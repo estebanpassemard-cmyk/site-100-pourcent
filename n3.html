@@ -1,0 +1,996 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Imersion Malouine</title>
+
+    <link rel="preload" data-rocket-preload="" as="image" href="images/scuba-hero-bg.jpg" fetchpriority="high">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/="">
+    <link rel="stylesheet" id="gdlr-core-google-font-css" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Merriweather:wght@300;400;700;900&family=Open+Sans:wght@300;400;500;600;700;800&display=swap">
+    <link data-minify="1" rel="stylesheet" id="font-awesome-css" href="css/font-awesome.css" type="text/css" media="all">
+    <link data-minify="1" rel="stylesheet" id="fa6-css" href="css/all.css" type="text/css" media="all">
+    <link data-minify="1" rel="stylesheet" id="elegant-font-css" href="css/elegant-font.css" type="text/css" media="all">
+    <link data-minify="1" rel="stylesheet" id="ionicons-css" href="css/ionicons.css" type="text/css" media="all">
+    <link data-minify="1" rel="stylesheet" id="simple-line-icons-css" href="css/simpleline.css" type="text/css" media="all">
+    <link data-minify="1" rel="stylesheet" id="gdlr-custom-icon-css" href="css/gdlr-custom-icon.css" type="text/css" media="all">
+    <link data-minify="1" rel="stylesheet" id="gdlr-core-plugin-css" href="css/style_1.css" type="text/css" media="all">
+    <link data-minify="1" rel="stylesheet" id="gdlr-core-page-builder-css" href="css/page-builder.css" type="text/css" media="all">
+    <link data-minify="1" rel="stylesheet" id="gdlr-travel-css" href="css/style.css" type="text/css" media="all">
+    <link data-minify="1" rel="stylesheet" id="tourmaster-style-css" href="css/tourmaster.css" type="text/css" media="all">
+    <link data-minify="1" rel="stylesheet" id="tourmaster-global-custom-style-css" href="css/tourmaster-global-style-custom.css" type="text/css" media="all">
+    <link data-minify="1" rel="stylesheet" id="newsletter-css" href="css/style_2.css" type="text/css" media="all">
+    <link data-minify="1" rel="stylesheet" id="tourmaster-custom-style-css" href="css/tourmaster-style-custom.css" type="text/css" media="all">
+    <link data-minify="1" rel="stylesheet" id="zurf-style-core-css" href="css/style-core.css" type="text/css" media="all">
+    <link data-minify="1" rel="stylesheet" id="zurf-custom-style-css" href="css/zurf-style-custom.css" type="text/css" media="all">
+	<link rel="stylesheet" href="css/force-menus.css">
+
+
+
+
+<style>
+/* === CSS MENUS DÉROULANTS AMÉLIORÉS === */
+
+/* Menu principal */
+.zurf-navigation .sf-menu > li {
+    position: relative;
+}
+
+/* Sous-menus - FOND BLANC */
+.zurf-navigation .sf-menu > li > .sub-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #ffffff;
+    min-width: 220px;
+    padding: 15px 0;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    border-top: 3px solid #2c7b8d;
+    z-index: 99999;
+    margin-top: 0;
+}
+
+/* Afficher au survol */
+.zurf-navigation .sf-menu > li:hover > .sub-menu {
+    display: block !important;
+    animation: fadeIn 0.2s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Items du sous-menu */
+.zurf-navigation .sf-menu .sub-menu li {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.zurf-navigation .sf-menu .sub-menu li:last-child {
+    border-bottom: none;
+}
+
+.zurf-navigation .sf-menu .sub-menu li a {
+    display: block;
+    padding: 12px 25px;
+    color: #556575 !important;
+    text-decoration: none;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    background-color: transparent;
+}
+
+.zurf-navigation .sf-menu .sub-menu li a:hover {
+    background-color: #e8f4f8 !important;
+    color: #2c7b8d !important;
+    padding-left: 30px;
+}
+
+/* Menu mobile */
+.zurf-main-menu-wrap .sf-menu > li > .sub-menu {
+    display: none;
+    background-color: rgba(13, 27, 42, 0.95);
+    padding: 10px 0;
+    margin-left: 20px;
+}
+
+.zurf-main-menu-wrap .sf-menu > li:hover > .sub-menu,
+.zurf-main-menu-wrap .sf-menu > li.zurf-active > .sub-menu {
+    display: block !important;
+}
+
+/* Fix pour visibilité */
+.zurf-navigation .sf-menu .sub-menu {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+</style>
+
+
+<style>
+/* === MENUS DÉROULANTS - CSS INLINE PRIORITAIRE === */
+
+/* Forcer l'affichage des sous-menus au survol */
+.zurf-navigation .sf-menu > li {
+    position: relative !important;
+}
+
+.zurf-navigation .sf-menu > li > .sub-menu {
+    display: none !important;
+    position: absolute !important;
+    top: 100% !important;
+    left: 0 !important;
+    background-color: rgba(13, 27, 42, 0.98) !important;
+    min-width: 220px !important;
+    padding: 15px 0 !important;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.4) !important;
+    border-top: 3px solid #2c7b8d !important;
+    z-index: 999999 !important;
+    margin-top: 0 !important;
+    list-style: none !important;
+}
+
+.zurf-navigation .sf-menu > li:hover > .sub-menu {
+    display: block !important;
+    animation: fadeInDropdown 0.2s ease-in !important;
+}
+
+@keyframes fadeInDropdown {
+    from { 
+        opacity: 0 !important; 
+        transform: translateY(-10px) !important; 
+    }
+    to { 
+        opacity: 1 !important; 
+        transform: translateY(0) !important; 
+    }
+}
+
+.zurf-navigation .sf-menu .sub-menu li {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border-bottom: 1px solid rgba(255,255,255,0.1) !important;
+}
+
+.zurf-navigation .sf-menu .sub-menu li:last-child {
+    border-bottom: none !important;
+}
+
+.zurf-navigation .sf-menu .sub-menu li a {
+    display: block !important;
+    padding: 12px 25px !important;
+    color: #ffffff !important;
+    text-decoration: none !important;
+    font-size: 14px !important;
+    font-weight: 400 !important;
+    transition: all 0.3s ease !important;
+    background-color: transparent !important;
+}
+
+.zurf-navigation .sf-menu .sub-menu li a:hover {
+    background-color: #2c7b8d !important;
+    padding-left: 30px !important;
+    color: #fff !important;
+}
+
+/* Menu mobile aussi */
+.zurf-main-menu-wrap .sf-menu > li > .sub-menu {
+    display: none !important;
+    background-color: rgba(13, 27, 42, 0.95) !important;
+    padding: 10px 0 !important;
+}
+
+.zurf-main-menu-wrap .sf-menu > li:hover > .sub-menu,
+.zurf-main-menu-wrap .sf-menu > li.zurf-active > .sub-menu {
+    display: block !important;
+}
+
+/* S'assurer que les sous-menus sont visibles */
+.sf-menu .sub-menu {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+/* Annuler tout display:none venant d'ailleurs */
+.zurf-navigation .sf-menu > li:hover .sub-menu,
+.zurf-navigation .sf-menu > li.sfHover .sub-menu {
+    display: block !important;
+}
+</style>
+
+</head>
+	<body>
+		<style>
+    .custom-select-wrapper {
+        position: relative;
+        width: 200px;
+        font-family: sans-serif;
+    }
+
+    .custom-select {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .custom-select img {
+        width: 20px;
+        height: auto;
+        margin-right: 8px;
+    }
+
+    .custom-select-options {
+        position: absolute;
+        top: 148%;
+        left: 10px;
+        width: -111.3%;
+        background-color: #0d1b2aed;
+        border-top: none;
+        z-index: 10;
+        display: none;
+        max-height: 200px;
+        overflow-y: auto;
+    }
+
+    .custom-select-option {
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    .custom-select-option:hover {
+background-color: #2c7b8d;
+    }
+
+    .custom-select-option img {
+        width: 20px;
+        height: auto;
+        margin-right: 8px;
+    }
+    .custom-select-wrapper-select{
+        position: initial;
+  width: initial;
+    }
+</style>
+<style type="text/css">
+    .zurf-logo {
+padding-top: 14px!important;
+    }
+</style>
+<body class="home page-template-default page page-id-15793 theme-zurf gdlr-core-body tourmaster-body woocommerce-no-js zurf-body zurf-body-front zurf-full zurf-with-sticky-navigation zurf-blockquote-style-3 gdlr-core-link-to-lightbox" data-home-url="index.html">
+
+    <!-- zurf-mobile-header-wrap -->
+    <div class="zurf-mobile-header-wrap">
+        <!--  TOP BAR -->
+        <div class="zurf-top-bar">
+            <div class="zurf-top-bar-background">
+            </div>
+            <div class="zurf-top-bar-container zurf-container">
+                <div class="zurf-top-bar-container-inner clearfix">
+                    <div class="zurf-top-bar-left zurf-item-pdlr">
+                        <!--
+                        <div class="tourmaster-user-top-bar tourmaster-guest tourmaster-style-1" data-redirect="index.htmladmin">
+                            <span class="tourmaster-user-top-bar-login"><i class="icon_lock_alt"></i><span class="tourmaster-text"> <a href="index.htmladmin">Administration</a></span></span>
+                        </div>
+                        -->
+                        <!--
+                        <div id="lang">
+    <div class="custom-select-wrapper-select">
+        <div class="custom-select" id="custom-select-trigger">
+            <img src="https://flagcdn.com/fr.svg" alt="Français">
+            <span>Français</span>
+        </div>
+        <div class="custom-select-options" id="custom-select-options">
+            <div class="custom-select-option" data-value="Francais" data-img="https://flagcdn.com/fr.svg">
+                <img src="https://flagcdn.com/fr.svg" alt="Français">
+                <span>Français</span>
+            </div>
+            <div class="custom-select-option" data-value="Anglais" data-img="https://flagcdn.com/gb.svg">
+                <img src="https://flagcdn.com/gb.svg" alt="Anglais">
+                <span>Anglais</span>
+            </div>
+            <div class="custom-select-option" data-value="Espagnol" data-img="https://flagcdn.com/es.svg">
+                <img src="https://flagcdn.com/es.svg" alt="Espagnol">
+                <span>Espagnol</span>
+            </div>
+            <div class="custom-select-option" data-value="Chinois" data-img="https://flagcdn.com/cn.svg">
+                <img src="https://flagcdn.com/cn.svg" alt="Chinois">
+                <span>Chinois</span>
+            </div>
+        </div>
+        <input type="hidden" name="lang" id="selected-lang" value="Francais">
+    </div>
+</div>
+
+-->
+                    </div>
+                    <div class="zurf-top-bar-right zurf-item-pdlr">
+                        <div class="zurf-top-bar-right-text">
+                            <i class="fa5s fa5-phone" style="font-size: 15px; color: #ffffff; margin-right: 10px;"></i><span style="font-weight: 500;"> 06.84.57.59.76</span>
+                            <i class="fa5s fa5-envelope-open" style="font-size: 15px; color: #ffffff; margin-left: 30px; margin-right: 10px;"></i>
+                            <a href="#"><span class="__cf_email__">contact@immersion-malouinne.com</span></a>
+                        </div>
+                        <div class="zurf-top-bar-right-social">
+                            <a href="#" target="_blank" class="zurf-top-bar-social-icon" title="facebook"><i class="fa6b fa6-facebook"></i></a>
+                            <a href="#" target="_blank" class="zurf-top-bar-social-icon" title="flickr"><i class="fa6b fa6-flickr"></i></a>
+                            <a href="#" target="_blank" class="zurf-top-bar-social-icon" title="twitter"><i class="fa6b fa6-x-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--  TOP BAR -->
+
+        <!-- SECTION MENU MOBILE -->
+        <div class="zurf-mobile-header zurf-header-background zurf-style-slide zurf-sticky-mobile-navigation" id="zurf-mobile-header">
+            <div class="zurf-mobile-header-container zurf-container clearfix">
+                <div class="zurf-logo zurf-item-pdlr">
+                    <div class="zurf-logo-inner">
+                        <a class="" href="index.html"><img src="images/logov1.png" alt="" width="198" height="30" title="logox2"></a>
+                    </div>
+                </div>
+                <div class="zurf-mobile-menu-right">
+                    <div class="zurf-mobile-menu">
+                        <a class="zurf-mm-menu-button zurf-mobile-menu-button zurf-mobile-button-hamburger" href="#zurf-mobile-menu"><span></span></a>
+                        <div class="zurf-mm-menu-wrap zurf-navigation-font" id="zurf-mobile-menu" data-slide="right">
+                            <ul id="menu-main-navigation" class="m-menu">
+<li class="menu-item zurf-normal-menu"><a href="index.html">Accueil</a></li>
+                                <li class="menu-item menu-item-has-children">
+                                <a href="#">Découverte</a>
+                                        <ul class="sub-menu">
+                                            <li class="menu-item" data-size="60"><a href="bapteme.html">Baptême</a></li>
+                                            <li class="menu-item" data-size="60"><a href="initiation.html">Initiation</a></li>
+                                        </ul>
+                                </li>
+                                <li class="menu-item menu-item-has-children">
+                                <a href="#">Formation</a>
+                                        <ul class="sub-menu">
+                                            <li class="menu-item" data-size="60"><a href="n1.html">Formation N1</a></li>
+                                            <li class="menu-item" data-size="60"><a href="n2.html">Formation N2</a></li>
+                                            <li class="menu-item" data-size="60"><a href="n3.html">Formation N3</a></li>
+                                            <li class="menu-item" data-size="60"><a href="n4.html">Formation N4</a></li>
+                                        </ul>
+                                </li>
+                                <li class="menu-item menu-item-has-children">
+                                <a href="#">Exploration</a>
+                                        <ul class="sub-menu">
+                                            <li class="menu-item" data-size="60"><a href="autonome.html">Autonome</a></li>
+                                            <li class="menu-item" data-size="60"><a href="encadre.html">Encadré</a></li>
+                                        </ul>
+                                </li>
+
+
+                                <li class="menu-item menu-item-has-children">
+                                <a href="#">Sans bouteille</a>
+                                        <ul class="sub-menu">
+                                            <li class="menu-item"><a href="randonnee-palmee.html">Randonnée palmée</a></li>
+                                            <li class="menu-item"><a href="apnee.html">Apnée</a></li>
+                                            <li class="menu-item"><a href="maitrise-du-milieu.html">Maîtrise du milieu</a></li>
+                                        </ul>
+                                </li>
+
+<li class="menu-item zurf-normal-menu"><a href="contact.html">Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- SECTION MENU MOBILE -->
+
+
+    <div class="zurf-body-outer-wrapper">
+        <div class="zurf-body-wrapper clearfix zurf-with-transparent-header zurf-with-frame">
+            <div class="zurf-header-background-transparent">
+                <!-- SECTION Top bar -->
+                <div class="zurf-top-bar">
+                    <div class="zurf-top-bar-background">
+                    </div>
+                    <div class="zurf-top-bar-container zurf-container">
+                        <div class="zurf-top-bar-container-inner clearfix">
+                            <div class="zurf-top-bar-left zurf-item-pdlr">
+<div id="lang">
+    <div class="custom-select-wrapper-select">
+        <div class="custom-select" id="custom-select-trigger">
+            <img src="fr.svg" alt="Français">
+            <span>Français</span>
+        </div>
+        <div class="custom-select-options" id="custom-select-options">
+            <div class="custom-select-option" data-value="Francais" data-img="https://flagcdn.com/fr.svg">
+                <img src="fr.svg" alt="Français">
+                <span>Français</span>
+            </div>
+            <div class="custom-select-option" data-value="Anglais" data-img="https://flagcdn.com/gb.svg">
+                <img src="gb.svg" alt="Anglais">
+                <span>Anglais</span>
+            </div>
+            <div class="custom-select-option" data-value="Espagnol" data-img="https://flagcdn.com/es.svg">
+                <img src="es.svg" alt="Espagnol">
+                <span>Espagnol</span>
+            </div>
+            <div class="custom-select-option" data-value="Chinois" data-img="https://flagcdn.com/cn.svg">
+                <img src="cn.svg" alt="Chinois">
+                <span>Chinois</span>
+            </div>
+        </div>
+        <input type="hidden" name="lang" id="selected-lang" value="Francais">
+    </div>
+</div>
+
+                            </div>
+                            <div class="zurf-top-bar-right zurf-item-pdlr">
+                        <div class="zurf-top-bar-right-text">
+                            <i class="fa5s fa5-phone" style="font-size: 15px; color: #ffffff; margin-right: 10px;"></i><span style="font-weight: 500;"> 06.84.57.59.76</span>
+                            <i class="fa5s fa5-envelope-open" style="font-size: 15px; color: #ffffff; margin-left: 30px; margin-right: 10px;"></i>
+                            <a href="#"><span class="__cf_email__">contact@immersion-malouinne.com</span></a>
+                        </div>
+                        
+                                <div class="zurf-top-bar-right-social">
+                                    <a href="#" target="_blank" class="zurf-top-bar-social-icon" title="facebook"><i class="fa6b fa6-facebook"></i></a>
+                                    <a href="#" target="_blank" class="zurf-top-bar-social-icon" title="flickr"><i class="fa6b fa6-flickr"></i></a>
+                                    <a href="#" target="_blank" class="zurf-top-bar-social-icon" title="twitter"><i class="fa6b fa6-x-twitter"></i></a>
+
+                                </div> 
+                                                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- HEADER -->
+                <header class="zurf-header-wrap zurf-header-style-plain zurf-style-menu-right zurf-sticky-navigation zurf-style-slide" data-navigation-offset="75px">
+                    <div class="zurf-header-background">
+                    </div>
+                    <div class="zurf-header-container zurf-container">
+                        <div class="zurf-header-container-inner clearfix">
+                            <!-- LOGO -->
+                            <div class="zurf-logo zurf-item-pdlr">
+                                <div class="zurf-logo-inner">
+                                    <a class="" href="index.html"><img src="images/logov1.png" alt="" width="99" height="15" title="logox1"></a>
+                                </div>
+                            </div>
+                            <div class="zurf-navigation zurf-item-pdlr clearfix zurf-navigation-submenu-indicator">
+                                <div class="zurf-main-menu" id="zurf-main-menu">
+                                    <ul id="menu-main-navigation-1" class="sf-menu">
+                                        <li class="menu-item zurf-normal-menu"><a href="index.html">Accueil</a></li>
+                                        <li class="menu-item menu-item-has-children zurf-normal-menu">
+                                        <a href="#" class="sf-with-ul-pre">Découverte</a>
+                                        <ul class="sub-menu">
+                                            <li class="menu-item" data-size="60"><a href="bapteme.html">Baptême</a></li>
+                                            <li class="menu-item" data-size="60"><a href="initiation.html">Initiation</a></li>
+                                        </ul>
+                                        </li>
+                                        <li class="menu-item menu-item-has-children zurf-normal-menu">
+                                        <a href="#" class="sf-with-ul-pre">Formations</a>
+                                        <ul class="sub-menu">
+                                            <li class="menu-item" data-size="60"><a href="n1.html">Formation N1</a></li>
+                                            <li class="menu-item" data-size="60"><a href="n2.html">Formation N2</a></li>
+                                            <li class="menu-item" data-size="60"><a href="n3.html">Formation N3</a></li>
+                                            <li class="menu-item" data-size="60"><a href="n4.html">Formation N4</a></li>
+                                        </ul>
+                                        </li>
+                                        <li class="menu-item menu-item-has-children zurf-normal-menu">
+                                        <a href="#" class="sf-with-ul-pre">Exploration</a>
+                                        <ul class="sub-menu">
+                                            <li class="menu-item" data-size="60"><a href="autonome.html">Autonome</a></li>
+                                            <li class="menu-item" data-size="60"><a href="encadre.html">Encadré</a></li>
+                                        </ul>
+                                        </li>
+
+                                                                                <li class="menu-item menu-item-has-children zurf-normal-menu">
+                                        <a href="#" class="sf-with-ul-pre">Sans bouteille</a>
+                                        <ul class="sub-menu">
+                                            <li class="menu-item"><a href="randonnee-palmee.html">Randonnée palmée</a></li>
+                                            <li class="menu-item"><a href="apnee.html">Apnée</a></li>
+                                            <li class="menu-item"><a href="maitrise-du-milieu.html">Maîtrise du milieu</a></li>
+                                        </ul>
+                                        </li>
+                                        <li class="menu-item zurf-normal-menu"><a href="contact.html">Contact</a></li>
+                                    </ul>
+                                </div>
+                                <div class="zurf-main-menu-right-wrap clearfix">
+                                    <a class="zurf-main-menu-right-button zurf-button-1 zurf-style-default" href="#" target="_self">Réservation</a>
+                                </div>
+                            </div>
+                            <!-- zurf-navigation -->
+                        </div>
+                        <!-- zurf-header-inner -->
+                    </div>
+                    <!-- zurf-header-container -->
+                </header>
+                <!-- header -->
+            </div>
+
+
+<script>
+    const trigger = document.getElementById('custom-select-trigger');
+    const options = document.getElementById('custom-select-options');
+    const hiddenInput = document.getElementById('selected-lang');
+
+    trigger.addEventListener('click', () => {
+        options.style.display = options.style.display === 'block' ? 'none' : 'block';
+    });
+
+    document.querySelectorAll('.custom-select-option').forEach(option => {
+        option.addEventListener('click', () => {
+            const lang = option.getAttribute('data-value');
+            const img = option.getAttribute('data-img');
+            const label = option.querySelector('span').textContent;
+
+            // Update display
+            trigger.innerHTML = `<img src="${img}" alt="${label}"><span>${label}</span>`;
+            hiddenInput.value = lang;
+            options.style.display = 'none';
+        });
+    });
+
+    // Fermer le menu si on clique ailleurs
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('.custom-select-wrapper-select')) {
+            options.style.display = 'none';
+        }
+    });
+</script>
+		<main>
+			<div class="zurf-page-wrapper" id="zurf-page-wrapper">
+                <div class="gdlr-core-page-builder-body clearfix">
+                    <div class="gdlr-core-pbf-wrapper" style="padding: 260px 0px 130px 0px;" data-skin="Dark" id="gdlr-core-wrapper-1">
+                        <div class="gdlr-core-pbf-background-wrap" style="background-color: #0a0a0a;">
+                            <div class="gdlr-core-pbf-background gdlr-core-parallax gdlr-core-js" style="opacity: 0.5; background-image: url(images/n3-formation.jpg); background-size: cover; background-repeat: no-repeat; background-position: center;" data-parallax-speed="0"></div>
+                        </div>
+                        <div class="gdlr-core-pbf-wrapper-content gdlr-core-js" data-gdlr-animation="fadeInUp" data-gdlr-animation-duration="600ms" data-gdlr-animation-offset="0.8">
+                            <div class="gdlr-core-pbf-wrapper-container clearfix gdlr-core-container">
+                                <div class="gdlr-core-pbf-element">
+                                    <div class="gdlr-core-title-item gdlr-core-item-pdb clearfix gdlr-core-center-align gdlr-core-title-item-caption-bottom gdlr-core-item-pdlr">
+                                        <div class="gdlr-core-title-item-title-wrap">
+                                            <h3 class="gdlr-core-title-item-title gdlr-core-skin-title class-test" style="font-size: 75px; font-weight: 600; letter-spacing: 0px; text-transform: none; color: #ffffff;">
+                                                formation n3<span class="gdlr-core-title-item-title-divider gdlr-core-skin-divider"></span>
+                                            </h3>
+                                        </div>
+                                        <span class="gdlr-core-title-item-caption gdlr-core-info-font gdlr-core-skin-caption" style="font-size: 25px; font-style: normal; letter-spacing: 0px; margin-top: 25px;"> </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    Page exemple
+                    
+                </div>
+            </div>		</main>
+		
+<!-- FOOTER -->
+            <footer data-wpr-lazyrender="1">
+            <div class="zurf-footer-wrapper">
+                <div class="zurf-footer-container zurf-container clearfix">
+                    <div class="zurf-footer-column zurf-item-pdlr zurf-column-15">
+                        <div id="block-5" class="widget widget_block zurf-widget">
+                            <h2 class="wp-block-heading">Nous contactez</h2>
+                        </div>
+                        <div id="block-7" class="widget widget_block widget_text zurf-widget">
+                            <p>
+                                 Immersion Malouine, St Juvat 35000<br>
+                                <span class="gdlr-core-space-shortcode" style="margin-top: 7px;"></span> +06.84.57.59.76<br>
+                                <span class="gdlr-core-space-shortcode" style="margin-top: 7px;"></span>
+                                <a style="color: #09548c;" href="/cdn-cgi/l/email-protection#64070b0a10050710240109050d084a070b09">
+                                <span class="__cf_email__" data-cfemail="1b7874756f7a786f5b6f697a6d7e776f746e696f737e767e35787476">contact@immersion-malouine.com</span>
+                                </a>
+                                <br>
+                                <span class="gdlr-core-space-shortcode" style="margin-top: 35px;"></span>
+                                <span class="gdlr-core-social-network-item gdlr-core-item-pdb gdlr-core-none-align gdlr-direction-horizontal" style="padding-bottom: 0px; display: block;" id="gdlr-core-social-network-1">
+                                <a href="#url" target="_blank" class="gdlr-core-social-network-icon" title="facebook" style=" color: #ffffff; border-color: #ffffff; border-width: 1px; margin-right: 12px; width: 50px; height: 50px; line-height: 50px; background-color: transparent; border-radius: 25px; -moz-border-radius: 25px; -webkit-border-radius: 25px; ">
+                                <i class="fa6b fa6-facebook"></i>
+                                </a>
+                                <a href="#url" target="_blank" class="gdlr-core-social-network-icon" title="twitter" style=" color: #ffffff; border-color: #ffffff; border-width: 1px; margin-right: 12px; width: 50px; height: 50px; line-height: 50px; background-color: transparent; border-radius: 25px; -moz-border-radius: 25px; -webkit-border-radius: 25px; ">
+                                <i class="fa6b fa6-x-twitter"></i>
+                                </a>
+                                <a href="#" target="_blank" class="gdlr-core-social-network-icon" title="instagram" style=" color: #ffffff; border-color: #ffffff; border-width: 1px; margin-right: 12px; width: 50px; height: 50px; line-height: 50px; background-color: transparent; border-radius: 25px; -moz-border-radius: 25px; -webkit-border-radius: 25px; ">
+                                <i class="fa6b fa6-instagram"></i>
+                                </a>
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="zurf-footer-column zurf-item-pdlr zurf-column-15">
+                        <div id="gdlr-core-custom-menu-widget-1" class="widget widget_gdlr-core-custom-menu-widget zurf-widget">
+                            <h3 class="zurf-widget-title">Menu</h3>
+                            <span class="clear"></span>
+                            <div class="menu-about-us-container">
+                                <ul id="menu-about-us" class="gdlr-core-custom-menu-widget gdlr-core-menu-style-plain">
+                                    <li class="menu-item zurf-normal-menu"><a href="blog-3-columns.html">Blog de voyage & Conseils</a></li>
+                                    <li class="menu-item zurf-normal-menu"><a href="about-us.html">Travailler avec nous</a></li>
+                                    <li class="menu-item zurf-normal-menu"><a href="about-us.html">Devenez notre partenaire</a></li>
+                                    <li class="menu-item zurf-normal-menu"><a href="about-us.html">Offres et forfaits</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="zurf-footer-column zurf-item-pdlr zurf-column-15">
+                        <div id="gdlr-core-custom-menu-widget-2" class="widget widget_gdlr-core-custom-menu-widget zurf-widget">
+                            <h3 class="zurf-widget-title">Support</h3>
+                            <span class="clear"></span>
+                            <div class="menu-support-container">
+                                <ul id="menu-support" class="gdlr-core-custom-menu-widget gdlr-core-menu-style-plain">
+                                    <li class="menu-item zurf-normal-menu"><a href="about-us.html">Service client</a></li>
+                                    <li class="menu-item zurf-normal-menu"><a href="about-us.html">Politique de confidentialité</a></li>
+                                    <li class="menu-item zurf-normal-menu"><a href="contact.html">Contact</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="zurf-footer-column zurf-item-pdlr zurf-column-15">
+                        <div id="text-2" class="widget widget_text zurf-widget">
+                            <h3 class="zurf-widget-title">Payez en toute sécurité</h3>
+                            <span class="clear"></span>
+                            <div class="textwidget">
+                                <p>
+Le paiement est crypté et transmis en toute sécurité grâce au protocole SSL.<br>
+                                    <img loading="lazy" decoding="async" class="alignnone size-full wp-image-5360" src="images/creditcard-logo.png" alt="" width="254" height="47">
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="zurf-copyright-wrapper">
+                <div class="zurf-copyright-container zurf-container">
+                    <div class="zurf-copyright-text zurf-item-pdlr">
+                         Copyright © 2025 Immersion Malouinne. All Rights Reserved | <a href="#" style="color: #fff;">Politique de confidentialité</a> | <a href="#" style="color: #fff;">Conditions générales</a>
+                    </div>
+                </div>
+            </div>
+            </footer>
+
+            <!-- FOOTER -->
+        </div>
+    </div>
+    <script type="text/javascript" src="js/jquery.min.js" id="jquery-core-js"></script>
+    <script type="text/javascript" src="js/jquery-migrate.min.js" id="jquery-migrate-js"></script>
+    <script type="text/javascript" src="js/jquery.blockUI.min.js" id="jquery-blockui-js" defer="defer" data-wp-strategy="defer"></script>
+    <script type="text/javascript" src="js/js.cookie.min.js" id="js-cookie-js" defer="defer" data-wp-strategy="defer"></script>
+    <script data-minify="1" type="text/javascript" src="js/script.js" id="gdlr-core-plugin-js" data-rocket-defer="" defer=""></script>
+    <script type="text/javascript" id="gdlr-core-page-builder-js-extra">
+        /* <![CDATA[ */
+        var gdlr_core_pbf = { admin: "", video: { width: "640", height: "360" }, ajax_url: "https:\/\/demo.goodlayers.com\/zurf\/scuba\/wp-admin\/admin-ajax.php" };
+        /* ]]> */
+    </script>
+    <script data-minify="1" type="text/javascript" src="js/page-builder.js" id="gdlr-core-page-builder-js" data-rocket-defer="" defer=""></script>
+    <script type="text/javascript" src="js/core.min.js" id="jquery-ui-core-js" data-rocket-defer="" defer=""></script>
+    <script type="text/javascript" src="js/datepicker.min.js" id="jquery-ui-datepicker-js" data-rocket-defer="" defer=""></script>
+    <script type="text/javascript" id="jquery-ui-datepicker-js-after">
+        /* <![CDATA[ */
+        jQuery(function (jQuery) {
+            jQuery.datepicker.setDefaults({
+                closeText: "Close",
+                currentText: "Today",
+                monthNames: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+                monthNamesShort: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                nextText: "Next",
+                prevText: "Previous",
+                dayNames: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+                dayNamesShort: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+                dayNamesMin: ["S", "M", "T", "W", "T", "F", "S"],
+                dateFormat: "MM d, yy",
+                firstDay: 1,
+                isRTL: false,
+            });
+        });
+        /* ]]> */
+    </script>
+    <script type="text/javascript" src="js/effect.min.js" id="jquery-effects-core-js" data-rocket-defer="" defer=""></script>
+    <script type="text/javascript" id="tourmaster-script-js-extra">
+        /* <![CDATA[ */
+        var TMi18n = {
+            closeText: "Done",
+            currentText: "Today",
+            monthNames: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+            monthNamesShort: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+            dayNames: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+            dayNamesShort: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+            dayNamesMin: ["S", "M", "T", "W", "T", "F", "S"],
+            firstDay: "1",
+        };
+        /* ]]> */
+    </script>
+    <script data-minify="1" type="text/javascript" src="js/tourmaster.js" id="tourmaster-script-js" data-rocket-defer="" defer=""></script>
+    <script type="text/javascript" src="js/sourcebuster.min.js" id="sourcebuster-js-js" data-rocket-defer="" defer=""></script>
+
+    <script type="text/javascript" src="js/order-attribution.min.js" id="wc-order-attribution-js" data-rocket-defer="" defer=""></script>
+    <script data-minify="1" type="text/javascript" src="js/tourmaster-tour.js" id="tourmaster-tour-script-js" data-rocket-defer="" defer=""></script>
+    <script data-minify="1" type="text/javascript" src="js/jquery.mmenu.js" id="zurf-jquery-mmenu-js" data-rocket-defer="" defer=""></script>
+    <script data-minify="1" type="text/javascript" src="js/jquery.superfish.js" id="zurf-jquery-superfish-js" data-rocket-defer="" defer=""></script>
+    <script data-minify="1" type="text/javascript" src="js/script-core.js" id="zurf-script-core-js" data-rocket-defer="" defer=""></script>
+            	
+
+
+
+<script>
+// Menu mobile burger
+document.addEventListener('DOMContentLoaded', function() {
+    const menuBtn = document.querySelector('.zurf-mm-menu-button');
+    const menuWrap = document.querySelector('.zurf-mm-menu-wrap');
+    
+    if (menuBtn && menuWrap) {
+        menuBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            this.classList.toggle('zurf-active');
+            menuWrap.classList.toggle('zurf-active');
+        });
+        
+        menuWrap.querySelectorAll('.menu-item-has-children > a').forEach(function(link) {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                this.parentElement.classList.toggle('zurf-active');
+            });
+        });
+    }
+});
+</script>
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style id="menu-mobile-complet">
+/* === MENU MOBILE RESPONSIVE === */
+
+/* Masquer menu desktop sur mobile */
+@media (max-width: 999px) {
+    .zurf-header-wrap .zurf-navigation {
+        display: none !important;
+    }
+    
+    .zurf-mobile-header {
+        display: block !important;
+        position: relative !important;
+        background: #ffffff !important;
+        border-bottom: 1px solid #e0e0e0 !important;
+        padding: 15px 0 !important;
+    }
+}
+
+/* Afficher menu desktop sur grand écran */
+@media (min-width: 1000px) {
+    .zurf-mobile-header {
+        display: none !important;
+    }
+}
+
+/* Bouton hamburger */
+.zurf-mm-menu-button {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    position: relative;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    padding: 0;
+}
+
+.zurf-mm-menu-button span,
+.zurf-mm-menu-button span::before,
+.zurf-mm-menu-button span::after {
+    display: block;
+    position: absolute;
+    width: 30px;
+    height: 3px;
+    background: #2c7b8d;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.zurf-mm-menu-button span {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.zurf-mm-menu-button span::before {
+    content: '';
+    top: -10px;
+    left: 0;
+}
+
+.zurf-mm-menu-button span::after {
+    content: '';
+    top: 10px;
+    left: 0;
+}
+
+/* Animation bouton actif */
+.zurf-mm-menu-button.active span {
+    background: transparent;
+}
+
+.zurf-mm-menu-button.active span::before {
+    top: 0;
+    transform: rotate(45deg);
+}
+
+.zurf-mm-menu-button.active span::after {
+    top: 0;
+    transform: rotate(-45deg);
+}
+
+/* Menu mobile */
+.zurf-mm-menu-wrap {
+    position: fixed;
+    top: 71px; /* Hauteur du header mobile */
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #ffffff;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    overflow-y: auto;
+    z-index: 999999;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+}
+
+.zurf-mm-menu-wrap.active {
+    transform: translateX(0);
+}
+
+/* Items du menu mobile */
+.zurf-mm-menu-wrap .m-menu {
+    list-style: none;
+    margin: 0;
+    padding: 20px 0;
+}
+
+.zurf-mm-menu-wrap .m-menu > li {
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.zurf-mm-menu-wrap .m-menu > li > a {
+    display: block;
+    padding: 15px 25px;
+    color: #333333 !important;
+    font-size: 16px !important;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.zurf-mm-menu-wrap .m-menu > li > a:hover {
+    background: #f5f5f5;
+    color: #2c7b8d !important;
+    padding-left: 35px;
+}
+
+/* Sous-menus mobile */
+.zurf-mm-menu-wrap .sub-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background: #f9f9f9;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.zurf-mm-menu-wrap .menu-item-has-children.active > .sub-menu {
+    max-height: 500px;
+}
+
+.zurf-mm-menu-wrap .sub-menu li a {
+    display: block;
+    padding: 12px 25px 12px 45px;
+    color: #556575 !important;
+    font-size: 14px !important;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.zurf-mm-menu-wrap .sub-menu li a:hover {
+    background: #ffffff;
+    color: #2c7b8d !important;
+    padding-left: 55px;
+}
+
+/* Indicateur sous-menu */
+.zurf-mm-menu-wrap .menu-item-has-children > a::after {
+    content: "▼";
+    float: right;
+    font-size: 12px;
+    transition: transform 0.3s ease;
+}
+
+.zurf-mm-menu-wrap .menu-item-has-children.active > a::after {
+    transform: rotate(180deg);
+}
+
+/* === RESPONSIVE FONTS === */
+@media (max-width: 999px) {
+    /* Titre header pages */
+    .gdlr-core-title-item-title {
+        font-size: 45px !important;
+    }
+    
+    /* Sous-titre header */
+    .gdlr-core-title-item-caption {
+        font-size: 18px !important;
+    }
+    
+    /* Texte général */
+    .zurf-content-wrap p,
+    .zurf-content-wrap li {
+        font-size: 16px !important;
+        line-height: 1.6 !important;
+    }
+    
+    /* Titres de section */
+    h2 {
+        font-size: 28px !important;
+    }
+    
+    h3 {
+        font-size: 24px !important;
+    }
+    
+    /* Padding général mobile */
+    .gdlr-core-pbf-wrapper {
+        padding-top: 80px !important;
+        padding-bottom: 60px !important;
+    }
+}
+
+@media (max-width: 600px) {
+    .gdlr-core-title-item-title {
+        font-size: 36px !important;
+    }
+    
+    .gdlr-core-title-item-caption {
+        font-size: 16px !important;
+    }
+}
+</style>
+<script>
+// Menu mobile - Version unique et propre
+(function() {
+    var btn = document.querySelector('.zurf-mm-menu-button');
+    var menu = document.querySelector('.zurf-mm-menu-wrap');
+    if (!btn || !menu) return;
+    
+    btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        this.classList.toggle('active');
+        menu.classList.toggle('active');
+    });
+    
+    menu.querySelectorAll('.menu-item-has-children > a[href="#"]').forEach(function(link) {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            this.parentElement.classList.toggle('active');
+        });
+    });
+    
+    menu.querySelectorAll('a[href]:not([href="#"])').forEach(function(link) {
+        link.addEventListener('click', function() {
+            btn.classList.remove('active');
+            menu.classList.remove('active');
+        });
+    });
+})();
+</script>
+</body></html>
