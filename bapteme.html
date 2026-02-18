@@ -27,12 +27,12 @@
     <link data-minify="1" rel="stylesheet" id="zurf-custom-style-css" href="css/zurf-style-custom.css" type="text/css" media="all">
 
 <style>
-/* === CSS MENUS DESKTOP - FOND BLEU + TEXTE BLANC === */
+/* === CSS MENUS DESKTOP - TOUT BLEU AVEC TEXTE BLANC === */
 .zurf-navigation .sf-menu > li {
     position: relative !important;
 }
 
-/* Sous-menus - FOND BLEU + TEXTE BLANC */
+/* Sous-menus - TOUT LE FOND BLEU */
 .zurf-navigation .sf-menu > li > .sub-menu,
 .zurf-navigation .sf-menu > li > ul.sub-menu {
     display: none !important;
@@ -40,11 +40,10 @@
     top: 100% !important;
     left: 0 !important;
     right: auto !important;
-    background-color: #2c7b8d !important; /* FOND BLEU */
+    background: #2c7b8d !important; /* FOND BLEU PARTOUT */
     min-width: 220px !important;
     padding: 15px 0 !important;
     box-shadow: 0 8px 16px rgba(0,0,0,0.3) !important;
-    border-top: 3px solid #004375 !important;
     z-index: 999999 !important;
     margin: 0 !important;
 }
@@ -58,26 +57,28 @@
     padding: 0 !important;
     margin: 0 !important;
     border-bottom: 1px solid rgba(255,255,255,0.1) !important;
+    background: transparent !important; /* PAS DE FOND BLANC SUR LES LI */
 }
 
 .zurf-navigation .sf-menu .sub-menu li:last-child {
     border-bottom: none !important;
 }
 
-/* Liens - TEXTE BLANC */
+/* Liens - TEXTE BLANC FORCÉ */
 .zurf-navigation .sf-menu .sub-menu li a {
     display: block !important;
     padding: 12px 25px !important;
-    color: #ffffff !important; /* TEXTE BLANC */
+    color: #ffffff !important; /* TEXTE BLANC FORCÉ */
     text-decoration: none !important;
     font-size: 14px !important;
+    font-weight: 500 !important;
     transition: all 0.3s ease !important;
-    background-color: transparent !important;
+    background: transparent !important; /* PAS DE FOND PAR DÉFAUT */
 }
 
 /* Hover - FOND PLUS FONCÉ */
 .zurf-navigation .sf-menu .sub-menu li a:hover {
-    background-color: #004375 !important; /* BLEU FONCÉ AU SURVOL */
+    background: #004375 !important; /* BLEU FONCÉ AU SURVOL */
     color: #ffffff !important;
     padding-left: 30px !important;
 }
