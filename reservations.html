@@ -3,19 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <title>Réservations - Immersion Malouine</title>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Merriweather:wght@300;400;700;900&family=Open+Sans:wght@300;400;500;600;700;800&display=swap">
+    <link rel="stylesheet" href="css/font-awesome.css" type="text/css" media="all">
+    <link rel="stylesheet" href="css/all.css" type="text/css" media="all">
+    <link rel="stylesheet" href="css/style-core.css" type="text/css" media="all">
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="all">
+
 <style>
-body {
-    margin: 0;
-    padding: 0;
-    background: linear-gradient(135deg, #e8f4f8 0%, #2c7b8d 100%);
-    min-height: 100vh;
+/* === CSS MENUS DESKTOP === */
+.zurf-navigation .sf-menu > li {
+    position: relative !important;
+}
+
+.zurf-navigation .sf-menu > li > .sub-menu,
+.zurf-navigation .sf-menu > li > ul.sub-menu {
+    display: none !important;
+    position: absolute !important;
+    top: 100% !important;
+    left: 0 !important;
+    right: auto !important;
+    background: #5ab9ba !important;
+    min-width: 250px !important;
+    padding: 0 !important;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2) !important;
+    z-index: 999999 !important;
+    margin: 0 !important;
+    border: none !important;
+}
+
+.zurf-navigation .sf-menu > li:hover > .sub-menu {
+    display: block !important;
+}
+
+.zurf-navigation .sf-menu .sub-menu li {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border-bottom: 1px solid rgba(255,255,255,0.2) !important;
+    background: transparent !important;
+}
+
+.zurf-navigation .sf-menu .sub-menu li:last-child {
+    border-bottom: none !important;
+}
+
+.zurf-navigation .sf-menu .sub-menu li a {
+    display: block !important;
+    padding: 15px 25px !important;
+    color: #ffffff !important;
+    text-decoration: none !important;
+    font-size: 15px !important;
+    font-weight: 500 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+    transition: all 0.3s ease !important;
+    background: transparent !important;
+}
+
+.zurf-navigation .sf-menu .sub-menu li a:hover {
+    background: rgba(0,0,0,0.15) !important;
+    color: #ffffff !important;
+    padding-left: 35px !important;
+}
+
+.zurf-navigation .sf-menu > li.menu-item-has-children > a::after {
+    content: " ▼" !important;
+    font-size: 10px !important;
+    margin-left: 5px !important;
+}
+
+/* CONTENU PAGE RÉSERVATIONS */
+.reservations-content {
+    position: relative;
+    min-height: 80vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: Arial, sans-serif;
-    position: relative;
+    background: linear-gradient(135deg, #e8f4f8 0%, #2c7b8d 100%);
+    padding: 100px 20px;
 }
 
 .euro {
@@ -34,10 +104,8 @@ body {
 .euro:nth-child(6) { top: 60%; right: 25%; }
 .euro:nth-child(7) { top: 75%; left: 15%; }
 .euro:nth-child(8) { bottom: 10%; right: 20%; }
-.euro:nth-child(9) { top: 20%; left: 50%; }
-.euro:nth-child(10) { top: 70%; left: 45%; }
 
-.message {
+.message-box {
     background: white;
     padding: 60px;
     border-radius: 20px;
@@ -47,56 +115,416 @@ body {
     position: relative;
 }
 
-.message h1 {
+.message-box h1 {
     font-size: 48px;
     color: #2c7b8d;
     margin: 0 0 20px 0;
 }
 
-.message p {
+.message-box p {
     font-size: 24px;
     color: #556575;
     margin: 0;
 }
 
-.back-btn {
-    display: inline-block;
-    margin-top: 30px;
-    padding: 15px 40px;
-    background: #2c7b8d;
-    color: white;
-    text-decoration: none;
-    border-radius: 50px;
-    font-size: 18px;
-    font-weight: bold;
-    transition: all 0.3s;
+.custom-select-wrapper {
+    position: relative;
+    width: 200px;
+    font-family: sans-serif;
 }
 
-.back-btn:hover {
-    background: #004375;
-    transform: scale(1.05);
+.custom-select {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.custom-select img {
+    width: 20px;
+    height: auto;
+    margin-right: 8px;
+}
+
+.custom-select-options {
+    position: absolute;
+    top: 148%;
+    left: 10px;
+    width: -111.3%;
+    background-color: #0d1b2aed;
+    border-top: none;
+    z-index: 10;
+    display: none;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.custom-select-option {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.custom-select-option:hover {
+    background-color: #2c7b8d;
+}
+
+.custom-select-option img {
+    width: 20px;
+    height: auto;
+    margin-right: 8px;
+}
+
+.custom-select-wrapper-select {
+    position: initial;
+    width: initial;
+}
+
+.zurf-logo {
+    padding-top: 14px!important;
 }
 </style>
+
 </head>
-<body>
+<body class="home page-template-default page theme-zurf gdlr-core-body tourmaster-body zurf-body zurf-body-front zurf-full zurf-with-sticky-navigation" data-home-url="index.html">
 
-<div class="euro">€</div>
-<div class="euro">€</div>
-<div class="euro">€</div>
-<div class="euro">€</div>
-<div class="euro">€</div>
-<div class="euro">€</div>
-<div class="euro">€</div>
-<div class="euro">€</div>
-<div class="euro">€</div>
-<div class="euro">€</div>
+    <!-- zurf-mobile-header-wrap -->
+    <div class="zurf-mobile-header-wrap">
+        <!--  TOP BAR MOBILE -->
+        <div class="zurf-top-bar">
+            <div class="zurf-top-bar-background">
+            </div>
+            <div class="zurf-top-bar-container zurf-container">
+                <div class="zurf-top-bar-container-inner clearfix">
+                    <div class="zurf-top-bar-left zurf-item-pdlr">
+                    </div>
+                    <div class="zurf-top-bar-right zurf-item-pdlr">
+                        <div class="zurf-top-bar-right-text">
+                            <i class="fa5s fa5-phone" style="font-size: 15px; color: #ffffff; margin-right: 10px;"></i><span style="font-weight: 500;"> 06.84.57.59.76</span>
+                            <i class="fa5s fa5-envelope-open" style="font-size: 15px; color: #ffffff; margin-left: 30px; margin-right: 10px;"></i>
+                            <a href="contact.html"><span class="__cf_email__">contact@immersion-malouine.com</span></a>
+                        </div>
+                        <div class="zurf-top-bar-right-social">
+                            <a href="https://www.facebook.com/alexandre.roussel.58" target="_blank" class="zurf-top-bar-social-icon" title="Facebook" style="font-size: 16px; color: #ffffff; margin-left: 15px;"><i class="fa-brands fa-facebook"></i></a>
+                            <a href="#" target="_blank" class="zurf-top-bar-social-icon" title="Instagram" style="font-size: 16px; color: #ffffff; margin-left: 15px;"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="#" target="_blank" class="zurf-top-bar-social-icon" title="X (Twitter)" style="font-size: 16px; color: #ffffff; margin-left: 15px;"><i class="fa-brands fa-x-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--  TOP BAR MOBILE -->
 
-<div class="message">
-    <h1>💶 PAGE RÉSERVATIONS 💶</h1>
-    <p>En construction</p>
-    <p style="font-size: 18px; margin-top: 15px; color: #999;">Module de paiement à venir</p>
-    <a href="index.html" class="back-btn">← Retour à l'accueil</a>
+        <!-- SECTION MENU MOBILE -->
+        <div class="zurf-mobile-header zurf-header-background zurf-style-slide zurf-sticky-mobile-navigation" id="zurf-mobile-header">
+            <div class="zurf-mobile-header-container zurf-container clearfix">
+                <div class="zurf-logo zurf-item-pdlr">
+                    <div class="zurf-logo-inner">
+                        <a class="" href="index.html"><img src="images/logov1.png" alt="" width="198" height="30" title="logox2"></a>
+                    </div>
+                </div>
+                <div class="zurf-mobile-menu-right">
+                    <div class="zurf-mobile-menu">
+                        <a class="zurf-mm-menu-button zurf-mobile-menu-button zurf-mobile-button-hamburger" href="#zurf-mobile-menu"><span></span></a>
+                        <div class="zurf-mm-menu-wrap zurf-navigation-font" id="zurf-mobile-menu" data-slide="right">
+                            <ul id="menu-main-navigation" class="m-menu">
+<li class="menu-item zurf-normal-menu"><a href="index.html">Accueil</a></li>
+                                <li class="menu-item menu-item-has-children">
+                                <a href="#">Découverte</a>
+                                        <ul class="sub-menu">
+                                            <li class="menu-item" data-size="60"><a href="bapteme.html">Baptême</a></li>
+                                            <li class="menu-item" data-size="60"><a href="initiation.html">Initiation</a></li>
+                                        </ul>
+                                </li>
+                                <li class="menu-item menu-item-has-children">
+                                <a href="#">Formation</a>
+                                        <ul class="sub-menu">
+                                            <li class="menu-item" data-size="60"><a href="n1.html">Formation N1</a></li>
+                                            <li class="menu-item" data-size="60"><a href="n2.html">Formation N2</a></li>
+                                            <li class="menu-item" data-size="60"><a href="n3.html">Formation N3</a></li>
+                                            <li class="menu-item" data-size="60"><a href="n4.html">Formation N4</a></li>
+                                        </ul>
+                                </li>
+                                <li class="menu-item menu-item-has-children">
+                                <a href="#">Exploration</a>
+                                        <ul class="sub-menu">
+                                            <li class="menu-item" data-size="60"><a href="autonome.html">Autonome</a></li>
+                                            <li class="menu-item" data-size="60"><a href="encadre.html">Encadré</a></li>
+                                        </ul>
+                                </li>
+
+                                <li class="menu-item menu-item-has-children">
+                                <a href="#">Sans bouteille</a>
+                                        <ul class="sub-menu">
+                                            <li class="menu-item"><a href="randonnee-palmee.html">Randonnée palmée</a></li>
+                                            <li class="menu-item"><a href="apnee.html">Apnée</a></li>
+                                            <li class="menu-item"><a href="maitrise-du-milieu.html">Maîtrise du milieu</a></li>
+                                        </ul>
+                                </li>
+
+<li class="menu-item zurf-normal-menu"><a href="contact.html">Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- SECTION MENU MOBILE -->
+
+
+    <div class="zurf-body-outer-wrapper">
+        <div class="zurf-body-wrapper clearfix zurf-with-transparent-header zurf-with-frame">
+            <div class="zurf-header-background-transparent">
+                <!-- SECTION Top bar DESKTOP -->
+                <div class="zurf-top-bar">
+                    <div class="zurf-top-bar-background">
+                    </div>
+                    <div class="zurf-top-bar-container zurf-container">
+                        <div class="zurf-top-bar-container-inner clearfix">
+                            <div class="zurf-top-bar-left zurf-item-pdlr">
+<div id="lang">
+    <div class="custom-select-wrapper-select">
+        <div class="custom-select" id="custom-select-trigger">
+            <img src="fr.svg" alt="Français">
+            <span>Français</span>
+        </div>
+        <div class="custom-select-options" id="custom-select-options">
+            <div class="custom-select-option" data-value="Francais" data-img="https://flagcdn.com/fr.svg">
+                <img src="fr.svg" alt="Français">
+                <span>Français</span>
+            </div>
+            <div class="custom-select-option" data-value="Anglais" data-img="https://flagcdn.com/gb.svg">
+                <img src="gb.svg" alt="Anglais">
+                <span>Anglais</span>
+            </div>
+            <div class="custom-select-option" data-value="Espagnol" data-img="https://flagcdn.com/es.svg">
+                <img src="es.svg" alt="Espagnol">
+                <span>Espagnol</span>
+            </div>
+            <div class="custom-select-option" data-value="Chinois" data-img="https://flagcdn.com/cn.svg">
+                <img src="cn.svg" alt="Chinois">
+                <span>Chinois</span>
+            </div>
+        </div>
+        <input type="hidden" name="lang" id="selected-lang" value="Francais">
+    </div>
 </div>
 
+                            </div>
+                            <div class="zurf-top-bar-right zurf-item-pdlr">
+                        <div class="zurf-top-bar-right-text">
+                            <i class="fa5s fa5-phone" style="font-size: 15px; color: #ffffff; margin-right: 10px;"></i><span style="font-weight: 500;"> 06.84.57.59.76</span>
+                            <i class="fa5s fa5-envelope-open" style="font-size: 15px; color: #ffffff; margin-left: 30px; margin-right: 10px;"></i>
+                            <a href="contact.html"><span class="__cf_email__">contact@immersion-malouine.com</span></a>
+                        </div>
+                        
+                                <div class="zurf-top-bar-right-social">
+                                    <a href="https://www.facebook.com/alexandre.roussel.58" target="_blank" class="zurf-top-bar-social-icon" title="Facebook" style="font-size: 16px; color: #ffffff; margin-left: 15px;"><i class="fa-brands fa-facebook"></i></a>
+                                    <a href="#" target="_blank" class="zurf-top-bar-social-icon" title="Instagram" style="font-size: 16px; color: #ffffff; margin-left: 15px;"><i class="fa-brands fa-instagram"></i></a>
+                                    <a href="#" target="_blank" class="zurf-top-bar-social-icon" title="X (Twitter)" style="font-size: 16px; color: #ffffff; margin-left: 15px;"><i class="fa-brands fa-x-twitter"></i></a>
+
+                                </div> 
+                                                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- HEADER -->
+                <header class="zurf-header-wrap zurf-header-style-plain zurf-style-menu-right zurf-sticky-navigation zurf-style-slide" data-navigation-offset="75px">
+                    <div class="zurf-header-background">
+                    </div>
+                    <div class="zurf-header-container zurf-container">
+                        <div class="zurf-header-container-inner clearfix">
+                            <!-- LOGO -->
+                            <div class="zurf-logo zurf-item-pdlr">
+                                <div class="zurf-logo-inner">
+                                    <a class="" href="index.html"><img src="images/logov1.png" alt="" width="99" height="15" title="logox1"></a>
+                                </div>
+                            </div>
+                            <div class="zurf-navigation zurf-item-pdlr clearfix zurf-navigation-submenu-indicator">
+                                <div class="zurf-main-menu" id="zurf-main-menu">
+                                    <ul id="menu-main-navigation-1" class="sf-menu">
+                                        <li class="menu-item zurf-normal-menu"><a href="index.html">Accueil</a></li>
+                                        <li class="menu-item menu-item-has-children zurf-normal-menu">
+                                        <a href="#" class="sf-with-ul-pre">Découverte</a>
+                                        <ul class="sub-menu">
+                                            <li class="menu-item" data-size="60"><a href="bapteme.html">Baptême</a></li>
+                                            <li class="menu-item" data-size="60"><a href="initiation.html">Initiation</a></li>
+                                        </ul>
+                                        </li>
+                                        <li class="menu-item menu-item-has-children zurf-normal-menu">
+                                        <a href="#" class="sf-with-ul-pre">Formations</a>
+                                        <ul class="sub-menu">
+                                            <li class="menu-item" data-size="60"><a href="n1.html">Formation N1</a></li>
+                                            <li class="menu-item" data-size="60"><a href="n2.html">Formation N2</a></li>
+                                            <li class="menu-item" data-size="60"><a href="n3.html">Formation N3</a></li>
+                                            <li class="menu-item" data-size="60"><a href="n4.html">Formation N4</a></li>
+                                        </ul>
+                                        </li>
+                                        <li class="menu-item menu-item-has-children zurf-normal-menu">
+                                        <a href="#" class="sf-with-ul-pre">Exploration</a>
+                                        <ul class="sub-menu">
+                                            <li class="menu-item" data-size="60"><a href="autonome.html">Autonome</a></li>
+                                            <li class="menu-item" data-size="60"><a href="encadre.html">Encadré</a></li>
+                                        </ul>
+                                        </li>
+
+                                        <li class="menu-item menu-item-has-children zurf-normal-menu">
+                                        <a href="#" class="sf-with-ul-pre">Sans bouteille</a>
+                                        <ul class="sub-menu">
+                                            <li class="menu-item"><a href="randonnee-palmee.html">Randonnée palmée</a></li>
+                                            <li class="menu-item"><a href="apnee.html">Apnée</a></li>
+                                            <li class="menu-item"><a href="maitrise-du-milieu.html">Maîtrise du milieu</a></li>
+                                        </ul>
+                                        </li>
+                                        <li class="menu-item zurf-normal-menu"><a href="contact.html">Contact</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- zurf-navigation -->
+                        </div>
+                        <!-- zurf-header-inner -->
+                    </div>
+                    <!-- zurf-header-container -->
+                </header>
+                <!-- header -->
+            </div>
+
+<script>
+    const trigger = document.getElementById('custom-select-trigger');
+    const options = document.getElementById('custom-select-options');
+    const hiddenInput = document.getElementById('selected-lang');
+
+    trigger.addEventListener('click', () => {
+        options.style.display = options.style.display === 'block' ? 'none' : 'block';
+    });
+
+    document.querySelectorAll('.custom-select-option').forEach(option => {
+        option.addEventListener('click', () => {
+            const lang = option.getAttribute('data-value');
+            const img = option.getAttribute('data-img');
+            const label = option.querySelector('span').textContent;
+
+            trigger.innerHTML = `<img src="${img}" alt="${label}"><span>${label}</span>`;
+            hiddenInput.value = lang;
+            options.style.display = 'none';
+        });
+    });
+
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('.custom-select-wrapper-select')) {
+            options.style.display = 'none';
+        }
+    });
+</script>
+
+<!-- CONTENU PRINCIPAL PAGE RÉSERVATIONS -->
+<main>
+    <div class="reservations-content">
+        <div class="euro">€</div>
+        <div class="euro">€</div>
+        <div class="euro">€</div>
+        <div class="euro">€</div>
+        <div class="euro">€</div>
+        <div class="euro">€</div>
+        <div class="euro">€</div>
+        <div class="euro">€</div>
+
+        <div class="message-box">
+            <h1>💶 PAGE RÉSERVATIONS 💶</h1>
+            <p>En construction</p>
+            <p style="font-size: 18px; margin-top: 15px; color: #999;">Module de paiement à venir</p>
+        </div>
+    </div>
+</main>
+
+<!-- FOOTER -->
+<footer data-wpr-lazyrender="1">
+    <div class="zurf-footer-wrapper">
+        <div class="zurf-footer-container zurf-container clearfix">
+            <div class="zurf-footer-column zurf-item-pdlr zurf-column-30">
+                <div id="block-5" class="widget widget_block zurf-widget">
+                    <h2 class="wp-block-heading">Nous contacter</h2>
+                </div>
+                <div id="block-7" class="widget widget_block widget_text zurf-widget">
+                    <p>
+                         Immersion Malouine, St Juvat 35000<br>
+                        <span class="gdlr-core-space-shortcode" style="margin-top: 7px;"></span> +06.84.57.59.76<br>
+                        <span class="gdlr-core-space-shortcode" style="margin-top: 7px;"></span>
+                        <a style="color: #09548c;" href="contact.html">
+                        <span class="__cf_email__">contact@immersion-malouine.com</span>
+                        </a>
+                        <br>
+                        <span class="gdlr-core-space-shortcode" style="margin-top: 35px;"></span>
+                        <span class="gdlr-core-social-network-item gdlr-core-item-pdb gdlr-core-none-align gdlr-direction-horizontal" style="padding-bottom: 0px; display: block;">
+                        <a href="https://www.facebook.com/alexandre.roussel.58" target="_blank" class="gdlr-core-social-network-icon" title="Facebook" style=" color: #ffffff; border-color: #ffffff; border-width: 1px; margin-right: 12px; width: 50px; height: 50px; line-height: 50px; background-color: transparent; border-radius: 25px; font-size: 18px; ">
+                        <i class="fa-brands fa-facebook"></i>
+                        </a>
+                        <a href="#" target="_blank" class="gdlr-core-social-network-icon" title="Instagram" style=" color: #ffffff; border-color: #ffffff; border-width: 1px; margin-right: 12px; width: 50px; height: 50px; line-height: 50px; background-color: transparent; border-radius: 25px; font-size: 18px; ">
+                        <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="#" target="_blank" class="gdlr-core-social-network-icon" title="X (Twitter)" style=" color: #ffffff; border-color: #ffffff; border-width: 1px; margin-right: 12px; width: 50px; height: 50px; line-height: 50px; background-color: transparent; border-radius: 25px; font-size: 18px; ">
+                        <i class="fa-brands fa-x-twitter"></i>
+                        </a>
+                        </span>
+                    </p>
+                </div>
+            </div>
+            <div class="zurf-footer-column zurf-item-pdlr zurf-column-30">
+                <div id="text-2" class="widget widget_text zurf-widget">
+                    <h3 class="zurf-widget-title">Payez en toute sécurité</h3>
+                    <span class="clear"></span>
+                    <div class="textwidget">
+                        <p>
+Le paiement est crypté et transmis en toute sécurité grâce au protocole SSL.<br>
+                            <img loading="lazy" decoding="async" class="alignnone size-full wp-image-5360" src="images/creditcard-logo.png" alt="" width="254" height="47">
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="zurf-copyright-wrapper">
+        <div class="zurf-copyright-container zurf-container">
+            <div class="zurf-copyright-text zurf-item-pdlr">
+                 Copyright © 2025 Immersion Malouinne. All Rights Reserved | <a href="#" style="color: #fff;">Politique de confidentialité</a> | <a href="#" style="color: #fff;">Conditions générales</a>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- FOOTER -->
+        </div>
+    </div>
+
+<script>
+// Menu mobile simple
+(function() {
+    var btn = document.querySelector('.zurf-mm-menu-button');
+    var menu = document.querySelector('.zurf-mm-menu-wrap');
+    if (!btn || !menu) return;
+    
+    btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        this.classList.toggle('active');
+        menu.classList.toggle('active');
+    });
+    
+    menu.querySelectorAll('.menu-item-has-children > a[href="#"]').forEach(function(link) {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            this.parentElement.classList.toggle('active');
+        });
+    });
+    
+    menu.querySelectorAll('a[href]:not([href="#"])').forEach(function(link) {
+        link.addEventListener('click', function() {
+            btn.classList.remove('active');
+            menu.classList.remove('active');
+        });
+    });
+})();
+</script>
 </body>
 </html>
