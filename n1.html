@@ -122,31 +122,42 @@
     background: #000000 !important;
     padding: 20px 0 15px 0 !important;
     position: relative !important;
+    overflow: hidden !important;
 }
 
 .zurf-footer-wrapper::before {
     content: '' !important;
     position: absolute !important;
-    top: 0 !important;
+    top: -20px !important;
+    left: 0 !important;
+    width: 200% !important;
+    height: 100px !important;
+    background: repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 10px,
+        rgba(255, 255, 255, 0.05) 10px,
+        rgba(255, 255, 255, 0.05) 20px
+    ) !important;
+    opacity: 0.3 !important;
+    pointer-events: none !important;
+}
+
+.zurf-footer-wrapper::after {
+    content: '' !important;
+    position: absolute !important;
+    bottom: 0 !important;
     left: 0 !important;
     width: 100% !important;
-    height: 100% !important;
-    background-image: 
-        repeating-linear-gradient(
-            90deg,
-            transparent,
-            transparent 50px,
-            rgba(255, 255, 255, 0.03) 50px,
-            rgba(255, 255, 255, 0.03) 100px
-        ),
-        repeating-linear-gradient(
-            0deg,
-            transparent,
-            transparent 50px,
-            rgba(255, 255, 255, 0.03) 50px,
-            rgba(255, 255, 255, 0.03) 100px
-        ) !important;
-    pointer-events: none !important;
+    height: 2px !important;
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(255, 255, 255, 0.1) 25%,
+        rgba(255, 255, 255, 0.2) 50%,
+        rgba(255, 255, 255, 0.1) 75%,
+        transparent 100%
+    ) !important;
 }
 
 .zurf-footer-wrapper .zurf-footer-container {
@@ -176,8 +187,8 @@
 }
 
 .zurf-logo img {
-    width: 606px !important;
-    height: 91px !important;
+    width: 198px !important;
+    height: 30px !important;
     max-width: none !important;
 }
 </style>
@@ -217,7 +228,7 @@
             <div class="zurf-mobile-header-container zurf-container clearfix">
                 <div class="zurf-logo zurf-item-pdlr">
                     <div class="zurf-logo-inner">
-                        <a class="" href="index.html"><img src="images/logov1.png" alt="" width="606" height="91" title="logox2"></a>
+                        <a class="" href="index.html"><img src="images/logov1.png" alt="" width="198" height="30" title="logox2"></a>
                     </div>
                 </div>
                 <div class="zurf-mobile-menu-right">
@@ -315,7 +326,7 @@
                             <!-- LOGO -->
                             <div class="zurf-logo zurf-item-pdlr">
                                 <div class="zurf-logo-inner">
-                                    <a class="" href="index.html"><img src="images/logov1.png" alt="" width="606" height="91" title="logox1"></a>
+                                    <a class="" href="index.html"><img src="images/logov1.png" alt="" width="198" height="30" title="logox1"></a>
                                 </div>
                             </div>
                             <div class="zurf-navigation zurf-item-pdlr clearfix zurf-navigation-submenu-indicator">
