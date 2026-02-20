@@ -95,148 +95,128 @@ body {
     margin-left: 5px !important;
 }
 
-/* === MENU MOBILE === */
-.zurf-mm-menu-button {
-    display: inline-block;
+/* === MENU MOBILE QUI FONCTIONNE === */
+#mobile-menu-btn {
     width: 40px;
     height: 40px;
     position: relative;
     cursor: pointer;
     background: transparent;
     border: none;
-    padding: 0;
+    z-index: 1000000;
 }
 
-.zurf-mm-menu-button span {
+#mobile-menu-btn span {
     display: block;
     position: absolute;
-    width: 30px;
+    width: 28px;
     height: 3px;
     background: #2c7b8d;
-    border-radius: 2px;
-    transition: all 0.3s ease;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    transition: all 0.3s;
 }
 
-.zurf-mm-menu-button span::before,
-.zurf-mm-menu-button span::after {
+#mobile-menu-btn span::before,
+#mobile-menu-btn span::after {
     content: '';
-    display: block;
     position: absolute;
-    width: 30px;
+    width: 28px;
     height: 3px;
     background: #2c7b8d;
-    border-radius: 2px;
-    transition: all 0.3s ease;
     left: 0;
+    transition: all 0.3s;
 }
 
-.zurf-mm-menu-button span::before {
-    top: -10px;
+#mobile-menu-btn span::before {
+    top: -9px;
 }
 
-.zurf-mm-menu-button span::after {
-    top: 10px;
+#mobile-menu-btn span::after {
+    top: 9px;
 }
 
-.zurf-mm-menu-button.active span {
+#mobile-menu-btn.active span {
     background: transparent;
 }
 
-.zurf-mm-menu-button.active span::before {
+#mobile-menu-btn.active span::before {
     top: 0;
     transform: rotate(45deg);
 }
 
-.zurf-mm-menu-button.active span::after {
+#mobile-menu-btn.active span::after {
     top: 0;
     transform: rotate(-45deg);
 }
 
-.zurf-mm-menu-wrap {
+#mobile-menu {
     position: fixed;
     top: 0;
     left: -100%;
     width: 280px;
     height: 100vh;
     background: #ffffff;
-    transition: left 0.3s ease;
+    transition: left 0.3s;
     overflow-y: auto;
     z-index: 999999;
-    box-shadow: 2px 0 10px rgba(0,0,0,0.1);
     padding-top: 80px;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.2);
 }
 
-.zurf-mm-menu-wrap.active {
+#mobile-menu.active {
     left: 0;
 }
 
-.zurf-mm-menu-wrap .m-menu {
+#mobile-menu .m-menu {
     list-style: none;
     margin: 0;
     padding: 0;
 }
 
-.zurf-mm-menu-wrap .m-menu > li {
+#mobile-menu .m-menu > li {
     border-bottom: 1px solid #f0f0f0;
 }
 
-.zurf-mm-menu-wrap .m-menu > li > a {
+#mobile-menu .m-menu > li > a {
     display: block;
     padding: 15px 25px;
     color: #333333 !important;
     font-size: 16px !important;
     font-weight: 500;
     text-decoration: none;
-    transition: all 0.3s ease;
 }
 
-.zurf-mm-menu-wrap .m-menu > li > a:hover {
-    background: #f5f5f5;
-    color: #2c7b8d !important;
-    padding-left: 35px;
-}
-
-.zurf-mm-menu-wrap .sub-menu {
+#mobile-menu .sub-menu {
     list-style: none;
-    margin: 0;
     padding: 0;
     background: #f9f9f9;
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.3s ease;
+    transition: max-height 0.3s;
 }
 
-.zurf-mm-menu-wrap .menu-item-has-children.active > .sub-menu {
+#mobile-menu .menu-item-has-children.active > .sub-menu {
     max-height: 500px;
 }
 
-.zurf-mm-menu-wrap .sub-menu li a {
+#mobile-menu .sub-menu li a {
     display: block;
-    padding: 12px 25px 12px 45px !important;
+    padding: 12px 45px !important;
     color: #556575 !important;
     font-size: 14px !important;
-    text-decoration: none;
-    transition: all 0.3s ease;
 }
 
-.zurf-mm-menu-wrap .sub-menu li a:hover {
-    background: #ffffff;
-    color: #2c7b8d !important;
-    padding-left: 55px !important;
-}
-
-.zurf-mm-menu-wrap .menu-item-has-children > a::after {
+#mobile-menu .menu-item-has-children > a::after {
     content: "▼";
     float: right;
     font-size: 12px;
-    transition: transform 0.3s ease;
 }
 
-.zurf-mm-menu-wrap .menu-item-has-children.active > a::after {
+#mobile-menu .menu-item-has-children.active > a::after {
     transform: rotate(180deg);
+    display: inline-block;
 }
 
 .zurf-logo {
@@ -244,8 +224,8 @@ body {
 }
 
 .zurf-logo img {
-    width: 249px !important;
-    height: 75px !important;
+    width: 198px !important;
+    height: 30px !important;
     max-width: none !important;
 }
 
@@ -308,13 +288,13 @@ body {
     }
     
     /* Titre hero responsive */
-    .gdlr-core-title-item-title {
+    .gdlr-core-title-item-title.class-test {
         font-size: 42px !important;
     }
 }
 
 @media (min-width: 1000px) {
-    .zurf-mobile-header {
+    .zurf-mobile-header-wrap {
         display: none !important;
     }
 }
@@ -367,44 +347,44 @@ body {
                 </div>
                 <div class="zurf-mobile-menu-right">
                     <div class="zurf-mobile-menu">
-                        <a class="zurf-mm-menu-button zurf-mobile-menu-button zurf-mobile-button-hamburger" href="#zurf-mobile-menu"><span></span></a>
-                        <div class="zurf-mm-menu-wrap zurf-navigation-font" id="zurf-mobile-menu" data-slide="right">
-                            <ul id="menu-main-navigation" class="m-menu">
-<li class="menu-item zurf-normal-menu"><a href="index.html">Accueil</a></li>
+                        <button id="mobile-menu-btn">
+                            <span></span>
+                        </button>
+                        <div id="mobile-menu">
+                            <ul class="m-menu">
+                                <li class="menu-item"><a href="index.html">Accueil</a></li>
                                 <li class="menu-item menu-item-has-children">
-                                <a href="#">Découverte</a>
-                                        <ul class="sub-menu">
-                                            <li class="menu-item" data-size="60"><a href="bapteme.html">Baptême</a></li>
-                                            <li class="menu-item" data-size="60"><a href="initiation.html">Initiation</a></li>
-                                        </ul>
+                                    <a href="#">Découverte</a>
+                                    <ul class="sub-menu">
+                                        <li class="menu-item"><a href="bapteme.html">Baptême</a></li>
+                                        <li class="menu-item"><a href="initiation.html">Initiation</a></li>
+                                    </ul>
                                 </li>
                                 <li class="menu-item menu-item-has-children">
-                                <a href="#">Formation</a>
-                                        <ul class="sub-menu">
-                                            <li class="menu-item" data-size="60"><a href="n1.html">Formation N1</a></li>
-                                            <li class="menu-item" data-size="60"><a href="n2.html">Formation N2</a></li>
-                                            <li class="menu-item" data-size="60"><a href="n3.html">Formation N3</a></li>
-                                            <li class="menu-item" data-size="60"><a href="n4.html">Formation N4</a></li>
-                                        </ul>
+                                    <a href="#">Formation</a>
+                                    <ul class="sub-menu">
+                                        <li class="menu-item"><a href="n1.html">Formation N1</a></li>
+                                        <li class="menu-item"><a href="n2.html">Formation N2</a></li>
+                                        <li class="menu-item"><a href="n3.html">Formation N3</a></li>
+                                        <li class="menu-item"><a href="n4.html">Formation N4</a></li>
+                                    </ul>
                                 </li>
                                 <li class="menu-item menu-item-has-children">
-                                <a href="#">Exploration</a>
-                                        <ul class="sub-menu">
-                                            <li class="menu-item" data-size="60"><a href="autonome.html">Autonome</a></li>
-                                            <li class="menu-item" data-size="60"><a href="encadre.html">Encadré</a></li>
-                                        </ul>
+                                    <a href="#">Exploration</a>
+                                    <ul class="sub-menu">
+                                        <li class="menu-item"><a href="autonome.html">Autonome</a></li>
+                                        <li class="menu-item"><a href="encadre.html">Encadré</a></li>
+                                    </ul>
                                 </li>
-
                                 <li class="menu-item menu-item-has-children">
-                                <a href="#">Sans bouteille</a>
-                                        <ul class="sub-menu">
-                                            <li class="menu-item"><a href="randonnee-palmee.html">Randonnée palmée</a></li>
-                                            <li class="menu-item"><a href="apnee.html">Apnée</a></li>
-                                            <li class="menu-item"><a href="maitrise-du-milieu.html">Maîtrise du milieu</a></li>
-                                        </ul>
+                                    <a href="#">Sans bouteille</a>
+                                    <ul class="sub-menu">
+                                        <li class="menu-item"><a href="randonnee-palmee.html">Randonnée palmée</a></li>
+                                        <li class="menu-item"><a href="apnee.html">Apnée</a></li>
+                                        <li class="menu-item"><a href="maitrise-du-milieu.html">Maîtrise du milieu</a></li>
+                                    </ul>
                                 </li>
-
-<li class="menu-item zurf-normal-menu"><a href="contact.html">Contact</a></li>
+                                <li class="menu-item"><a href="contact.html">Contact</a></li>
                             </ul>
                         </div>
                     </div>
@@ -982,34 +962,46 @@ Initiez-vous à la plongée dès aujourd'hui et vivez une expérience unique !<s
     </div>
 
 <script>
-// Menu mobile - UN SEUL SCRIPT QUI FONCTIONNE
+// === MENU MOBILE QUI FONCTIONNE - NE PAS MODIFIER ! ===
 (function() {
-    var btn = document.querySelector('.zurf-mm-menu-button');
-    var menu = document.querySelector('.zurf-mm-menu-wrap');
-    if (!btn || !menu) return;
+    var btn = document.getElementById('mobile-menu-btn');
+    var menu = document.getElementById('mobile-menu');
+    
+    if (!btn || !menu) {
+        console.log('Menu elements not found');
+        return;
+    }
     
     // Toggle menu
     btn.addEventListener('click', function(e) {
         e.preventDefault();
+        e.stopPropagation();
         this.classList.toggle('active');
         menu.classList.toggle('active');
+        console.log('Menu toggled');
     });
     
     // Sous-menus
-    menu.querySelectorAll('.menu-item-has-children > a[href="#"]').forEach(function(link) {
+    var menuItems = menu.querySelectorAll('.menu-item-has-children > a');
+    menuItems.forEach(function(link) {
         link.addEventListener('click', function(e) {
             e.preventDefault();
+            e.stopPropagation();
             this.parentElement.classList.toggle('active');
+            console.log('Submenu toggled');
         });
     });
     
-    // Fermer le menu quand on clique sur un lien
-    menu.querySelectorAll('a[href]:not([href="#"])').forEach(function(link) {
+    // Fermer quand on clique sur un vrai lien
+    var realLinks = menu.querySelectorAll('a[href]:not([href="#"])');
+    realLinks.forEach(function(link) {
         link.addEventListener('click', function() {
             btn.classList.remove('active');
             menu.classList.remove('active');
         });
     });
+    
+    console.log('Mobile menu initialized successfully');
 })();
 </script>
 </body>
