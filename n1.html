@@ -39,7 +39,7 @@
     top: 100% !important;
     left: 0 !important;
     right: auto !important;
-    background: #5ab9ba !important;
+    background: #40C4B7 !important;
     min-width: 250px !important;
     padding: 0 !important;
     box-shadow: 0 5px 20px rgba(0,0,0,0.2) !important;
@@ -154,11 +154,35 @@
     padding: 20px;
 }
 
+/* PREMIÈRE LIGNE EN VALEUR */
+.zurf-single-article-content > p:first-of-type {
+    font-size: 22px !important;
+    font-weight: 600 !important;
+    color: #2c7b8d !important;
+    line-height: 1.8 !important;
+    margin-bottom: 35px !important;
+}
+
+/* FOOTER BLEU FONCÉ RÉDUIT */
+.zurf-footer-wrapper {
+    background: #1a3a52 !important;
+    padding: 40px 0 30px 0 !important;
+}
+
+/* SUPPRESSION DU BANDEAU COPYRIGHT */
+.zurf-copyright-wrapper {
+    display: none !important;
+}
+
 @media (max-width: 768px) {
     .photo-placeholder {
         float: none;
         width: 100%;
         margin: 20px 0;
+    }
+    
+    .zurf-single-article-content > p:first-of-type {
+        font-size: 20px !important;
     }
 }
 
@@ -458,8 +482,8 @@
 		<main>
 			<div class="zurf-page-wrapper" id="zurf-page-wrapper">
                 <div class="gdlr-core-page-builder-body clearfix">
-                    <!-- HEADER AVEC FOND BLEU CLAIR -->
-                    <div class="gdlr-core-pbf-wrapper" style="padding: 320px 0px 130px 0px; background: #a8d5e2;" data-skin="Dark" id="gdlr-core-wrapper-1">
+                    <!-- HEADER AVEC FOND BLEU ÉMERAUDE -->
+                    <div class="gdlr-core-pbf-wrapper" style="padding: 320px 0px 130px 0px; background: #40C4B7;" data-skin="Dark" id="gdlr-core-wrapper-1">
                         <div class="gdlr-core-pbf-wrapper-content gdlr-core-js">
                             <div class="gdlr-core-pbf-wrapper-container clearfix gdlr-core-container">
                                 <div class="gdlr-core-pbf-element">
@@ -605,13 +629,6 @@ Le paiement est crypté et transmis en toute sécurité grâce au protocole SSL.
                                 </p>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-            <div class="zurf-copyright-wrapper">
-                <div class="zurf-copyright-container zurf-container">
-                    <div class="zurf-copyright-text zurf-item-pdlr">
-                         Copyright © 2025 Immersion Malouinne. All Rights Reserved | <a href="#" style="color: #fff;">Politique de confidentialité</a> | <a href="#" style="color: #fff;">Conditions générales</a>
                     </div>
                 </div>
             </div>
