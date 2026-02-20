@@ -154,11 +154,35 @@
     padding: 20px;
 }
 
+/* PREMIÈRE LIGNE EN VALEUR */
+.zurf-single-article-content > p:first-of-type {
+    font-size: 22px !important;
+    font-weight: 600 !important;
+    color: #2c7b8d !important;
+    line-height: 1.8 !important;
+    margin-bottom: 35px !important;
+}
+
+/* FOOTER BLEU FONCÉ RÉDUIT */
+.zurf-footer-wrapper {
+    background: #1a3a52 !important;
+    padding: 40px 0 30px 0 !important;
+}
+
+/* SUPPRESSION DU BANDEAU COPYRIGHT */
+.zurf-copyright-wrapper {
+    display: none !important;
+}
+
 @media (max-width: 768px) {
     .photo-placeholder {
         float: none;
         width: 100%;
         margin: 20px 0;
+    }
+    
+    .zurf-single-article-content > p:first-of-type {
+        font-size: 20px !important;
     }
 }
 
@@ -238,7 +262,7 @@
                         <div class="zurf-top-bar-right-text">
                             <i class="fa5s fa5-phone" style="font-size: 15px; color: #ffffff; margin-right: 10px;"></i><span style="font-weight: 500;"> 06.84.57.59.76</span>
                             <i class="fa5s fa5-envelope-open" style="font-size: 15px; color: #ffffff; margin-left: 30px; margin-right: 10px;"></i>
-                            <a href="contact.html"><span class="__cf_email__">contact@immersion-malouine.com</span></a>
+                            <a href="contact.html"><span class="__cf_email__"><span class="__cf_email__" data-cfemail="e685898892878592a68f8b8b8394958f8988cb8b878a89938f8883c885898b">[email&#160;protected]</span></span></a>
                         </div>
                         <div class="zurf-top-bar-right-social">
                             <a href="https://www.facebook.com/alexandre.roussel.58" target="_blank" class="zurf-top-bar-social-icon" title="Facebook" style="font-size: 16px; color: #ffffff; margin-left: 15px;"><i class="fa-brands fa-facebook"></i></a>
@@ -352,7 +376,7 @@
                         <div class="zurf-top-bar-right-text">
                             <i class="fa5s fa5-phone" style="font-size: 15px; color: #ffffff; margin-right: 10px;"></i><span style="font-weight: 500;"> 06.84.57.59.76</span>
                             <i class="fa5s fa5-envelope-open" style="font-size: 15px; color: #ffffff; margin-left: 30px; margin-right: 10px;"></i>
-                            <a href="contact.html"><span class="__cf_email__">contact@immersion-malouine.com</span></a>
+                            <a href="contact.html"><span class="__cf_email__"><span class="__cf_email__" data-cfemail="aecdc1c0dacfcddaeec7c3c3cbdcddc7c1c083c3cfc2c1dbc7c0cb80cdc1c3">[email&#160;protected]</span></span></a>
                         </div>
                         
                                 <div class="zurf-top-bar-right-social">
@@ -427,7 +451,7 @@
                 <!-- header -->
             </div>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
     const trigger = document.getElementById('custom-select-trigger');
     const options = document.getElementById('custom-select-options');
     const hiddenInput = document.getElementById('selected-lang');
@@ -583,7 +607,7 @@
                                 <span class="gdlr-core-space-shortcode" style="margin-top: 7px;"></span> +06.84.57.59.76<br>
                                 <span class="gdlr-core-space-shortcode" style="margin-top: 7px;"></span>
                                 <a style="color: #09548c;" href="contact.html">
-                                <span class="__cf_email__">contact@immersion-malouine.com</span>
+                                <span class="__cf_email__"><span class="__cf_email__" data-cfemail="6f0c00011b0e0c1b2f0602020a1d1c06000142020e03001a06010a410c0002">[email&#160;protected]</span></span>
                                 </a>
                                 <br>
                                 <span class="gdlr-core-space-shortcode" style="margin-top: 35px;"></span>
@@ -627,7 +651,7 @@ Le paiement est crypté et transmis en toute sécurité grâce au protocole SSL.
         </div>
     </div>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 // Menu mobile simple
 (function() {
     var btn = document.querySelector('.zurf-mm-menu-button');
@@ -640,20 +664,4 @@ Le paiement est crypté et transmis en toute sécurité grâce au protocole SSL.
         menu.classList.toggle('active');
     });
     
-    menu.querySelectorAll('.menu-item-has-children > a[href="#"]').forEach(function(link) {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            this.parentElement.classList.toggle('active');
-        });
-    });
     
-    menu.querySelectorAll('a[href]:not([href="#"])').forEach(function(link) {
-        link.addEventListener('click', function() {
-            btn.classList.remove('active');
-            menu.classList.remove('active');
-        });
-    });
-})();
-</script>
-</body>
-</html>
