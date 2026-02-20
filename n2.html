@@ -154,11 +154,35 @@
     padding: 20px;
 }
 
+/* PREMIÈRE LIGNE EN VALEUR */
+.zurf-single-article-content > p:first-of-type {
+    font-size: 22px !important;
+    font-weight: 600 !important;
+    color: #2c7b8d !important;
+    line-height: 1.8 !important;
+    margin-bottom: 35px !important;
+}
+
+/* FOOTER BLEU FONCÉ RÉDUIT */
+.zurf-footer-wrapper {
+    background: #1a3a52 !important;
+    padding: 40px 0 30px 0 !important;
+}
+
+/* SUPPRESSION DU BANDEAU COPYRIGHT */
+.zurf-copyright-wrapper {
+    display: none !important;
+}
+
 @media (max-width: 768px) {
     .photo-placeholder {
         float: none;
         width: 100%;
         margin: 20px 0;
+    }
+    
+    .zurf-single-article-content > p:first-of-type {
+        font-size: 20px !important;
     }
 }
 
