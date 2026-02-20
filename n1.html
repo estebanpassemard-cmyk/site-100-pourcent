@@ -39,7 +39,7 @@
     top: 100% !important;
     left: 0 !important;
     right: auto !important;
-    background: #40C4B7 !important;
+    background: rgba(13, 27, 42, 0.95) !important;
     min-width: 250px !important;
     padding: 0 !important;
     box-shadow: 0 5px 20px rgba(0,0,0,0.2) !important;
@@ -89,52 +89,6 @@
     margin-left: 5px !important;
 }
 
-/* BOUTON RÉSERVATION + PRIX */
-.booking-section {
-    text-align: center;
-    margin: 40px 0;
-    padding: 30px 20px;
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-    border-radius: 10px;
-}
-
-.booking-container {
-    display: inline-flex;
-    align-items: center;
-    gap: 20px;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.price-tag {
-    font-size: 42px;
-    font-weight: 700;
-    color: #2c7b8d;
-    background: #ffffff;
-    padding: 15px 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
-
-.booking-button {
-    display: inline-block;
-    background: #2c7b8d;
-    color: #ffffff !important;
-    font-size: 18px;
-    font-weight: 600;
-    padding: 18px 40px;
-    border-radius: 8px;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 12px rgba(44, 123, 141, 0.3);
-}
-
-.booking-button:hover {
-    background: #004375;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(44, 123, 141, 0.4);
-}
-
 /* ENCART PHOTO */
 .photo-placeholder {
     float: right;
@@ -166,7 +120,7 @@
 /* FOOTER BLEU FONCÉ RÉDUIT */
 .zurf-footer-wrapper {
     background: #1a3a52 !important;
-    padding: 40px 0 30px 0 !important;
+    padding: 20px 0 15px 0 !important;
 }
 
 /* SUPPRESSION DU BANDEAU COPYRIGHT */
@@ -184,60 +138,6 @@
     .zurf-single-article-content > p:first-of-type {
         font-size: 20px !important;
     }
-}
-
-.custom-select-wrapper {
-    position: relative;
-    width: 200px;
-    font-family: sans-serif;
-}
-
-.custom-select {
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.custom-select img {
-    width: 20px;
-    height: auto;
-    margin-right: 8px;
-}
-
-.custom-select-options {
-    position: absolute;
-    top: 148%;
-    left: 10px;
-    width: -111.3%;
-    background-color: #0d1b2aed;
-    border-top: none;
-    z-index: 10;
-    display: none;
-    max-height: 200px;
-    overflow-y: auto;
-}
-
-.custom-select-option {
-    padding: 10px;
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-}
-
-.custom-select-option:hover {
-    background-color: #2c7b8d;
-}
-
-.custom-select-option img {
-    width: 20px;
-    height: auto;
-    margin-right: 8px;
-}
-
-.custom-select-wrapper-select {
-    position: initial;
-    width: initial;
 }
 
 .zurf-logo {
@@ -262,7 +162,7 @@
                         <div class="zurf-top-bar-right-text">
                             <i class="fa5s fa5-phone" style="font-size: 15px; color: #ffffff; margin-right: 10px;"></i><span style="font-weight: 500;"> 06.84.57.59.76</span>
                             <i class="fa5s fa5-envelope-open" style="font-size: 15px; color: #ffffff; margin-left: 30px; margin-right: 10px;"></i>
-                            <a href="contact.html"><span class="__cf_email__">contact@immersion-malouine.com</span></a>
+                            <a href="contact.html"><span class="__cf_email__"><span class="__cf_email__" data-cfemail="1774787963767463577e7a7a7265647e78793a7a767b78627e79723974787a">[email&#160;protected]</span></span></a>
                         </div>
                         <div class="zurf-top-bar-right-social">
                             <a href="https://www.facebook.com/alexandre.roussel.58" target="_blank" class="zurf-top-bar-social-icon" title="Facebook" style="font-size: 16px; color: #ffffff; margin-left: 15px;"><i class="fa-brands fa-facebook"></i></a>
@@ -337,38 +237,17 @@
         <div class="zurf-body-wrapper clearfix zurf-with-transparent-header zurf-with-frame">
             <div class="zurf-header-background-transparent">
                 <!-- SECTION Top bar DESKTOP -->
-                <div class="zurf-top-bar">
+                <div class="zurf-top-bar" style="padding: 5px 0;">
                     <div class="zurf-top-bar-background">
                     </div>
                     <div class="zurf-top-bar-container zurf-container">
                         <div class="zurf-top-bar-container-inner clearfix">
                             <div class="zurf-top-bar-left zurf-item-pdlr">
-<div id="lang">
-    <div class="custom-select-wrapper-select">
-        <div class="custom-select" id="custom-select-trigger">
-            <img src="fr.svg" alt="Français">
-            <span>Français</span>
-        </div>
-        <div class="custom-select-options" id="custom-select-options">
-            <div class="custom-select-option" data-value="Francais" data-img="https://flagcdn.com/fr.svg">
-                <img src="fr.svg" alt="Français">
-                <span>Français</span>
-            </div>
-            <div class="custom-select-option" data-value="Anglais" data-img="https://flagcdn.com/gb.svg">
-                <img src="gb.svg" alt="Anglais">
-                <span>Anglais</span>
-            </div>
-            <div class="custom-select-option" data-value="Espagnol" data-img="https://flagcdn.com/es.svg">
-                <img src="es.svg" alt="Espagnol">
-                <span>Espagnol</span>
-            </div>
-            <div class="custom-select-option" data-value="Chinois" data-img="https://flagcdn.com/cn.svg">
-                <img src="cn.svg" alt="Chinois">
-                <span>Chinois</span>
-            </div>
-        </div>
-        <input type="hidden" name="lang" id="selected-lang" value="Francais">
-    </div>
+<div id="lang" style="display: flex; gap: 15px; align-items: center;">
+    <a href="#" style="text-decoration: none; color: #ffffff; font-size: 14px; font-weight: 500;">🇫🇷 FR</a>
+    <a href="#" style="text-decoration: none; color: #ffffff; font-size: 14px; font-weight: 500;">🇬🇧 EN</a>
+    <a href="#" style="text-decoration: none; color: #ffffff; font-size: 14px; font-weight: 500;">🇪🇸 ES</a>
+    <a href="#" style="text-decoration: none; color: #ffffff; font-size: 14px; font-weight: 500;">🇨🇳 CN</a>
 </div>
 
                             </div>
@@ -376,7 +255,7 @@
                         <div class="zurf-top-bar-right-text">
                             <i class="fa5s fa5-phone" style="font-size: 15px; color: #ffffff; margin-right: 10px;"></i><span style="font-weight: 500;"> 06.84.57.59.76</span>
                             <i class="fa5s fa5-envelope-open" style="font-size: 15px; color: #ffffff; margin-left: 30px; margin-right: 10px;"></i>
-                            <a href="contact.html"><span class="__cf_email__">contact@immersion-malouine.com</span></a>
+                            <a href="contact.html"><span class="__cf_email__"><span class="__cf_email__" data-cfemail="c8aba7a6bca9abbc88a1a5a5adbabba1a7a6e5a5a9a4a7bda1a6ade6aba7a5">[email&#160;protected]</span></span></a>
                         </div>
                         
                                 <div class="zurf-top-bar-right-social">
@@ -399,7 +278,7 @@
                             <!-- LOGO -->
                             <div class="zurf-logo zurf-item-pdlr">
                                 <div class="zurf-logo-inner">
-                                    <a class="" href="index.html"><img src="images/logov1.png" alt="" width="99" height="15" title="logox1"></a>
+                                    <a class="" href="index.html"><img src="images/logov1.png" alt="" width="198" height="30" title="logox1"></a>
                                 </div>
                             </div>
                             <div class="zurf-navigation zurf-item-pdlr clearfix zurf-navigation-submenu-indicator">
@@ -451,34 +330,6 @@
                 <!-- header -->
             </div>
 
-<script>
-    const trigger = document.getElementById('custom-select-trigger');
-    const options = document.getElementById('custom-select-options');
-    const hiddenInput = document.getElementById('selected-lang');
-
-    trigger.addEventListener('click', () => {
-        options.style.display = options.style.display === 'block' ? 'none' : 'block';
-    });
-
-    document.querySelectorAll('.custom-select-option').forEach(option => {
-        option.addEventListener('click', () => {
-            const lang = option.getAttribute('data-value');
-            const img = option.getAttribute('data-img');
-            const label = option.querySelector('span').textContent;
-
-            trigger.innerHTML = `<img src="${img}" alt="${label}"><span>${label}</span>`;
-            hiddenInput.value = lang;
-            options.style.display = 'none';
-        });
-    });
-
-    document.addEventListener('click', (e) => {
-        if (!e.target.closest('.custom-select-wrapper-select')) {
-            options.style.display = 'none';
-        }
-    });
-</script>
-
 		<main>
 			<div class="zurf-page-wrapper" id="zurf-page-wrapper">
                 <div class="gdlr-core-page-builder-body clearfix">
@@ -493,6 +344,11 @@
                                                 Formation N1<span class="gdlr-core-title-item-title-divider gdlr-core-skin-divider"></span>
                                             </h3>
                                         </div>
+                                        <!-- PRIX ET BOUTON DANS LE HEADER -->
+                                        <div style="margin-top: 30px; text-align: center;">
+                                            <div style="font-size: 36px; font-weight: 700; color: #ffffff; margin-bottom: 15px;">440€ TTC</div>
+                                            <a href="reservations.html" style="display: inline-block; background: #ffffff; color: #2c7b8d !important; font-size: 18px; font-weight: 600; padding: 15px 40px; border-radius: 8px; text-decoration: none; transition: all 0.3s ease;">Réserver maintenant</a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -504,14 +360,6 @@
                             <div class="zurf-sidebar-center zurf-column-60 zurf-line-height">
                                 <div class="zurf-content-wrap zurf-item-pdlr clearfix">
                                     <div class="zurf-content-area">
-
-<!-- BOUTON RÉSERVATION AVANT LE TEXTE -->
-<div class="booking-section">
-    <div class="booking-container">
-        <div class="price-tag">440€</div>
-        <a href="reservations.html" class="booking-button">Réserver maintenant</a>
-    </div>
-</div>
 
 <article id="post-17071" class="post-17071 post type-post status-publish format-standard has-post-thumbnail hentry category-news tag-pro-dive tag-scuba">
     <div class="zurf-single-article clearfix">
@@ -569,11 +417,9 @@
 </article>
 
 <!-- BOUTON RÉSERVATION APRÈS LE TEXTE -->
-<div class="booking-section">
-    <div class="booking-container">
-        <div class="price-tag">440€</div>
-        <a href="reservations.html" class="booking-button">Réserver maintenant</a>
-    </div>
+<div style="text-align: center; margin: 50px 0; padding: 30px 0;">
+    <div style="font-size: 36px; font-weight: 700; color: #2c7b8d; margin-bottom: 15px;">440€ TTC</div>
+    <a href="reservations.html" style="display: inline-block; background: #2c7b8d; color: #ffffff !important; font-size: 18px; font-weight: 600; padding: 15px 40px; border-radius: 8px; text-decoration: none; transition: all 0.3s ease;">Réserver maintenant</a>
 </div>
 
                                     </div>
@@ -600,21 +446,8 @@
                                 <span class="gdlr-core-space-shortcode" style="margin-top: 7px;"></span> +06.84.57.59.76<br>
                                 <span class="gdlr-core-space-shortcode" style="margin-top: 7px;"></span>
                                 <a style="color: #09548c;" href="contact.html">
-                                <span class="__cf_email__">contact@immersion-malouine.com</span>
+                                <span class="__cf_email__"><span class="__cf_email__" data-cfemail="e784888993868493a78e8a8a8295948e8889ca8a868b88928e8982c984888a">[email&#160;protected]</span></span>
                                 </a>
-                                <br>
-                                <span class="gdlr-core-space-shortcode" style="margin-top: 35px;"></span>
-                                <span class="gdlr-core-social-network-item gdlr-core-item-pdb gdlr-core-none-align gdlr-direction-horizontal" style="padding-bottom: 0px; display: block;">
-                                <a href="https://www.facebook.com/alexandre.roussel.58" target="_blank" class="gdlr-core-social-network-icon" title="Facebook" style=" color: #ffffff; border-color: #ffffff; border-width: 1px; margin-right: 12px; width: 50px; height: 50px; line-height: 50px; background-color: transparent; border-radius: 25px; font-size: 18px; ">
-                                <i class="fa-brands fa-facebook"></i>
-                                </a>
-                                <a href="#" target="_blank" class="gdlr-core-social-network-icon" title="Instagram" style=" color: #ffffff; border-color: #ffffff; border-width: 1px; margin-right: 12px; width: 50px; height: 50px; line-height: 50px; background-color: transparent; border-radius: 25px; font-size: 18px; ">
-                                <i class="fa-brands fa-instagram"></i>
-                                </a>
-                                <a href="#" target="_blank" class="gdlr-core-social-network-icon" title="X (Twitter)" style=" color: #ffffff; border-color: #ffffff; border-width: 1px; margin-right: 12px; width: 50px; height: 50px; line-height: 50px; background-color: transparent; border-radius: 25px; font-size: 18px; ">
-                                <i class="fa-brands fa-x-twitter"></i>
-                                </a>
-                                </span>
                             </p>
                         </div>
                     </div>
@@ -637,7 +470,7 @@ Le paiement est crypté et transmis en toute sécurité grâce au protocole SSL.
         </div>
     </div>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 // Menu mobile simple
 (function() {
     var btn = document.querySelector('.zurf-mm-menu-button');
@@ -650,20 +483,4 @@ Le paiement est crypté et transmis en toute sécurité grâce au protocole SSL.
         menu.classList.toggle('active');
     });
     
-    menu.querySelectorAll('.menu-item-has-children > a[href="#"]').forEach(function(link) {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            this.parentElement.classList.toggle('active');
-        });
-    });
     
-    menu.querySelectorAll('a[href]:not([href="#"])').forEach(function(link) {
-        link.addEventListener('click', function() {
-            btn.classList.remove('active');
-            menu.classList.remove('active');
-        });
-    });
-})();
-</script>
-</body>
-</html>
