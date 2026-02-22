@@ -27,7 +27,7 @@
     <link data-minify="1" rel="stylesheet" id="zurf-custom-style-css" href="css/zurf-style-custom.css" type="text/css" media="all">
 
 <style>
-/* FIX MOBILE - EMPÊCHER LE GLISSEMENT */
+/* FIX MOBILE */
 html, body {
     overflow-x: hidden;
     max-width: 100%;
@@ -37,7 +37,7 @@ body {
     position: relative;
 }
 
-/* === CSS MENUS DESKTOP TRANSPARENT (NE PAS TOUCHER - ÇA FONCTIONNE) === */
+/* === CSS MENUS DESKTOP TRANSPARENT === */
 .zurf-navigation .sf-menu > li {
     position: relative !important;
 }
@@ -99,7 +99,7 @@ body {
     margin-left: 5px !important;
 }
 
-/* === MENU MOBILE QUI FONCTIONNE (COMME INDEX) === */
+/* === MENU MOBILE CENTRÉ === */
 #mobile-menu-btn {
     width: 40px;
     height: 40px;
@@ -107,7 +107,7 @@ body {
     cursor: pointer;
     background: transparent;
     border: none;
-    z-index: 1000000;
+    z-index: 1000001;
 }
 
 #mobile-menu-btn span {
@@ -155,22 +155,47 @@ body {
     transform: rotate(-45deg);
 }
 
+/* MENU CENTRÉ SUR LA PAGE */
 #mobile-menu {
     position: fixed;
-    top: 0;
-    left: -100%;
-    width: 280px;
-    height: 100vh;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    width: 90%;
+    max-width: 400px;
+    max-height: 80vh;
     background: #ffffff;
-    transition: left 0.3s;
+    transition: transform 0.3s ease;
     overflow-y: auto;
-    z-index: 999999;
-    padding-top: 80px;
-    box-shadow: 2px 0 10px rgba(0,0,0,0.2);
+    z-index: 1000000;
+    padding: 20px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+    border-radius: 15px;
+    opacity: 0;
 }
 
 #mobile-menu.active {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+}
+
+/* FOND SOMBRE DERRIÈRE LE MENU */
+#mobile-menu-overlay {
+    position: fixed;
+    top: 0;
     left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999999;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+}
+
+#mobile-menu-overlay.active {
+    opacity: 1;
+    visibility: visible;
 }
 
 #mobile-menu .m-menu {
@@ -183,9 +208,13 @@ body {
     border-bottom: 1px solid #f0f0f0;
 }
 
+#mobile-menu .m-menu > li:last-child {
+    border-bottom: none;
+}
+
 #mobile-menu .m-menu > li > a {
     display: block;
-    padding: 15px 25px;
+    padding: 15px 10px;
     color: #333333 !important;
     font-size: 16px !important;
     font-weight: 500;
@@ -199,6 +228,8 @@ body {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s;
+    border-radius: 8px;
+    margin-top: 5px;
 }
 
 #mobile-menu .menu-item-has-children.active > .sub-menu {
@@ -207,7 +238,7 @@ body {
 
 #mobile-menu .sub-menu li a {
     display: block;
-    padding: 12px 45px !important;
+    padding: 12px 30px !important;
     color: #556575 !important;
     font-size: 14px !important;
 }
@@ -221,6 +252,52 @@ body {
 #mobile-menu .menu-item-has-children.active > a::after {
     transform: rotate(180deg);
     display: inline-block;
+}
+
+/* BOUTON RÉSERVATION + PRIX */
+.booking-section {
+    text-align: center;
+    margin: 40px 0;
+    padding: 30px 20px;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    border-radius: 10px;
+}
+
+.booking-container {
+    display: inline-flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.price-tag {
+    font-size: 42px;
+    font-weight: 700;
+    color: #2c7b8d;
+    background: #ffffff;
+    padding: 15px 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.booking-button {
+    display: inline-block;
+    background: #2c7b8d;
+    color: #ffffff !important;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 18px 40px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(44, 123, 141, 0.3);
+}
+
+.booking-button:hover {
+    background: #004375;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(44, 123, 141, 0.4);
 }
 
 /* ENCART PHOTO */
@@ -251,7 +328,7 @@ body {
     margin-bottom: 35px !important;
 }
 
-/* FOOTER NOIR AVEC VAGUES BLANCHES */
+/* FOOTER NOIR AVEC VAGUES */
 .zurf-footer-wrapper {
     background: #000000 !important;
     padding: 20px 0 15px 0 !important;
@@ -299,7 +376,6 @@ body {
     z-index: 1 !important;
 }
 
-/* SUPPRESSION DU BANDEAU COPYRIGHT */
 .zurf-copyright-wrapper {
     display: none !important;
 }
@@ -314,7 +390,7 @@ body {
     max-width: none !important;
 }
 
-/* RESPONSIVE MOBILE */
+/* RESPONSIVE */
 @media (max-width: 999px) {
     .zurf-header-wrap .zurf-navigation {
         display: none !important;
@@ -325,10 +401,6 @@ body {
         width: 100%;
         margin: 20px 0;
     }
-    
-    .zurf-single-article-content > p:first-of-type {
-        font-size: 20px !important;
-    }
 }
 
 @media (min-width: 1000px) {
@@ -336,10 +408,51 @@ body {
         display: none !important;
     }
 }
+
+/* RESPONSIVE TITRES MOBILE */
+@media (max-width: 768px) {
+    .gdlr-core-title-item-title {
+        font-size: 40px !important;
+        line-height: 1.2 !important;
+        padding: 0 15px !important;
+    }
+    
+    .wp-block-heading {
+        font-size: 20px !important;
+        line-height: 1.3 !important;
+    }
+    
+    .gdlr-core-pbf-wrapper[id="gdlr-core-wrapper-1"] {
+        padding: 180px 0px 80px 0px !important;
+    }
+    
+    .zurf-single-article-content > p:first-of-type {
+        font-size: 20px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .gdlr-core-title-item-title {
+        font-size: 32px !important;
+    }
+    
+    .price-tag {
+        font-size: 32px !important;
+        padding: 12px 20px !important;
+    }
+    
+    .booking-button {
+        font-size: 16px !important;
+        padding: 15px 30px !important;
+    }
+}
 </style>
 
 </head>
 <body class="home page-template-default page page-id-15793 theme-zurf gdlr-core-body tourmaster-body woocommerce-no-js zurf-body zurf-body-front zurf-full zurf-with-sticky-navigation zurf-blockquote-style-3 gdlr-core-link-to-lightbox" data-home-url="index.html">
+
+    <!-- OVERLAY POUR FOND SOMBRE -->
+    <div id="mobile-menu-overlay"></div>
 
     <!-- zurf-mobile-header-wrap -->
     <div class="zurf-mobile-header-wrap">
@@ -366,7 +479,6 @@ body {
                 </div>
             </div>
         </div>
-        <!--  TOP BAR MOBILE -->
 
         <!-- SECTION MENU MOBILE -->
         <div class="zurf-mobile-header zurf-header-background zurf-style-slide zurf-sticky-mobile-navigation" id="zurf-mobile-header">
@@ -381,50 +493,50 @@ body {
                         <button id="mobile-menu-btn">
                             <span></span>
                         </button>
-                        <div id="mobile-menu">
-                            <ul class="m-menu">
-                                <li class="menu-item"><a href="index.html">Accueil</a></li>
-                                <li class="menu-item menu-item-has-children">
-                                    <a href="#">Découverte</a>
-                                    <ul class="sub-menu">
-                                        <li class="menu-item"><a href="bapteme.html">Baptême</a></li>
-                                        <li class="menu-item"><a href="initiation.html">Initiation</a></li>
-                                    </ul>
-                                </li>
-                                <li class="menu-item menu-item-has-children">
-                                    <a href="#">Formation</a>
-                                    <ul class="sub-menu">
-                                        <li class="menu-item"><a href="n1.html">Formation N1</a></li>
-                                        <li class="menu-item"><a href="n2.html">Formation N2</a></li>
-                                        <li class="menu-item"><a href="n3.html">Formation N3</a></li>
-                                        <li class="menu-item"><a href="n4.html">Formation N4</a></li>
-                                    </ul>
-                                </li>
-                                <li class="menu-item menu-item-has-children">
-                                    <a href="#">Exploration</a>
-                                    <ul class="sub-menu">
-                                        <li class="menu-item"><a href="autonome.html">Autonome</a></li>
-                                        <li class="menu-item"><a href="encadre.html">Encadré</a></li>
-                                    </ul>
-                                </li>
-                                <li class="menu-item menu-item-has-children">
-                                    <a href="#">Sans bouteille</a>
-                                    <ul class="sub-menu">
-                                        <li class="menu-item"><a href="randonnee-palmee.html">Randonnée palmée</a></li>
-                                        <li class="menu-item"><a href="apnee.html">Apnée</a></li>
-                                        <li class="menu-item"><a href="maitrise-du-milieu.html">Maîtrise du milieu</a></li>
-                                    </ul>
-                                </li>
-                                <li class="menu-item"><a href="contact.html">Contact</a></li>
-                            </ul>
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- SECTION MENU MOBILE -->
 
+    <!-- MENU MOBILE CENTRÉ -->
+    <div id="mobile-menu">
+        <ul class="m-menu">
+            <li class="menu-item"><a href="index.html">Accueil</a></li>
+            <li class="menu-item menu-item-has-children">
+                <a href="#">Découverte</a>
+                <ul class="sub-menu">
+                    <li class="menu-item"><a href="bapteme.html">Baptême</a></li>
+                    <li class="menu-item"><a href="initiation.html">Initiation</a></li>
+                </ul>
+            </li>
+            <li class="menu-item menu-item-has-children">
+                <a href="#">Formation</a>
+                <ul class="sub-menu">
+                    <li class="menu-item"><a href="n1.html">Formation N1</a></li>
+                    <li class="menu-item"><a href="n2.html">Formation N2</a></li>
+                    <li class="menu-item"><a href="n3.html">Formation N3</a></li>
+                    <li class="menu-item"><a href="n4.html">Formation N4</a></li>
+                </ul>
+            </li>
+            <li class="menu-item menu-item-has-children">
+                <a href="#">Exploration</a>
+                <ul class="sub-menu">
+                    <li class="menu-item"><a href="autonome.html">Autonome</a></li>
+                    <li class="menu-item"><a href="encadre.html">Encadré</a></li>
+                </ul>
+            </li>
+            <li class="menu-item menu-item-has-children">
+                <a href="#">Sans bouteille</a>
+                <ul class="sub-menu">
+                    <li class="menu-item"><a href="randonnee-palmee.html">Randonnée palmée</a></li>
+                    <li class="menu-item"><a href="apnee.html">Apnée</a></li>
+                    <li class="menu-item"><a href="maitrise-du-milieu.html">Maîtrise du milieu</a></li>
+                </ul>
+            </li>
+            <li class="menu-item"><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
 
     <div class="zurf-body-outer-wrapper">
         <div class="zurf-body-wrapper clearfix zurf-with-transparent-header zurf-with-frame">
@@ -442,7 +554,6 @@ body {
     <a href="#" style="text-decoration: none; color: #ffffff; font-size: 14px; font-weight: 500;">🇪🇸 ES</a>
     <a href="#" style="text-decoration: none; color: #ffffff; font-size: 14px; font-weight: 500;">🇨🇳 CN</a>
 </div>
-
                             </div>
                             <div class="zurf-top-bar-right zurf-item-pdlr">
                         <div class="zurf-top-bar-right-text">
@@ -455,7 +566,6 @@ body {
                                     <a href="https://www.facebook.com/alexandre.roussel.58" target="_blank" class="zurf-top-bar-social-icon" title="Facebook" style="font-size: 16px; color: #ffffff; margin-left: 15px;"><i class="fa-brands fa-facebook"></i></a>
                                     <a href="#" target="_blank" class="zurf-top-bar-social-icon" title="Instagram" style="font-size: 16px; color: #ffffff; margin-left: 15px;"><i class="fa-brands fa-instagram"></i></a>
                                     <a href="#" target="_blank" class="zurf-top-bar-social-icon" title="X (Twitter)" style="font-size: 16px; color: #ffffff; margin-left: 15px;"><i class="fa-brands fa-x-twitter"></i></a>
-
                                 </div> 
                                                             </div>
                         </div>
@@ -514,13 +624,9 @@ body {
                                     </ul>
                                 </div>
                             </div>
-                            <!-- zurf-navigation -->
                         </div>
-                        <!-- zurf-header-inner -->
                     </div>
-                    <!-- zurf-header-container -->
                 </header>
-                <!-- header -->
             </div>
 
 		<main>
@@ -537,11 +643,6 @@ body {
                                                 Formation N1<span class="gdlr-core-title-item-title-divider gdlr-core-skin-divider"></span>
                                             </h3>
                                         </div>
-                                        <!-- PRIX ET BOUTON DANS LE HEADER -->
-                                        <div style="margin-top: 30px; text-align: center;">
-                                            <div style="font-size: 36px; font-weight: 700; color: #ffffff; margin-bottom: 15px;">440€ TTC</div>
-                                            <a href="reservations.html" style="display: inline-block; background: #ffffff; color: #2c7b8d !important; font-size: 18px; font-weight: 600; padding: 15px 40px; border-radius: 8px; text-decoration: none; transition: all 0.3s ease;">Réserver maintenant</a>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -554,17 +655,21 @@ body {
                                 <div class="zurf-content-wrap zurf-item-pdlr clearfix">
                                     <div class="zurf-content-area">
 
+<!-- BOUTON RÉSERVATION AVANT LE TEXTE -->
+<div class="booking-section">
+    <div class="booking-container">
+        <div class="price-tag">440€</div>
+        <a href="reservations.html" class="booking-button">Réserver maintenant</a>
+    </div>
+</div>
+
 <article id="post-17071" class="post-17071 post type-post status-publish format-standard has-post-thumbnail hentry category-news tag-pro-dive tag-scuba">
     <div class="zurf-single-article clearfix">
         <div class="zurf-single-article-content">
-            <p><strong>Vous rêvez de profiter des eaux cristallines des tropiques pendant vos vacances ?</strong> Vous voulez dépasser le stade du baptême et faire de la plongée une véritable passion ? Le Niveau 1 est votre ticket d'entrée pour l'aventure.</p>
+            <p><strong>Vous avez adoré votre baptême ou votre initiation et vous voulez franchir le cap ?</strong> Le Niveau 1 (N1) est votre première vraie certification de plongeur. Vous allez apprendre à plonger jusqu'à 20 mètres de profondeur et découvrir un univers sous-marin fascinant.</p>
             
             <span class="gdlr-core-space-shortcode" style="margin-top: 30px;"></span>
-            <h4 class="wp-block-heading"><strong>Vos nouvelles prérogatives</strong></h4>
-            <p>Une fois certifié, vous devenez un plongeur capable d'évoluer jusqu'à 20 mètres de profondeur. Vous serez toujours accompagné d'un guide de palanquée, au sein d'un petit groupe de 4 plongeurs maximum.</p>
-            
-            <span class="gdlr-core-space-shortcode" style="margin-top: 30px;"></span>
-            <h4 class="wp-block-heading"><strong>Au programme de votre formation</strong></h4>
+            <h4 class="wp-block-heading"><strong>Qu'est-ce que le Niveau 1 ?</strong></h4>
             
             <!-- ENCART PHOTO À DROITE -->
             <div class="photo-placeholder">
@@ -572,35 +677,39 @@ body {
                 (Image à ajouter)
             </div>
             
-            <p>La formation est conçue pour être progressive et accessible. Elle s'articule autour de deux axes :</p>
+            <p>Le Niveau 1 vous permet de plonger jusqu'à <strong>20 mètres</strong> accompagné d'un guide de palanquée (Niveau 4 minimum). C'est la première étape officielle vers l'autonomie.</p>
+            
+            <span class="gdlr-core-space-shortcode" style="margin-top: 30px;"></span>
+            <h4 class="wp-block-heading"><strong>Le programme : Pratique et Théorie</strong></h4>
+            <p>La formation Niveau 1 se compose de :</p>
             <ul class="list-no-left wp-block-list" style="list-style: none; padding-left: 0;">
-                <li style="margin-bottom: 10px;"><span style="color: #48bf84; font-size: 22px; width: 22px; display: inline-block; font-weight: bold;">✓</span> <strong>Pratique (6 séances)</strong> : Apprendre à préparer votre équipement, maîtriser votre flottabilité, et adopter les bons réflexes de sécurité.</li>
-                <li style="margin-bottom: 10px;"><span style="color: #48bf84; font-size: 22px; width: 22px; display: inline-block; font-weight: bold;">✓</span> <strong>Théorie (2 séances)</strong> : Comprendre les principes de base (pression, communication, respect de l'environnement marin).</li>
+                <li style="margin-bottom: 10px;"><span style="color: #48bf84; font-size: 22px; width: 22px; display: inline-block; font-weight: bold;">✓</span> <strong>6 plongées pratiques</strong> : En milieu naturel pour maîtriser les techniques et gagner en confiance.</li>
+                <li style="margin-bottom: 10px;"><span style="color: #48bf84; font-size: 22px; width: 22px; display: inline-block; font-weight: bold;">✓</span> <strong>2 séances de théorie</strong> : Comprendre la physique de la plongée, les règles de sécurité et l'utilisation du matériel.</li>
             </ul>
             
             <span class="gdlr-core-space-shortcode" style="margin-top: 30px;"></span>
-            <h4 class="wp-block-heading"><strong>Une organisation flexible</strong></h4>
-            <p>Nous adaptons le planning selon votre profil :</p>
+            <h4 class="wp-block-heading"><strong>Ce que vous apprendrez</strong></h4>
             <ul class="list-no-left wp-block-list" style="list-style: none; padding-left: 0;">
-                <li style="margin-bottom: 10px;"><span style="color: #48bf84; font-size: 22px; width: 22px; display: inline-block; font-weight: bold;">✓</span> <strong>En vacances ?</strong> Prévoyez un séjour d'une semaine minimum pour valider vos acquis sereinement.</li>
-                <li style="margin-bottom: 10px;"><span style="color: #48bf84; font-size: 22px; width: 22px; display: inline-block; font-weight: bold;">✓</span> <strong>Habitant local ?</strong> Progressez à votre rythme avec une séance par semaine.</li>
+                <li style="margin-bottom: 10px;"><span style="color: #48bf84; font-size: 22px; width: 22px; display: inline-block; font-weight: bold;">✓</span> <strong>Techniques de base</strong> : Stabilisation, équilibrage, palmage efficace.</li>
+                <li style="margin-bottom: 10px;"><span style="color: #48bf84; font-size: 22px; width: 22px; display: inline-block; font-weight: bold;">✓</span> <strong>Gestion de l'équipement</strong> : Montage, vérifications, entretien.</li>
+                <li style="margin-bottom: 10px;"><span style="color: #48bf84; font-size: 22px; width: 22px; display: inline-block; font-weight: bold;">✓</span> <strong>Sécurité</strong> : Assistance d'un coéquipier, remontée sur expiration, procédures d'urgence.</li>
+                <li style="margin-bottom: 10px;"><span style="color: #48bf84; font-size: 22px; width: 22px; display: inline-block; font-weight: bold;">✓</span> <strong>Théorie</strong> : Pression, flottabilité, tables de plongée, signes de communication.</li>
             </ul>
             
             <span class="gdlr-core-space-shortcode" style="margin-top: 30px;"></span>
-            <h4 class="wp-block-heading"><strong>Pré-requis & Inscription</strong></h4>
-            <p>Avant de vous jeter à l'eau, assurez-vous de remplir ces conditions :</p>
+            <h4 class="wp-block-heading"><strong>Pré-requis</strong></h4>
             <ul class="list-no-left wp-block-list" style="list-style: none; padding-left: 0;">
+                <li style="margin-bottom: 10px;"><span style="color: #48bf84; font-size: 22px; width: 22px; display: inline-block; font-weight: bold;">✓</span> <strong>Âge minimum</strong> : 14 ans (12 ans pour PE12).</li>
                 <li style="margin-bottom: 10px;"><span style="color: #48bf84; font-size: 22px; width: 22px; display: inline-block; font-weight: bold;">✓</span> <strong>Savoir nager</strong></li>
-                <li style="margin-bottom: 10px;"><span style="color: #48bf84; font-size: 22px; width: 22px; display: inline-block; font-weight: bold;">✓</span> <strong>Certificat médical</strong> de non contre-indication à la pratique de la plongée.</li>
-                <li style="margin-bottom: 10px;"><span style="color: #48bf84; font-size: 22px; width: 22px; display: inline-block; font-weight: bold;">✓</span> <strong>Baptême préalable</strong> (fortement conseillé pour être à l'aise dès la première séance).</li>
+                <li style="margin-bottom: 10px;"><span style="color: #48bf84; font-size: 22px; width: 22px; display: inline-block; font-weight: bold;">✓</span> <strong>Certificat médical</strong> de non contre-indication à la plongée.</li>
             </ul>
             
             <span class="gdlr-core-space-shortcode" style="margin-top: 30px;"></span>
-            <h4 class="wp-block-heading"><strong>Et après ? L'aventure continue !</strong></h4>
-            <p>Le Niveau 1 n'est que le début. Selon votre aisance et votre expérience, vous pourrez ensuite viser le Niveau 2 pour gagner en liberté :</p>
+            <h4 class="wp-block-heading"><strong>Et après ?</strong></h4>
+            <p>Une fois votre Niveau 1 en poche :</p>
             <ul class="list-no-left wp-block-list" style="list-style: none; padding-left: 0;">
-                <li style="margin-bottom: 10px;"><span style="color: #48bf84; font-size: 22px; width: 22px; display: inline-block; font-weight: bold;">✓</span> <strong>Autonomie</strong> : Plongez sans guide jusqu'à 20m.</li>
-                <li style="margin-bottom: 10px;"><span style="color: #48bf84; font-size: 22px; width: 22px; display: inline-block; font-weight: bold;">✓</span> <strong>Profondeur</strong> : Explorez jusqu'à 40m accompagné d'un guide.</li>
+                <li style="margin-bottom: 10px;"><span style="color: #48bf84; font-size: 22px; width: 22px; display: inline-block; font-weight: bold;">✓</span> <strong>Plonger en exploration</strong> : Découvrez de nouveaux sites accompagné d'un guide.</li>
+                <li style="margin-bottom: 10px;"><span style="color: #48bf84; font-size: 22px; width: 22px; display: inline-block; font-weight: bold;">✓</span> <strong>Continuer avec le Niveau 2</strong> : Accéder à 40m de profondeur et à l'autonomie limitée (20m).</li>
             </ul>
             
             <span class="gdlr-core-space-shortcode" style="margin-top: 30px;"></span>
@@ -610,9 +719,11 @@ body {
 </article>
 
 <!-- BOUTON RÉSERVATION APRÈS LE TEXTE -->
-<div style="text-align: center; margin: 50px 0; padding: 30px 0;">
-    <div style="font-size: 36px; font-weight: 700; color: #2c7b8d; margin-bottom: 15px;">440€ TTC</div>
-    <a href="reservations.html" style="display: inline-block; background: #2c7b8d; color: #ffffff !important; font-size: 18px; font-weight: 600; padding: 15px 40px; border-radius: 8px; text-decoration: none; transition: all 0.3s ease;">Réserver maintenant</a>
+<div class="booking-section">
+    <div class="booking-container">
+        <div class="price-tag">440€</div>
+        <a href="reservations.html" class="booking-button">Réserver maintenant</a>
+    </div>
 </div>
 
                                     </div>
@@ -658,30 +769,32 @@ body {
                 </div>
             </div>
             </footer>
-            <!-- FOOTER -->
         </div>
     </div>
 
 <script>
-// === MENU MOBILE QUI FONCTIONNE - NE PAS MODIFIER ! ===
+// === MENU MOBILE CENTRÉ QUI FONCTIONNE ===
 (function() {
     var btn = document.getElementById('mobile-menu-btn');
     var menu = document.getElementById('mobile-menu');
+    var overlay = document.getElementById('mobile-menu-overlay');
     
-    if (!btn || !menu) {
-        console.log('Menu elements not found');
-        return;
-    }
+    if (!btn || !menu || !overlay) return;
     
-    // Toggle menu
     btn.addEventListener('click', function(e) {
         e.preventDefault();
         e.stopPropagation();
         this.classList.toggle('active');
         menu.classList.toggle('active');
+        overlay.classList.toggle('active');
     });
     
-    // Sous-menus
+    overlay.addEventListener('click', function() {
+        btn.classList.remove('active');
+        menu.classList.remove('active');
+        overlay.classList.remove('active');
+    });
+    
     var menuItems = menu.querySelectorAll('.menu-item-has-children > a');
     menuItems.forEach(function(link) {
         link.addEventListener('click', function(e) {
@@ -691,16 +804,14 @@ body {
         });
     });
     
-    // Fermer quand on clique sur un vrai lien
     var realLinks = menu.querySelectorAll('a[href]:not([href="#"])');
     realLinks.forEach(function(link) {
         link.addEventListener('click', function() {
             btn.classList.remove('active');
             menu.classList.remove('active');
+            overlay.classList.remove('active');
         });
     });
-    
-    console.log('Mobile menu initialized successfully');
 })();
 </script>
 </body>
