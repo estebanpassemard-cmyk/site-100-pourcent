@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
     <title>Formation N3 - Immersion Malouine</title>
 
@@ -27,7 +27,17 @@
     <link data-minify="1" rel="stylesheet" id="zurf-custom-style-css" href="css/zurf-style-custom.css" type="text/css" media="all">
 
 <style>
-/* === CSS MENUS DESKTOP === */
+/* FIX MOBILE */
+html, body {
+    overflow-x: hidden;
+    max-width: 100%;
+}
+
+body {
+    position: relative;
+}
+
+/* === CSS MENUS DESKTOP TRANSPARENT === */
 .zurf-navigation .sf-menu > li {
     position: relative !important;
 }
@@ -39,10 +49,10 @@
     top: 100% !important;
     left: 0 !important;
     right: auto !important;
-    background: #40C4B7 !important;
+    background: transparent !important;
     min-width: 250px !important;
     padding: 0 !important;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.2) !important;
+    box-shadow: none !important;
     z-index: 999999 !important;
     margin: 0 !important;
     border: none !important;
@@ -56,7 +66,7 @@
     list-style: none !important;
     padding: 0 !important;
     margin: 0 !important;
-    border-bottom: 1px solid rgba(255,255,255,0.2) !important;
+    border-bottom: none !important;
     background: transparent !important;
 }
 
@@ -78,7 +88,7 @@
 }
 
 .zurf-navigation .sf-menu .sub-menu li a:hover {
-    background: rgba(0,0,0,0.15) !important;
+    background: rgba(64, 196, 183, 0.2) !important;
     color: #ffffff !important;
     padding-left: 35px !important;
 }
@@ -87,6 +97,130 @@
     content: " ▼" !important;
     font-size: 10px !important;
     margin-left: 5px !important;
+}
+
+/* === MENU MOBILE FONCTIONNEL === */
+#mobile-menu-btn {
+    width: 40px;
+    height: 40px;
+    position: relative;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    z-index: 1000000;
+}
+
+#mobile-menu-btn span {
+    display: block;
+    position: absolute;
+    width: 28px;
+    height: 3px;
+    background: #2c7b8d;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.3s;
+}
+
+#mobile-menu-btn span::before,
+#mobile-menu-btn span::after {
+    content: '';
+    position: absolute;
+    width: 28px;
+    height: 3px;
+    background: #2c7b8d;
+    left: 0;
+    transition: all 0.3s;
+}
+
+#mobile-menu-btn span::before {
+    top: -9px;
+}
+
+#mobile-menu-btn span::after {
+    top: 9px;
+}
+
+#mobile-menu-btn.active span {
+    background: transparent;
+}
+
+#mobile-menu-btn.active span::before {
+    top: 0;
+    transform: rotate(45deg);
+}
+
+#mobile-menu-btn.active span::after {
+    top: 0;
+    transform: rotate(-45deg);
+}
+
+#mobile-menu {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 280px;
+    height: 100vh;
+    background: #ffffff;
+    transition: left 0.3s;
+    overflow-y: auto;
+    z-index: 999999;
+    padding-top: 80px;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.2);
+}
+
+#mobile-menu.active {
+    left: 0;
+}
+
+#mobile-menu .m-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#mobile-menu .m-menu > li {
+    border-bottom: 1px solid #f0f0f0;
+}
+
+#mobile-menu .m-menu > li > a {
+    display: block;
+    padding: 15px 25px;
+    color: #333333 !important;
+    font-size: 16px !important;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+#mobile-menu .sub-menu {
+    list-style: none;
+    padding: 0;
+    background: #f9f9f9;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s;
+}
+
+#mobile-menu .menu-item-has-children.active > .sub-menu {
+    max-height: 500px;
+}
+
+#mobile-menu .sub-menu li a {
+    display: block;
+    padding: 12px 45px !important;
+    color: #556575 !important;
+    font-size: 14px !important;
+}
+
+#mobile-menu .menu-item-has-children > a::after {
+    content: "▼";
+    float: right;
+    font-size: 12px;
+}
+
+#mobile-menu .menu-item-has-children.active > a::after {
+    transform: rotate(180deg);
+    display: inline-block;
 }
 
 /* BOUTON RÉSERVATION + PRIX */
@@ -163,18 +297,74 @@
     margin-bottom: 35px !important;
 }
 
-/* FOOTER BLEU FONCÉ RÉDUIT */
+/* FOOTER NOIR AVEC VAGUES */
 .zurf-footer-wrapper {
-    background: #1a3a52 !important;
-    padding: 40px 0 30px 0 !important;
+    background: #000000 !important;
+    padding: 20px 0 15px 0 !important;
+    position: relative !important;
+    overflow: hidden !important;
 }
 
-/* SUPPRESSION DU BANDEAU COPYRIGHT */
+.zurf-footer-wrapper::before {
+    content: '' !important;
+    position: absolute !important;
+    top: -20px !important;
+    left: 0 !important;
+    width: 200% !important;
+    height: 100px !important;
+    background: repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 10px,
+        rgba(255, 255, 255, 0.05) 10px,
+        rgba(255, 255, 255, 0.05) 20px
+    ) !important;
+    opacity: 0.3 !important;
+    pointer-events: none !important;
+}
+
+.zurf-footer-wrapper::after {
+    content: '' !important;
+    position: absolute !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 2px !important;
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(255, 255, 255, 0.1) 25%,
+        rgba(255, 255, 255, 0.2) 50%,
+        rgba(255, 255, 255, 0.1) 75%,
+        transparent 100%
+    ) !important;
+}
+
+.zurf-footer-wrapper .zurf-footer-container {
+    position: relative !important;
+    z-index: 1 !important;
+}
+
 .zurf-copyright-wrapper {
     display: none !important;
 }
 
-@media (max-width: 768px) {
+.zurf-logo {
+    padding-top: 14px!important;
+}
+
+.zurf-logo img {
+    width: 198px !important;
+    height: 60px !important;
+    max-width: none !important;
+}
+
+/* RESPONSIVE */
+@media (max-width: 999px) {
+    .zurf-header-wrap .zurf-navigation {
+        display: none !important;
+    }
+    
     .photo-placeholder {
         float: none;
         width: 100%;
@@ -186,62 +376,10 @@
     }
 }
 
-.custom-select-wrapper {
-    position: relative;
-    width: 200px;
-    font-family: sans-serif;
-}
-
-.custom-select {
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.custom-select img {
-    width: 20px;
-    height: auto;
-    margin-right: 8px;
-}
-
-.custom-select-options {
-    position: absolute;
-    top: 148%;
-    left: 10px;
-    width: -111.3%;
-    background-color: #0d1b2aed;
-    border-top: none;
-    z-index: 10;
-    display: none;
-    max-height: 200px;
-    overflow-y: auto;
-}
-
-.custom-select-option {
-    padding: 10px;
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-}
-
-.custom-select-option:hover {
-    background-color: #2c7b8d;
-}
-
-.custom-select-option img {
-    width: 20px;
-    height: auto;
-    margin-right: 8px;
-}
-
-.custom-select-wrapper-select {
-    position: initial;
-    width: initial;
-}
-
-.zurf-logo {
-    padding-top: 14px!important;
+@media (min-width: 1000px) {
+    .zurf-mobile-header-wrap {
+        display: none !important;
+    }
 }
 </style>
 
@@ -262,7 +400,7 @@
                         <div class="zurf-top-bar-right-text">
                             <i class="fa5s fa5-phone" style="font-size: 15px; color: #ffffff; margin-right: 10px;"></i><span style="font-weight: 500;"> 06.84.57.59.76</span>
                             <i class="fa5s fa5-envelope-open" style="font-size: 15px; color: #ffffff; margin-left: 30px; margin-right: 10px;"></i>
-                            <a href="contact.html"><span class="__cf_email__"><span class="__cf_email__" data-cfemail="e685898892878592a68f8b8b8394958f8988cb8b878a89938f8883c885898b">[email&#160;protected]</span></span></a>
+                            <a href="contact.html"><span class="__cf_email__">contact@immersion-malouine.com</span></a>
                         </div>
                         <div class="zurf-top-bar-right-social">
                             <a href="https://www.facebook.com/alexandre.roussel.58" target="_blank" class="zurf-top-bar-social-icon" title="Facebook" style="font-size: 16px; color: #ffffff; margin-left: 15px;"><i class="fa-brands fa-facebook"></i></a>
@@ -273,56 +411,55 @@
                 </div>
             </div>
         </div>
-        <!--  TOP BAR MOBILE -->
 
         <!-- SECTION MENU MOBILE -->
         <div class="zurf-mobile-header zurf-header-background zurf-style-slide zurf-sticky-mobile-navigation" id="zurf-mobile-header">
             <div class="zurf-mobile-header-container zurf-container clearfix">
                 <div class="zurf-logo zurf-item-pdlr">
                     <div class="zurf-logo-inner">
-                        <a class="" href="index.html"><img src="images/logov1.png" alt="" width="198" height="30" title="logox2"></a>
+                        <a class="" href="index.html"><img src="images/logov1.png" alt="" width="198" height="60" title="logox2"></a>
                     </div>
                 </div>
                 <div class="zurf-mobile-menu-right">
                     <div class="zurf-mobile-menu">
-                        <a class="zurf-mm-menu-button zurf-mobile-menu-button zurf-mobile-button-hamburger" href="#zurf-mobile-menu"><span></span></a>
-                        <div class="zurf-mm-menu-wrap zurf-navigation-font" id="zurf-mobile-menu" data-slide="right">
-                            <ul id="menu-main-navigation" class="m-menu">
-<li class="menu-item zurf-normal-menu"><a href="index.html">Accueil</a></li>
+                        <button id="mobile-menu-btn">
+                            <span></span>
+                        </button>
+                        <div id="mobile-menu">
+                            <ul class="m-menu">
+                                <li class="menu-item"><a href="index.html">Accueil</a></li>
                                 <li class="menu-item menu-item-has-children">
-                                <a href="#">Découverte</a>
-                                        <ul class="sub-menu">
-                                            <li class="menu-item" data-size="60"><a href="bapteme.html">Baptême</a></li>
-                                            <li class="menu-item" data-size="60"><a href="initiation.html">Initiation</a></li>
-                                        </ul>
+                                    <a href="#">Découverte</a>
+                                    <ul class="sub-menu">
+                                        <li class="menu-item"><a href="bapteme.html">Baptême</a></li>
+                                        <li class="menu-item"><a href="initiation.html">Initiation</a></li>
+                                    </ul>
                                 </li>
                                 <li class="menu-item menu-item-has-children">
-                                <a href="#">Formation</a>
-                                        <ul class="sub-menu">
-                                            <li class="menu-item" data-size="60"><a href="n1.html">Formation N1</a></li>
-                                            <li class="menu-item" data-size="60"><a href="n2.html">Formation N2</a></li>
-                                            <li class="menu-item" data-size="60"><a href="n3.html">Formation N3</a></li>
-                                            <li class="menu-item" data-size="60"><a href="n4.html">Formation N4</a></li>
-                                        </ul>
+                                    <a href="#">Formation</a>
+                                    <ul class="sub-menu">
+                                        <li class="menu-item"><a href="n1.html">Formation N1</a></li>
+                                        <li class="menu-item"><a href="n2.html">Formation N2</a></li>
+                                        <li class="menu-item"><a href="n3.html">Formation N3</a></li>
+                                        <li class="menu-item"><a href="n4.html">Formation N4</a></li>
+                                    </ul>
                                 </li>
                                 <li class="menu-item menu-item-has-children">
-                                <a href="#">Exploration</a>
-                                        <ul class="sub-menu">
-                                            <li class="menu-item" data-size="60"><a href="autonome.html">Autonome</a></li>
-                                            <li class="menu-item" data-size="60"><a href="encadre.html">Encadré</a></li>
-                                        </ul>
+                                    <a href="#">Exploration</a>
+                                    <ul class="sub-menu">
+                                        <li class="menu-item"><a href="autonome.html">Autonome</a></li>
+                                        <li class="menu-item"><a href="encadre.html">Encadré</a></li>
+                                    </ul>
                                 </li>
-
                                 <li class="menu-item menu-item-has-children">
-                                <a href="#">Sans bouteille</a>
-                                        <ul class="sub-menu">
-                                            <li class="menu-item"><a href="randonnee-palmee.html">Randonnée palmée</a></li>
-                                            <li class="menu-item"><a href="apnee.html">Apnée</a></li>
-                                            <li class="menu-item"><a href="maitrise-du-milieu.html">Maîtrise du milieu</a></li>
-                                        </ul>
+                                    <a href="#">Sans bouteille</a>
+                                    <ul class="sub-menu">
+                                        <li class="menu-item"><a href="randonnee-palmee.html">Randonnée palmée</a></li>
+                                        <li class="menu-item"><a href="apnee.html">Apnée</a></li>
+                                        <li class="menu-item"><a href="maitrise-du-milieu.html">Maîtrise du milieu</a></li>
+                                    </ul>
                                 </li>
-
-<li class="menu-item zurf-normal-menu"><a href="contact.html">Contact</a></li>
+                                <li class="menu-item"><a href="contact.html">Contact</a></li>
                             </ul>
                         </div>
                     </div>
@@ -330,60 +467,35 @@
             </div>
         </div>
     </div>
-    <!-- SECTION MENU MOBILE -->
-
 
     <div class="zurf-body-outer-wrapper">
         <div class="zurf-body-wrapper clearfix zurf-with-transparent-header zurf-with-frame">
             <div class="zurf-header-background-transparent">
                 <!-- SECTION Top bar DESKTOP -->
-                <div class="zurf-top-bar">
+                <div class="zurf-top-bar" style="padding: 5px 0;">
                     <div class="zurf-top-bar-background">
                     </div>
                     <div class="zurf-top-bar-container zurf-container">
                         <div class="zurf-top-bar-container-inner clearfix">
                             <div class="zurf-top-bar-left zurf-item-pdlr">
-<div id="lang">
-    <div class="custom-select-wrapper-select">
-        <div class="custom-select" id="custom-select-trigger">
-            <img src="fr.svg" alt="Français">
-            <span>Français</span>
-        </div>
-        <div class="custom-select-options" id="custom-select-options">
-            <div class="custom-select-option" data-value="Francais" data-img="https://flagcdn.com/fr.svg">
-                <img src="fr.svg" alt="Français">
-                <span>Français</span>
-            </div>
-            <div class="custom-select-option" data-value="Anglais" data-img="https://flagcdn.com/gb.svg">
-                <img src="gb.svg" alt="Anglais">
-                <span>Anglais</span>
-            </div>
-            <div class="custom-select-option" data-value="Espagnol" data-img="https://flagcdn.com/es.svg">
-                <img src="es.svg" alt="Espagnol">
-                <span>Espagnol</span>
-            </div>
-            <div class="custom-select-option" data-value="Chinois" data-img="https://flagcdn.com/cn.svg">
-                <img src="cn.svg" alt="Chinois">
-                <span>Chinois</span>
-            </div>
-        </div>
-        <input type="hidden" name="lang" id="selected-lang" value="Francais">
-    </div>
+<div id="lang" style="display: flex; gap: 15px; align-items: center;">
+    <a href="#" style="text-decoration: none; color: #ffffff; font-size: 14px; font-weight: 500;">🇫🇷 FR</a>
+    <a href="#" style="text-decoration: none; color: #ffffff; font-size: 14px; font-weight: 500;">🇬🇧 EN</a>
+    <a href="#" style="text-decoration: none; color: #ffffff; font-size: 14px; font-weight: 500;">🇪🇸 ES</a>
+    <a href="#" style="text-decoration: none; color: #ffffff; font-size: 14px; font-weight: 500;">🇨🇳 CN</a>
 </div>
-
                             </div>
                             <div class="zurf-top-bar-right zurf-item-pdlr">
                         <div class="zurf-top-bar-right-text">
                             <i class="fa5s fa5-phone" style="font-size: 15px; color: #ffffff; margin-right: 10px;"></i><span style="font-weight: 500;"> 06.84.57.59.76</span>
                             <i class="fa5s fa5-envelope-open" style="font-size: 15px; color: #ffffff; margin-left: 30px; margin-right: 10px;"></i>
-                            <a href="contact.html"><span class="__cf_email__"><span class="__cf_email__" data-cfemail="aecdc1c0dacfcddaeec7c3c3cbdcddc7c1c083c3cfc2c1dbc7c0cb80cdc1c3">[email&#160;protected]</span></span></a>
+                            <a href="contact.html"><span class="__cf_email__">contact@immersion-malouine.com</span></a>
                         </div>
                         
                                 <div class="zurf-top-bar-right-social">
                                     <a href="https://www.facebook.com/alexandre.roussel.58" target="_blank" class="zurf-top-bar-social-icon" title="Facebook" style="font-size: 16px; color: #ffffff; margin-left: 15px;"><i class="fa-brands fa-facebook"></i></a>
                                     <a href="#" target="_blank" class="zurf-top-bar-social-icon" title="Instagram" style="font-size: 16px; color: #ffffff; margin-left: 15px;"><i class="fa-brands fa-instagram"></i></a>
                                     <a href="#" target="_blank" class="zurf-top-bar-social-icon" title="X (Twitter)" style="font-size: 16px; color: #ffffff; margin-left: 15px;"><i class="fa-brands fa-x-twitter"></i></a>
-
                                 </div> 
                                                             </div>
                         </div>
@@ -399,7 +511,7 @@
                             <!-- LOGO -->
                             <div class="zurf-logo zurf-item-pdlr">
                                 <div class="zurf-logo-inner">
-                                    <a class="" href="index.html"><img src="images/logov1.png" alt="" width="99" height="15" title="logox1"></a>
+                                    <a class="" href="index.html"><img src="images/logov1.png" alt="" width="198" height="60" title="logox1"></a>
                                 </div>
                             </div>
                             <div class="zurf-navigation zurf-item-pdlr clearfix zurf-navigation-submenu-indicator">
@@ -442,42 +554,10 @@
                                     </ul>
                                 </div>
                             </div>
-                            <!-- zurf-navigation -->
                         </div>
-                        <!-- zurf-header-inner -->
                     </div>
-                    <!-- zurf-header-container -->
                 </header>
-                <!-- header -->
             </div>
-
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-    const trigger = document.getElementById('custom-select-trigger');
-    const options = document.getElementById('custom-select-options');
-    const hiddenInput = document.getElementById('selected-lang');
-
-    trigger.addEventListener('click', () => {
-        options.style.display = options.style.display === 'block' ? 'none' : 'block';
-    });
-
-    document.querySelectorAll('.custom-select-option').forEach(option => {
-        option.addEventListener('click', () => {
-            const lang = option.getAttribute('data-value');
-            const img = option.getAttribute('data-img');
-            const label = option.querySelector('span').textContent;
-
-            trigger.innerHTML = `<img src="${img}" alt="${label}"><span>${label}</span>`;
-            hiddenInput.value = lang;
-            options.style.display = 'none';
-        });
-    });
-
-    document.addEventListener('click', (e) => {
-        if (!e.target.closest('.custom-select-wrapper-select')) {
-            options.style.display = 'none';
-        }
-    });
-</script>
 
 		<main>
 			<div class="zurf-page-wrapper" id="zurf-page-wrapper">
@@ -597,7 +677,7 @@
             <footer data-wpr-lazyrender="1">
             <div class="zurf-footer-wrapper">
                 <div class="zurf-footer-container zurf-container clearfix">
-                    <div class="zurf-footer-column zurf-item-pdlr zurf-column-30">
+                    <div class="zurf-footer-column zurf-item-pdlr" style="width: 100%; text-align: center;">
                         <div id="block-5" class="widget widget_block zurf-widget">
                             <h2 class="wp-block-heading">Nous contacter</h2>
                         </div>
@@ -607,61 +687,60 @@
                                 <span class="gdlr-core-space-shortcode" style="margin-top: 7px;"></span> +06.84.57.59.76<br>
                                 <span class="gdlr-core-space-shortcode" style="margin-top: 7px;"></span>
                                 <a style="color: #09548c;" href="contact.html">
-                                <span class="__cf_email__"><span class="__cf_email__" data-cfemail="6f0c00011b0e0c1b2f0602020a1d1c06000142020e03001a06010a410c0002">[email&#160;protected]</span></span>
+                                <span class="__cf_email__">contact@immersion-malouine.com</span>
                                 </a>
-                                <br>
-                                <span class="gdlr-core-space-shortcode" style="margin-top: 35px;"></span>
-                                <span class="gdlr-core-social-network-item gdlr-core-item-pdb gdlr-core-none-align gdlr-direction-horizontal" style="padding-bottom: 0px; display: block;">
-                                <a href="https://www.facebook.com/alexandre.roussel.58" target="_blank" class="gdlr-core-social-network-icon" title="Facebook" style=" color: #ffffff; border-color: #ffffff; border-width: 1px; margin-right: 12px; width: 50px; height: 50px; line-height: 50px; background-color: transparent; border-radius: 25px; font-size: 18px; ">
-                                <i class="fa-brands fa-facebook"></i>
-                                </a>
-                                <a href="#" target="_blank" class="gdlr-core-social-network-icon" title="Instagram" style=" color: #ffffff; border-color: #ffffff; border-width: 1px; margin-right: 12px; width: 50px; height: 50px; line-height: 50px; background-color: transparent; border-radius: 25px; font-size: 18px; ">
-                                <i class="fa-brands fa-instagram"></i>
-                                </a>
-                                <a href="#" target="_blank" class="gdlr-core-social-network-icon" title="X (Twitter)" style=" color: #ffffff; border-color: #ffffff; border-width: 1px; margin-right: 12px; width: 50px; height: 50px; line-height: 50px; background-color: transparent; border-radius: 25px; font-size: 18px; ">
-                                <i class="fa-brands fa-x-twitter"></i>
-                                </a>
-                                </span>
                             </p>
                         </div>
                     </div>
-                    <div class="zurf-footer-column zurf-item-pdlr zurf-column-30">
-                        <div id="text-2" class="widget widget_text zurf-widget">
-                            <h3 class="zurf-widget-title">Payez en toute sécurité</h3>
-                            <span class="clear"></span>
-                            <div class="textwidget">
-                                <p>
-Le paiement est crypté et transmis en toute sécurité grâce au protocole SSL.<br>
-                                    <img loading="lazy" decoding="async" class="alignnone size-full wp-image-5360" src="images/creditcard-logo.png" alt="" width="254" height="47">
-                                </p>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
-            <div class="zurf-copyright-wrapper">
-                <div class="zurf-copyright-container zurf-container">
-                    <div class="zurf-copyright-text zurf-item-pdlr">
-                         Copyright © 2025 Immersion Malouinne. All Rights Reserved | <a href="#" style="color: #fff;">Politique de confidentialité</a> | <a href="#" style="color: #fff;">Conditions générales</a>
-                    </div>
+            
+            <!-- COPYRIGHT BANDEAU VERT ÉMERAUDE -->
+            <div style="background: #40C4B7; padding: 15px 0; text-align: center;">
+                <div class="zurf-container">
+                    <p style="margin: 0; color: #ffffff; font-size: 14px;">
+                        Copyright © 2025 Immersion Malouine. All Rights Reserved | 
+                        <a href="#" style="color: #ffffff; text-decoration: underline;">Politique de confidentialité</a> | 
+                        <a href="#" style="color: #ffffff; text-decoration: underline;">Conditions générales</a>
+                    </p>
                 </div>
             </div>
             </footer>
-            <!-- FOOTER -->
         </div>
     </div>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-// Menu mobile simple
+<script>
+// === MENU MOBILE QUI FONCTIONNE ===
 (function() {
-    var btn = document.querySelector('.zurf-mm-menu-button');
-    var menu = document.querySelector('.zurf-mm-menu-wrap');
+    var btn = document.getElementById('mobile-menu-btn');
+    var menu = document.getElementById('mobile-menu');
+    
     if (!btn || !menu) return;
     
     btn.addEventListener('click', function(e) {
         e.preventDefault();
+        e.stopPropagation();
         this.classList.toggle('active');
         menu.classList.toggle('active');
     });
     
+    var menuItems = menu.querySelectorAll('.menu-item-has-children > a');
+    menuItems.forEach(function(link) {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            this.parentElement.classList.toggle('active');
+        });
+    });
     
+    var realLinks = menu.querySelectorAll('a[href]:not([href="#"])');
+    realLinks.forEach(function(link) {
+        link.addEventListener('click', function() {
+            btn.classList.remove('active');
+            menu.classList.remove('active');
+        });
+    });
+})();
+</script>
+</body>
+</html>
