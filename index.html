@@ -37,43 +37,6 @@ body {
     position: relative;
 }
 
-/* === FIX ICÔNES SOCIALES === */
-.zurf-top-bar-social-icon {
-    display: inline-block !important;
-    width: 32px !important;
-    height: 32px !important;
-    line-height: 32px !important;
-    text-align: center !important;
-    border-radius: 50% !important;
-    background: rgba(255, 255, 255, 0.1) !important;
-    transition: all 0.3s ease !important;
-}
-
-.zurf-top-bar-social-icon:hover {
-    background: rgba(255, 255, 255, 0.2) !important;
-    transform: scale(1.1) !important;
-}
-
-.zurf-top-bar-social-icon i {
-    display: inline-block !important;
-    font-family: "Font Awesome 6 Brands" !important;
-    font-weight: 400 !important;
-    font-style: normal !important;
-    line-height: 32px !important;
-}
-
-.fa-facebook::before {
-    content: "\f09a" !important;
-}
-
-.fa-instagram::before {
-    content: "\f16d" !important;
-}
-
-.fa-x-twitter::before {
-    content: "\e61b" !important;
-}
-
 /* === CSS MENUS DESKTOP === */
 .zurf-navigation .sf-menu > li {
     position: relative !important;
@@ -266,53 +229,41 @@ body {
     max-width: none !important;
 }
 
-/* === SECTION IMMERSION MALOUINE AVEC VAGUES === */
-#gdlr-core-wrapper-2 {
-    background: #151B1F !important;
+/* === SECTION VIDEO + ARTICLE AVEC VAGUES GRISES === */
+#gdlr-core-wrapper-4 {
     position: relative !important;
     overflow: hidden !important;
 }
 
-#gdlr-core-wrapper-2::before {
+#gdlr-core-wrapper-4::before {
     content: '' !important;
     position: absolute !important;
-    top: -20px !important;
+    top: 0 !important;
     left: 0 !important;
     width: 200% !important;
-    height: 100px !important;
+    height: 100% !important;
     background: repeating-linear-gradient(
         45deg,
         transparent,
         transparent 10px,
-        rgba(255, 255, 255, 0.03) 10px,
-        rgba(255, 255, 255, 0.03) 20px
+        rgba(0, 0, 0, 0.02) 10px,
+        rgba(0, 0, 0, 0.02) 20px
     ) !important;
-    opacity: 0.5 !important;
+    opacity: 0.3 !important;
     pointer-events: none !important;
     z-index: 0 !important;
 }
 
-#gdlr-core-wrapper-2::after {
-    content: '' !important;
-    position: absolute !important;
-    bottom: 0 !important;
-    left: 0 !important;
-    width: 100% !important;
-    height: 2px !important;
-    background: linear-gradient(
-        90deg,
-        transparent 0%,
-        rgba(255, 255, 255, 0.1) 25%,
-        rgba(255, 255, 255, 0.2) 50%,
-        rgba(255, 255, 255, 0.1) 75%,
-        transparent 100%
-    ) !important;
-    z-index: 0 !important;
-}
-
-#gdlr-core-wrapper-2 .gdlr-core-pbf-wrapper-content {
+#gdlr-core-wrapper-4 .gdlr-core-pbf-wrapper-content {
     position: relative !important;
     z-index: 1 !important;
+}
+
+/* REDIMENSIONNER LA PHOTO D'ALEX */
+#gdlr-core-column-3 img {
+    max-width: 100% !important;
+    height: auto !important;
+    object-fit: cover !important;
 }
 
 /* FOOTER NOIR AVEC VAGUES */
@@ -619,8 +570,8 @@ body {
                     </div>
                     <!-- SECTION TOP PAGE -->
 
-                    <!-- SECTION DECOUVERTE AVEC VAGUES -->
-                    <div class="gdlr-core-pbf-wrapper" style="padding: 75px 0px 60px 0px;" id="gdlr-core-wrapper-2">
+                    <!-- SECTION DECOUVERTE (SANS VAGUES - FOND GRIS NORMAL) -->
+                    <div class="gdlr-core-pbf-wrapper" style="padding: 75px 0px 60px 0px;" id="gdlr-core-wrapper-2" style='background:#151B1F!important;'>
                         <div class="gdlr-core-pbf-background-wrap">
                         </div>
                         <div class="gdlr-core-pbf-wrapper-content gdlr-core-js">
@@ -734,7 +685,7 @@ body {
                                             <div class="gdlr-core-pbf-element">
                                                 <div class="gdlr-core-image-item gdlr-core-item-pdb gdlr-core-center-align gdlr-core-item-pdlr">
                                                     <div class="gdlr-core-image-item-wrap gdlr-core-media-image gdlr-core-image-item-style-rectangle" style="border-width: 0px;">
-                                                        <img src="images/alex.plage.jpeg" alt="" width="1446" height="1224" title="Alex sur la plage">
+                                                        <img src="images/alex.plage.jpeg" alt="" title="Alex sur la plage">
                                                     </div>
                                                 </div>
                                             </div>
@@ -922,7 +873,7 @@ Initiez-vous à la plongée dès aujourd'hui et vivez une expérience unique !<s
                     </div>
                     <!-- SECTION MODULES -->
 
-                    <!-- SECTION VIDEO + ARTICLE -->
+                    <!-- SECTION VIDEO + ARTICLE AVEC VAGUES GRISES -->
                     <div class="gdlr-core-pbf-wrapper" style="padding: 95px 0px 30px 0px;" id="gdlr-core-wrapper-4">
                         <div class="gdlr-core-pbf-background-wrap">
                             <div class="gdlr-core-pbf-background gdlr-core-parallax gdlr-core-js" style="background-image: url(images/hp-about-bg-1.jpg); background-size: cover; background-repeat: no-repeat; background-position: center;" data-parallax-speed="0">
