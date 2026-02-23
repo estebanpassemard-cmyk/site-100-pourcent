@@ -66,6 +66,11 @@ body {
     display: block !important;
 }
 
+.zurf-navigation .sf-menu .sub-menu li {
+    background: transparent !important;
+    border: none !important;
+}
+
 .zurf-navigation .sf-menu .sub-menu li a {
     display: block !important;
     padding: 15px 25px !important;
@@ -301,29 +306,17 @@ body {
     padding: 20px;
 }
 
-/* SECTION "ET APRÈS" AVEC FOND VAGUES - PLEINE LARGEUR */
+/* SECTION "ET APRÈS" AVEC FOND VAGUES AGRANDI */
 .waves-section {
     background-image: url(images/hp-about-bg-1.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    padding: 40px;
-    margin-left: -100vw;
-    margin-right: -100vw;
-    padding-left: calc(100vw - 50%);
-    padding-right: calc(100vw - 50%);
-    width: 100vw;
-    position: relative;
-    left: 50%;
-    right: 50%;
-    margin-left: -50vw;
-    margin-right: -50vw;
-}
-
-.waves-section-inner {
-    max-width: 1140px;
-    margin: 0 auto;
-    padding: 0 15px;
+    padding: 50px 60px;
+    border-radius: 15px;
+    margin-top: 40px;
+    margin-left: -40px;
+    margin-right: -40px;
 }
 
 /* TAILLE TEXTE */
@@ -337,11 +330,12 @@ body {
     font-size: 24px !important;
 }
 
-/* PREMIÈRE LIGNE EN VALEUR */
-.zurf-single-article-content > p:first-of-type {
+/* PREMIÈRE LIGNE EN BLEU ÉMERAUDE */
+.intro-emeraude {
     font-size: 20px !important;
     font-weight: 600 !important;
-    color: #2c7b8d !important;
+    color: #40C4B7 !important;
+    line-height: 1.8 !important;
 }
 
 /* BOUTON RÉSERVATION BAS */
@@ -485,6 +479,8 @@ body {
     
     .waves-section {
         padding: 30px 20px;
+        margin-left: 0;
+        margin-right: 0;
     }
 }
 </style>
@@ -697,7 +693,8 @@ body {
             <!-- LAYOUT AVEC PHOTO À DROITE -->
             <div class="content-with-photo">
                 <div class="text-column">
-                    <p><strong>Vous avez adoré votre baptême ou votre initiation et vous voulez franchir le cap ?</strong> Le Niveau 1 (N1) est votre première vraie certification de plongeur. Vous allez apprendre à plonger jusqu'à 20 mètres de profondeur et découvrir un univers sous-marin fascinant.</p>
+                    <!-- PREMIÈRE PHRASE EN BLEU ÉMERAUDE -->
+                    <p class="intro-emeraude"><strong>Vous avez adoré votre baptême ou votre initiation et vous voulez franchir le cap ?</strong> Le Niveau 1 (N1) est votre première vraie certification de plongeur. Vous allez apprendre à plonger jusqu'à 20 mètres de profondeur et découvrir un univers sous-marin fascinant.</p>
                     
                     <span class="gdlr-core-space-shortcode" style="margin-top: 30px;"></span>
                     <h4 class="wp-block-heading"><strong>Qu'est-ce que le Niveau 1 ?</strong></h4>
@@ -739,18 +736,16 @@ body {
                 </div>
             </div>
             
-            <!-- SECTION "ET APRÈS" AVEC FOND VAGUES PLEINE LARGEUR -->
+            <!-- SECTION "ET APRÈS" AVEC FOND VAGUES AGRANDI -->
             <div class="waves-section">
-                <div class="waves-section-inner">
-                    <span class="gdlr-core-space-shortcode" style="margin-top: 30px;"></span>
-                    <h4 class="wp-block-heading"><strong>Et après ?</strong></h4>
-                    <p>Une fois votre Niveau 1 en poche :</p>
-                    <ul class="list-no-left wp-block-list" style="list-style: none; padding-left: 0;">
-                        <li style="margin-bottom: 10px;"><span style="color: #2c7b8d; font-size: 22px; width: 22px; display: inline-block; font-weight: bold;">•</span> <strong>Plonger en exploration</strong> : Découvrez de nouveaux sites accompagné d'un guide.</li>
-                        <li style="margin-bottom: 10px;"><span style="color: #2c7b8d; font-size: 22px; width: 22px; display: inline-block; font-weight: bold;">•</span> <strong>Continuer avec le Niveau 2</strong> : Accéder à 40m de profondeur et à l'autonomie limitée (20m).</li>
-                    </ul>
-                    <span class="gdlr-core-space-shortcode" style="margin-top: 30px;"></span>
-                </div>
+                <span class="gdlr-core-space-shortcode" style="margin-top: 30px;"></span>
+                <h4 class="wp-block-heading"><strong>Et après ?</strong></h4>
+                <p>Une fois votre Niveau 1 en poche :</p>
+                <ul class="list-no-left wp-block-list" style="list-style: none; padding-left: 0;">
+                    <li style="margin-bottom: 10px;"><span style="color: #2c7b8d; font-size: 22px; width: 22px; display: inline-block; font-weight: bold;">•</span> <strong>Plonger en exploration</strong> : Découvrez de nouveaux sites accompagné d'un guide.</li>
+                    <li style="margin-bottom: 10px;"><span style="color: #2c7b8d; font-size: 22px; width: 22px; display: inline-block; font-weight: bold;">•</span> <strong>Continuer avec le Niveau 2</strong> : Accéder à 40m de profondeur et à l'autonomie limitée (20m).</li>
+                </ul>
+                <span class="gdlr-core-space-shortcode" style="margin-top: 30px;"></span>
             </div>
         </div>
     </div>
