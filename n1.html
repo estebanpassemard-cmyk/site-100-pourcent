@@ -37,18 +37,22 @@ body {
     position: relative;
 }
 
+/* FIX ICÔNES RÉSEAUX */
+.fa-brands {
+    font-family: 'Font Awesome 6 Brands' !important;
+    font-weight: 400 !important;
+}
+
 /* === CSS MENUS DESKTOP TRANSPARENT === */
 .zurf-navigation .sf-menu > li {
     position: relative !important;
 }
 
-.zurf-navigation .sf-menu > li > .sub-menu,
-.zurf-navigation .sf-menu > li > ul.sub-menu {
+.zurf-navigation .sf-menu > li > .sub-menu {
     display: none !important;
     position: absolute !important;
     top: 100% !important;
     left: 0 !important;
-    right: auto !important;
     background: transparent !important;
     min-width: 250px !important;
     padding: 0 !important;
@@ -60,18 +64,6 @@ body {
 
 .zurf-navigation .sf-menu > li:hover > .sub-menu {
     display: block !important;
-}
-
-.zurf-navigation .sf-menu .sub-menu li {
-    list-style: none !important;
-    padding: 0 !important;
-    margin: 0 !important;
-    border-bottom: none !important;
-    background: transparent !important;
-}
-
-.zurf-navigation .sf-menu .sub-menu li:last-child {
-    border-bottom: none !important;
 }
 
 .zurf-navigation .sf-menu .sub-menu li a {
@@ -89,14 +81,7 @@ body {
 
 .zurf-navigation .sf-menu .sub-menu li a:hover {
     background: rgba(64, 196, 183, 0.2) !important;
-    color: #ffffff !important;
     padding-left: 35px !important;
-}
-
-.zurf-navigation .sf-menu > li.menu-item-has-children > a::after {
-    content: " ▼" !important;
-    font-size: 10px !important;
-    margin-left: 5px !important;
 }
 
 /* === MENU MOBILE CENTRÉ === */
@@ -133,29 +118,13 @@ body {
     transition: all 0.3s;
 }
 
-#mobile-menu-btn span::before {
-    top: -9px;
-}
+#mobile-menu-btn span::before { top: -9px; }
+#mobile-menu-btn span::after { top: 9px; }
 
-#mobile-menu-btn span::after {
-    top: 9px;
-}
+#mobile-menu-btn.active span { background: transparent; }
+#mobile-menu-btn.active span::before { top: 0; transform: rotate(45deg); }
+#mobile-menu-btn.active span::after { top: 0; transform: rotate(-45deg); }
 
-#mobile-menu-btn.active span {
-    background: transparent;
-}
-
-#mobile-menu-btn.active span::before {
-    top: 0;
-    transform: rotate(45deg);
-}
-
-#mobile-menu-btn.active span::after {
-    top: 0;
-    transform: rotate(-45deg);
-}
-
-/* MENU CENTRÉ SUR LA PAGE */
 #mobile-menu {
     position: fixed;
     top: 50%;
@@ -179,7 +148,6 @@ body {
     opacity: 1;
 }
 
-/* FOND SOMBRE DERRIÈRE LE MENU */
 #mobile-menu-overlay {
     position: fixed;
     top: 0;
@@ -206,10 +174,6 @@ body {
 
 #mobile-menu .m-menu > li {
     border-bottom: 1px solid #f0f0f0;
-}
-
-#mobile-menu .m-menu > li:last-child {
-    border-bottom: none;
 }
 
 #mobile-menu .m-menu > li > a {
@@ -243,45 +207,114 @@ body {
     font-size: 14px !important;
 }
 
-#mobile-menu .menu-item-has-children > a::after {
-    content: "▼";
-    float: right;
-    font-size: 12px;
+/* BANDEAU AVEC IMAGE + PRIX/BOUTON */
+#gdlr-core-wrapper-1 {
+    position: relative;
+    overflow: hidden;
 }
 
-#mobile-menu .menu-item-has-children.active > a::after {
-    transform: rotate(180deg);
+#gdlr-core-wrapper-1::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(images/alex.plage.jpeg);
+    background-size: cover;
+    background-position: center;
+    opacity: 0.3;
+    z-index: 0;
+}
+
+#gdlr-core-wrapper-1 > * {
+    position: relative;
+    z-index: 1;
+}
+
+.header-booking-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.header-price {
+    font-size: 48px;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.header-booking-button {
     display: inline-block;
+    background: #2c7b8d;
+    color: #ffffff !important;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 18px 40px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
-/* BOUTON RÉSERVATION + PRIX */
-.booking-section {
-    text-align: center;
-    margin: 40px 0;
-    padding: 30px 20px;
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+.header-booking-button:hover {
+    background: #004375;
+    transform: translateY(-2px);
+}
+
+/* TEXTE AVEC FOND VAGUES */
+.zurf-content-area {
+    background-image: url(images/hp-about-bg-1.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 60px 40px;
     border-radius: 10px;
 }
 
-.booking-container {
+/* TAILLE TEXTE RÉDUITE */
+.zurf-single-article-content p,
+.zurf-single-article-content ul li {
+    font-size: 16px !important;
+    line-height: 1.8 !important;
+}
+
+.zurf-single-article-content h4 {
+    font-size: 24px !important;
+}
+
+/* PREMIÈRE LIGNE EN VALEUR */
+.zurf-single-article-content > p:first-of-type {
+    font-size: 20px !important;
+    font-weight: 600 !important;
+    color: #2c7b8d !important;
+}
+
+/* BOUTON RÉSERVATION BAS */
+.bottom-booking-section {
+    text-align: center;
+    margin: 40px 0;
+    padding: 30px 20px;
+}
+
+.bottom-booking-container {
     display: inline-flex;
     align-items: center;
-    gap: 20px;
+    gap: 30px;
     flex-wrap: wrap;
     justify-content: center;
 }
 
-.price-tag {
-    font-size: 42px;
+.bottom-price {
+    font-size: 48px;
     font-weight: 700;
     color: #2c7b8d;
-    background: #ffffff;
-    padding: 15px 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
-.booking-button {
+.bottom-booking-button {
     display: inline-block;
     background: #2c7b8d;
     color: #ffffff !important;
@@ -294,41 +327,12 @@ body {
     box-shadow: 0 4px 12px rgba(44, 123, 141, 0.3);
 }
 
-.booking-button:hover {
+.bottom-booking-button:hover {
     background: #004375;
     transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(44, 123, 141, 0.4);
 }
 
-/* ENCART PHOTO */
-.photo-placeholder {
-    float: right;
-    width: 350px;
-    height: 450px;
-    margin: 20px 0 20px 30px;
-    background: #e8f4f8;
-    border: 3px dashed #2c7b8d;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #556575;
-    font-size: 18px;
-    font-weight: 600;
-    text-align: center;
-    padding: 20px;
-}
-
-/* PREMIÈRE LIGNE EN VALEUR */
-.zurf-single-article-content > p:first-of-type {
-    font-size: 22px !important;
-    font-weight: 600 !important;
-    color: #2c7b8d !important;
-    line-height: 1.8 !important;
-    margin-bottom: 35px !important;
-}
-
-/* FOOTER NOIR AVEC VAGUES */
+/* FOOTER NOIR AVEC VAGUES BLANCHES */
 .zurf-footer-wrapper {
     background: #000000 !important;
     padding: 20px 0 15px 0 !important;
@@ -395,12 +399,6 @@ body {
     .zurf-header-wrap .zurf-navigation {
         display: none !important;
     }
-    
-    .photo-placeholder {
-        float: none;
-        width: 100%;
-        margin: 20px 0;
-    }
 }
 
 @media (min-width: 1000px) {
@@ -409,41 +407,17 @@ body {
     }
 }
 
-/* RESPONSIVE TITRES MOBILE */
 @media (max-width: 768px) {
     .gdlr-core-title-item-title {
         font-size: 40px !important;
-        line-height: 1.2 !important;
-        padding: 0 15px !important;
     }
     
-    .wp-block-heading {
-        font-size: 20px !important;
-        line-height: 1.3 !important;
+    .header-price, .bottom-price {
+        font-size: 36px !important;
     }
     
-    .gdlr-core-pbf-wrapper[id="gdlr-core-wrapper-1"] {
-        padding: 180px 0px 80px 0px !important;
-    }
-    
-    .zurf-single-article-content > p:first-of-type {
-        font-size: 20px !important;
-    }
-}
-
-@media (max-width: 480px) {
-    .gdlr-core-title-item-title {
-        font-size: 32px !important;
-    }
-    
-    .price-tag {
-        font-size: 32px !important;
-        padding: 12px 20px !important;
-    }
-    
-    .booking-button {
-        font-size: 16px !important;
-        padding: 15px 30px !important;
+    .zurf-content-area {
+        padding: 40px 20px;
     }
 }
 </style>
@@ -451,19 +425,14 @@ body {
 </head>
 <body class="home page-template-default page page-id-15793 theme-zurf gdlr-core-body tourmaster-body woocommerce-no-js zurf-body zurf-body-front zurf-full zurf-with-sticky-navigation zurf-blockquote-style-3 gdlr-core-link-to-lightbox" data-home-url="index.html">
 
-    <!-- OVERLAY POUR FOND SOMBRE -->
     <div id="mobile-menu-overlay"></div>
 
-    <!-- zurf-mobile-header-wrap -->
     <div class="zurf-mobile-header-wrap">
-        <!--  TOP BAR MOBILE -->
         <div class="zurf-top-bar">
-            <div class="zurf-top-bar-background">
-            </div>
+            <div class="zurf-top-bar-background"></div>
             <div class="zurf-top-bar-container zurf-container">
                 <div class="zurf-top-bar-container-inner clearfix">
-                    <div class="zurf-top-bar-left zurf-item-pdlr">
-                    </div>
+                    <div class="zurf-top-bar-left zurf-item-pdlr"></div>
                     <div class="zurf-top-bar-right zurf-item-pdlr">
                         <div class="zurf-top-bar-right-text">
                             <i class="fa5s fa5-phone" style="font-size: 15px; color: #ffffff; margin-right: 10px;"></i><span style="font-weight: 500;"> 06.84.57.59.76</span>
@@ -471,21 +440,20 @@ body {
                             <a href="contact.html"><span class="__cf_email__">contact@immersion-malouine.com</span></a>
                         </div>
                         <div class="zurf-top-bar-right-social">
-                            <a href="https://www.facebook.com/alexandre.roussel.58" target="_blank" class="zurf-top-bar-social-icon" title="Facebook" style="font-size: 16px; color: #ffffff; margin-left: 15px;"><i class="fa-brands fa-facebook"></i></a>
-                            <a href="#" target="_blank" class="zurf-top-bar-social-icon" title="Instagram" style="font-size: 16px; color: #ffffff; margin-left: 15px;"><i class="fa-brands fa-instagram"></i></a>
-                            <a href="#" target="_blank" class="zurf-top-bar-social-icon" title="X (Twitter)" style="font-size: 16px; color: #ffffff; margin-left: 15px;"><i class="fa-brands fa-x-twitter"></i></a>
+                            <a href="https://www.facebook.com/alexandre.roussel.58" target="_blank" class="zurf-top-bar-social-icon" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                            <a href="#" target="_blank" class="zurf-top-bar-social-icon" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="#" target="_blank" class="zurf-top-bar-social-icon" title="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- SECTION MENU MOBILE -->
         <div class="zurf-mobile-header zurf-header-background zurf-style-slide zurf-sticky-mobile-navigation" id="zurf-mobile-header">
             <div class="zurf-mobile-header-container zurf-container clearfix">
                 <div class="zurf-logo zurf-item-pdlr">
                     <div class="zurf-logo-inner">
-                        <a class="" href="index.html"><img src="images/logov1.png" alt="" width="198" height="60" title="logox2"></a>
+                        <a class="" href="index.html"><img src="images/logov1.png" alt="" width="198" height="60"></a>
                     </div>
                 </div>
                 <div class="zurf-mobile-menu-right">
@@ -499,7 +467,6 @@ body {
         </div>
     </div>
 
-    <!-- MENU MOBILE CENTRÉ -->
     <div id="mobile-menu">
         <ul class="m-menu">
             <li class="menu-item"><a href="index.html">Accueil</a></li>
@@ -541,10 +508,8 @@ body {
     <div class="zurf-body-outer-wrapper">
         <div class="zurf-body-wrapper clearfix zurf-with-transparent-header zurf-with-frame">
             <div class="zurf-header-background-transparent">
-                <!-- SECTION Top bar DESKTOP -->
                 <div class="zurf-top-bar" style="padding: 5px 0;">
-                    <div class="zurf-top-bar-background">
-                    </div>
+                    <div class="zurf-top-bar-background"></div>
                     <div class="zurf-top-bar-container zurf-container">
                         <div class="zurf-top-bar-container-inner clearfix">
                             <div class="zurf-top-bar-left zurf-item-pdlr">
@@ -563,25 +528,22 @@ body {
                         </div>
                         
                                 <div class="zurf-top-bar-right-social">
-                                    <a href="https://www.facebook.com/alexandre.roussel.58" target="_blank" class="zurf-top-bar-social-icon" title="Facebook" style="font-size: 16px; color: #ffffff; margin-left: 15px;"><i class="fa-brands fa-facebook"></i></a>
-                                    <a href="#" target="_blank" class="zurf-top-bar-social-icon" title="Instagram" style="font-size: 16px; color: #ffffff; margin-left: 15px;"><i class="fa-brands fa-instagram"></i></a>
-                                    <a href="#" target="_blank" class="zurf-top-bar-social-icon" title="X (Twitter)" style="font-size: 16px; color: #ffffff; margin-left: 15px;"><i class="fa-brands fa-x-twitter"></i></a>
+                                    <a href="https://www.facebook.com/alexandre.roussel.58" target="_blank" class="zurf-top-bar-social-icon" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                                    <a href="#" target="_blank" class="zurf-top-bar-social-icon" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                                    <a href="#" target="_blank" class="zurf-top-bar-social-icon" title="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
                                 </div> 
                                                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- HEADER -->
                 <header class="zurf-header-wrap zurf-header-style-plain zurf-style-menu-right zurf-sticky-navigation zurf-style-slide" data-navigation-offset="75px">
-                    <div class="zurf-header-background">
-                    </div>
+                    <div class="zurf-header-background"></div>
                     <div class="zurf-header-container zurf-container">
                         <div class="zurf-header-container-inner clearfix">
-                            <!-- LOGO -->
                             <div class="zurf-logo zurf-item-pdlr">
                                 <div class="zurf-logo-inner">
-                                    <a class="" href="index.html"><img src="images/logov1.png" alt="" width="198" height="60" title="logox1"></a>
+                                    <a class="" href="index.html"><img src="images/logov1.png" alt="" width="198" height="60"></a>
                                 </div>
                             </div>
                             <div class="zurf-navigation zurf-item-pdlr clearfix zurf-navigation-submenu-indicator">
@@ -632,7 +594,7 @@ body {
 		<main>
 			<div class="zurf-page-wrapper" id="zurf-page-wrapper">
                 <div class="gdlr-core-page-builder-body clearfix">
-                    <!-- HEADER AVEC FOND BLEU ÉMERAUDE -->
+                    <!-- BANDEAU AVEC IMAGE + PRIX/BOUTON -->
                     <div class="gdlr-core-pbf-wrapper" style="padding: 320px 0px 130px 0px; background: #40C4B7;" data-skin="Dark" id="gdlr-core-wrapper-1">
                         <div class="gdlr-core-pbf-wrapper-content gdlr-core-js">
                             <div class="gdlr-core-pbf-wrapper-container clearfix gdlr-core-container">
@@ -645,6 +607,11 @@ body {
                                         </div>
                                     </div>
                                 </div>
+                                <!-- PRIX + BOUTON DANS LE BANDEAU -->
+                                <div class="header-booking-section">
+                                    <div class="header-price">440€ TTC</div>
+                                    <a href="reservations.html" class="header-booking-button">Réserver maintenant</a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -655,14 +622,6 @@ body {
                                 <div class="zurf-content-wrap zurf-item-pdlr clearfix">
                                     <div class="zurf-content-area">
 
-<!-- BOUTON RÉSERVATION AVANT LE TEXTE -->
-<div class="booking-section">
-    <div class="booking-container">
-        <div class="price-tag">440€</div>
-        <a href="reservations.html" class="booking-button">Réserver maintenant</a>
-    </div>
-</div>
-
 <article id="post-17071" class="post-17071 post type-post status-publish format-standard has-post-thumbnail hentry category-news tag-pro-dive tag-scuba">
     <div class="zurf-single-article clearfix">
         <div class="zurf-single-article-content">
@@ -671,29 +630,23 @@ body {
             <span class="gdlr-core-space-shortcode" style="margin-top: 30px;"></span>
             <h4 class="wp-block-heading"><strong>Qu'est-ce que le Niveau 1 ?</strong></h4>
             
-            <!-- ENCART PHOTO À DROITE -->
-            <div class="photo-placeholder">
-                📸 Espace photo<br>
-                (Image à ajouter)
-            </div>
-            
             <p>Le Niveau 1 vous permet de plonger jusqu'à <strong>20 mètres</strong> accompagné d'un guide de palanquée (Niveau 4 minimum). C'est la première étape officielle vers l'autonomie.</p>
             
             <span class="gdlr-core-space-shortcode" style="margin-top: 30px;"></span>
             <h4 class="wp-block-heading"><strong>Le programme : Pratique et Théorie</strong></h4>
             <p>La formation Niveau 1 se compose de :</p>
             <ul class="list-no-left wp-block-list" style="list-style: none; padding-left: 0;">
-                <li style="margin-bottom: 10px;"><span style="color: #48bf84; font-size: 22px; width: 22px; display: inline-block; font-weight: bold;">✓</span> <strong>6 plongées pratiques</strong> : En milieu naturel pour maîtriser les techniques et gagner en confiance.</li>
-                <li style="margin-bottom: 10px;"><span style="color: #48bf84; font-size: 22px; width: 22px; display: inline-block; font-weight: bold;">✓</span> <strong>2 séances de théorie</strong> : Comprendre la physique de la plongée, les règles de sécurité et l'utilisation du matériel.</li>
+                <li style="margin-bottom: 10px;"><span style="color: #2c7b8d; font-size: 22px; width: 22px; display: inline-block; font-weight: bold;">•</span> <strong>6 plongées pratiques</strong> : En milieu naturel pour maîtriser les techniques et gagner en confiance.</li>
+                <li style="margin-bottom: 10px;"><span style="color: #2c7b8d; font-size: 22px; width: 22px; display: inline-block; font-weight: bold;">•</span> <strong>2 séances de théorie</strong> : Comprendre la physique de la plongée, les règles de sécurité et l'utilisation du matériel.</li>
             </ul>
             
             <span class="gdlr-core-space-shortcode" style="margin-top: 30px;"></span>
             <h4 class="wp-block-heading"><strong>Ce que vous apprendrez</strong></h4>
             <ul class="list-no-left wp-block-list" style="list-style: none; padding-left: 0;">
-                <li style="margin-bottom: 10px;"><span style="color: #48bf84; font-size: 22px; width: 22px; display: inline-block; font-weight: bold;">✓</span> <strong>Techniques de base</strong> : Stabilisation, équilibrage, palmage efficace.</li>
-                <li style="margin-bottom: 10px;"><span style="color: #48bf84; font-size: 22px; width: 22px; display: inline-block; font-weight: bold;">✓</span> <strong>Gestion de l'équipement</strong> : Montage, vérifications, entretien.</li>
-                <li style="margin-bottom: 10px;"><span style="color: #48bf84; font-size: 22px; width: 22px; display: inline-block; font-weight: bold;">✓</span> <strong>Sécurité</strong> : Assistance d'un coéquipier, remontée sur expiration, procédures d'urgence.</li>
-                <li style="margin-bottom: 10px;"><span style="color: #48bf84; font-size: 22px; width: 22px; display: inline-block; font-weight: bold;">✓</span> <strong>Théorie</strong> : Pression, flottabilité, tables de plongée, signes de communication.</li>
+                <li style="margin-bottom: 10px;"><span style="color: #2c7b8d; font-size: 22px; width: 22px; display: inline-block; font-weight: bold;">•</span> <strong>Techniques de base</strong> : Stabilisation, équilibrage, palmage efficace.</li>
+                <li style="margin-bottom: 10px;"><span style="color: #2c7b8d; font-size: 22px; width: 22px; display: inline-block; font-weight: bold;">•</span> <strong>Gestion de l'équipement</strong> : Montage, vérifications, entretien.</li>
+                <li style="margin-bottom: 10px;"><span style="color: #2c7b8d; font-size: 22px; width: 22px; display: inline-block; font-weight: bold;">•</span> <strong>Sécurité</strong> : Assistance d'un coéquipier, remontée sur expiration, procédures d'urgence.</li>
+                <li style="margin-bottom: 10px;"><span style="color: #2c7b8d; font-size: 22px; width: 22px; display: inline-block; font-weight: bold;">•</span> <strong>Théorie</strong> : Pression, flottabilité, tables de plongée, signes de communication.</li>
             </ul>
             
             <span class="gdlr-core-space-shortcode" style="margin-top: 30px;"></span>
@@ -708,21 +661,20 @@ body {
             <h4 class="wp-block-heading"><strong>Et après ?</strong></h4>
             <p>Une fois votre Niveau 1 en poche :</p>
             <ul class="list-no-left wp-block-list" style="list-style: none; padding-left: 0;">
-                <li style="margin-bottom: 10px;"><span style="color: #48bf84; font-size: 22px; width: 22px; display: inline-block; font-weight: bold;">✓</span> <strong>Plonger en exploration</strong> : Découvrez de nouveaux sites accompagné d'un guide.</li>
-                <li style="margin-bottom: 10px;"><span style="color: #48bf84; font-size: 22px; width: 22px; display: inline-block; font-weight: bold;">✓</span> <strong>Continuer avec le Niveau 2</strong> : Accéder à 40m de profondeur et à l'autonomie limitée (20m).</li>
+                <li style="margin-bottom: 10px;"><span style="color: #2c7b8d; font-size: 22px; width: 22px; display: inline-block; font-weight: bold;">•</span> <strong>Plonger en exploration</strong> : Découvrez de nouveaux sites accompagné d'un guide.</li>
+                <li style="margin-bottom: 10px;"><span style="color: #2c7b8d; font-size: 22px; width: 22px; display: inline-block; font-weight: bold;">•</span> <strong>Continuer avec le Niveau 2</strong> : Accéder à 40m de profondeur et à l'autonomie limitée (20m).</li>
             </ul>
             
             <span class="gdlr-core-space-shortcode" style="margin-top: 30px;"></span>
-            <div style="clear: both;"></div>
         </div>
     </div>
 </article>
 
-<!-- BOUTON RÉSERVATION APRÈS LE TEXTE -->
-<div class="booking-section">
-    <div class="booking-container">
-        <div class="price-tag">440€</div>
-        <a href="reservations.html" class="booking-button">Réserver maintenant</a>
+<!-- BOUTON RÉSERVATION BAS -->
+<div class="bottom-booking-section">
+    <div class="bottom-booking-container">
+        <div class="bottom-price">440€ TTC</div>
+        <a href="reservations.html" class="bottom-booking-button">Réserver maintenant</a>
     </div>
 </div>
 
@@ -758,7 +710,6 @@ body {
                 </div>
             </div>
             
-            <!-- COPYRIGHT BANDEAU VERT ÉMERAUDE -->
             <div style="background: #40C4B7; padding: 15px 0; text-align: center;">
                 <div class="zurf-container">
                     <p style="margin: 0; color: #ffffff; font-size: 14px;">
@@ -773,7 +724,6 @@ body {
     </div>
 
 <script>
-// === MENU MOBILE CENTRÉ QUI FONCTIONNE ===
 (function() {
     var btn = document.getElementById('mobile-menu-btn');
     var menu = document.getElementById('mobile-menu');
