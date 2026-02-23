@@ -216,12 +216,17 @@ body {
     background-position: center !important;
 }
 
-/* TITRE ET PRIX/BOUTON CENTRÉS */
+/* CENTRAGE ABSOLU PAR RAPPORT À LA PAGE */
+.gdlr-core-pbf-wrapper-container {
+    max-width: 100% !important;
+}
+
 .header-content-wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    width: 100%;
 }
 
 .header-booking-section {
@@ -258,20 +263,67 @@ body {
     transform: translateY(-2px);
 }
 
-/* ZONE TEXTE NORMAL SANS FOND */
+/* LAYOUT AVEC PHOTO À DROITE */
 .zurf-content-area {
-    padding: 60px 40px;
+    padding: 60px 0;
+    position: relative;
 }
 
-/* SECTION "ET APRÈS" AVEC FOND VAGUES */
+.content-with-photo {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+.text-column {
+    flex: 1;
+    max-width: 60%;
+}
+
+.photo-column {
+    width: 350px;
+    flex-shrink: 0;
+}
+
+.photo-placeholder {
+    width: 100%;
+    height: 450px;
+    background: #e8f4f8;
+    border: 3px dashed #2c7b8d;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #556575;
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+    padding: 20px;
+}
+
+/* SECTION "ET APRÈS" AVEC FOND VAGUES - PLEINE LARGEUR */
 .waves-section {
     background-image: url(images/hp-about-bg-1.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     padding: 40px;
-    border-radius: 10px;
-    margin-top: 30px;
+    margin-left: -100vw;
+    margin-right: -100vw;
+    padding-left: calc(100vw - 50%);
+    padding-right: calc(100vw - 50%);
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+}
+
+.waves-section-inner {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 15px;
 }
 
 /* TAILLE TEXTE */
@@ -397,6 +449,18 @@ body {
 @media (max-width: 999px) {
     .zurf-header-wrap .zurf-navigation {
         display: none !important;
+    }
+    
+    .content-with-photo {
+        flex-direction: column;
+    }
+    
+    .text-column {
+        max-width: 100%;
+    }
+    
+    .photo-column {
+        width: 100%;
     }
 }
 
@@ -597,10 +661,10 @@ body {
 		<main>
 			<div class="zurf-page-wrapper" id="zurf-page-wrapper">
                 <div class="gdlr-core-page-builder-body clearfix">
-                    <!-- BANDEAU AVEC IMAGE SANS VOILE -->
+                    <!-- BANDEAU CENTRÉ -->
                     <div class="gdlr-core-pbf-wrapper" style="padding: 320px 0px 130px 0px;" data-skin="Dark" id="gdlr-core-wrapper-1">
                         <div class="gdlr-core-pbf-wrapper-content gdlr-core-js">
-                            <div class="gdlr-core-pbf-wrapper-container clearfix gdlr-core-container">
+                            <div class="gdlr-core-pbf-wrapper-container clearfix">
                                 <div class="header-content-wrapper">
                                     <div class="gdlr-core-pbf-element">
                                         <div class="gdlr-core-title-item gdlr-core-item-pdb clearfix gdlr-core-center-align gdlr-core-title-item-caption-bottom gdlr-core-item-pdlr">
@@ -611,7 +675,6 @@ body {
                                             </div>
                                         </div>
                                     </div>
-                                    <!-- PRIX + BOUTON CENTRÉS -->
                                     <div class="header-booking-section">
                                         <div class="header-price">440€ TTC</div>
                                         <a href="reservations.html" class="header-booking-button">Réserver maintenant</a>
@@ -630,48 +693,64 @@ body {
 <article id="post-17071" class="post-17071 post type-post status-publish format-standard has-post-thumbnail hentry category-news tag-pro-dive tag-scuba">
     <div class="zurf-single-article clearfix">
         <div class="zurf-single-article-content">
-            <p><strong>Vous avez adoré votre baptême ou votre initiation et vous voulez franchir le cap ?</strong> Le Niveau 1 (N1) est votre première vraie certification de plongeur. Vous allez apprendre à plonger jusqu'à 20 mètres de profondeur et découvrir un univers sous-marin fascinant.</p>
             
-            <span class="gdlr-core-space-shortcode" style="margin-top: 30px;"></span>
-            <h4 class="wp-block-heading"><strong>Qu'est-ce que le Niveau 1 ?</strong></h4>
+            <!-- LAYOUT AVEC PHOTO À DROITE -->
+            <div class="content-with-photo">
+                <div class="text-column">
+                    <p><strong>Vous avez adoré votre baptême ou votre initiation et vous voulez franchir le cap ?</strong> Le Niveau 1 (N1) est votre première vraie certification de plongeur. Vous allez apprendre à plonger jusqu'à 20 mètres de profondeur et découvrir un univers sous-marin fascinant.</p>
+                    
+                    <span class="gdlr-core-space-shortcode" style="margin-top: 30px;"></span>
+                    <h4 class="wp-block-heading"><strong>Qu'est-ce que le Niveau 1 ?</strong></h4>
+                    
+                    <p>Le Niveau 1 vous permet de plonger jusqu'à <strong>20 mètres</strong> accompagné d'un guide de palanquée (Niveau 4 minimum). C'est la première étape officielle vers l'autonomie.</p>
+                    
+                    <span class="gdlr-core-space-shortcode" style="margin-top: 30px;"></span>
+                    <h4 class="wp-block-heading"><strong>Le programme : Pratique et Théorie</strong></h4>
+                    <p>La formation Niveau 1 se compose de :</p>
+                    <ul class="list-no-left wp-block-list" style="list-style: none; padding-left: 0;">
+                        <li style="margin-bottom: 10px;"><span style="color: #2c7b8d; font-size: 22px; width: 22px; display: inline-block; font-weight: bold;">•</span> <strong>6 plongées pratiques</strong> : En milieu naturel pour maîtriser les techniques et gagner en confiance.</li>
+                        <li style="margin-bottom: 10px;"><span style="color: #2c7b8d; font-size: 22px; width: 22px; display: inline-block; font-weight: bold;">•</span> <strong>2 séances de théorie</strong> : Comprendre la physique de la plongée, les règles de sécurité et l'utilisation du matériel.</li>
+                    </ul>
+                    
+                    <span class="gdlr-core-space-shortcode" style="margin-top: 30px;"></span>
+                    <h4 class="wp-block-heading"><strong>Ce que vous apprendrez</strong></h4>
+                    <ul class="list-no-left wp-block-list" style="list-style: none; padding-left: 0;">
+                        <li style="margin-bottom: 10px;"><span style="color: #2c7b8d; font-size: 22px; width: 22px; display: inline-block; font-weight: bold;">•</span> <strong>Techniques de base</strong> : Stabilisation, équilibrage, palmage efficace.</li>
+                        <li style="margin-bottom: 10px;"><span style="color: #2c7b8d; font-size: 22px; width: 22px; display: inline-block; font-weight: bold;">•</span> <strong>Gestion de l'équipement</strong> : Montage, vérifications, entretien.</li>
+                        <li style="margin-bottom: 10px;"><span style="color: #2c7b8d; font-size: 22px; width: 22px; display: inline-block; font-weight: bold;">•</span> <strong>Sécurité</strong> : Assistance d'un coéquipier, remontée sur expiration, procédures d'urgence.</li>
+                        <li style="margin-bottom: 10px;"><span style="color: #2c7b8d; font-size: 22px; width: 22px; display: inline-block; font-weight: bold;">•</span> <strong>Théorie</strong> : Pression, flottabilité, tables de plongée, signes de communication.</li>
+                    </ul>
+                    
+                    <span class="gdlr-core-space-shortcode" style="margin-top: 30px;"></span>
+                    <h4 class="wp-block-heading"><strong>Pré-requis</strong></h4>
+                    <ul class="list-no-left wp-block-list" style="list-style: none; padding-left: 0;">
+                        <li style="margin-bottom: 10px;"><span style="color: #48bf84; font-size: 22px; width: 22px; display: inline-block; font-weight: bold;">✓</span> <strong>Âge minimum</strong> : 14 ans (12 ans pour PE12).</li>
+                        <li style="margin-bottom: 10px;"><span style="color: #48bf84; font-size: 22px; width: 22px; display: inline-block; font-weight: bold;">✓</span> <strong>Savoir nager</strong></li>
+                        <li style="margin-bottom: 10px;"><span style="color: #48bf84; font-size: 22px; width: 22px; display: inline-block; font-weight: bold;">✓</span> <strong>Certificat médical</strong> de non contre-indication à la plongée.</li>
+                    </ul>
+                </div>
+                
+                <!-- COLONNE PHOTO -->
+                <div class="photo-column">
+                    <div class="photo-placeholder">
+                        📸 Espace photo<br>
+                        (Image à ajouter)
+                    </div>
+                </div>
+            </div>
             
-            <p>Le Niveau 1 vous permet de plonger jusqu'à <strong>20 mètres</strong> accompagné d'un guide de palanquée (Niveau 4 minimum). C'est la première étape officielle vers l'autonomie.</p>
-            
-            <span class="gdlr-core-space-shortcode" style="margin-top: 30px;"></span>
-            <h4 class="wp-block-heading"><strong>Le programme : Pratique et Théorie</strong></h4>
-            <p>La formation Niveau 1 se compose de :</p>
-            <ul class="list-no-left wp-block-list" style="list-style: none; padding-left: 0;">
-                <li style="margin-bottom: 10px;"><span style="color: #2c7b8d; font-size: 22px; width: 22px; display: inline-block; font-weight: bold;">•</span> <strong>6 plongées pratiques</strong> : En milieu naturel pour maîtriser les techniques et gagner en confiance.</li>
-                <li style="margin-bottom: 10px;"><span style="color: #2c7b8d; font-size: 22px; width: 22px; display: inline-block; font-weight: bold;">•</span> <strong>2 séances de théorie</strong> : Comprendre la physique de la plongée, les règles de sécurité et l'utilisation du matériel.</li>
-            </ul>
-            
-            <span class="gdlr-core-space-shortcode" style="margin-top: 30px;"></span>
-            <h4 class="wp-block-heading"><strong>Ce que vous apprendrez</strong></h4>
-            <ul class="list-no-left wp-block-list" style="list-style: none; padding-left: 0;">
-                <li style="margin-bottom: 10px;"><span style="color: #2c7b8d; font-size: 22px; width: 22px; display: inline-block; font-weight: bold;">•</span> <strong>Techniques de base</strong> : Stabilisation, équilibrage, palmage efficace.</li>
-                <li style="margin-bottom: 10px;"><span style="color: #2c7b8d; font-size: 22px; width: 22px; display: inline-block; font-weight: bold;">•</span> <strong>Gestion de l'équipement</strong> : Montage, vérifications, entretien.</li>
-                <li style="margin-bottom: 10px;"><span style="color: #2c7b8d; font-size: 22px; width: 22px; display: inline-block; font-weight: bold;">•</span> <strong>Sécurité</strong> : Assistance d'un coéquipier, remontée sur expiration, procédures d'urgence.</li>
-                <li style="margin-bottom: 10px;"><span style="color: #2c7b8d; font-size: 22px; width: 22px; display: inline-block; font-weight: bold;">•</span> <strong>Théorie</strong> : Pression, flottabilité, tables de plongée, signes de communication.</li>
-            </ul>
-            
-            <span class="gdlr-core-space-shortcode" style="margin-top: 30px;"></span>
-            <h4 class="wp-block-heading"><strong>Pré-requis</strong></h4>
-            <ul class="list-no-left wp-block-list" style="list-style: none; padding-left: 0;">
-                <li style="margin-bottom: 10px;"><span style="color: #48bf84; font-size: 22px; width: 22px; display: inline-block; font-weight: bold;">✓</span> <strong>Âge minimum</strong> : 14 ans (12 ans pour PE12).</li>
-                <li style="margin-bottom: 10px;"><span style="color: #48bf84; font-size: 22px; width: 22px; display: inline-block; font-weight: bold;">✓</span> <strong>Savoir nager</strong></li>
-                <li style="margin-bottom: 10px;"><span style="color: #48bf84; font-size: 22px; width: 22px; display: inline-block; font-weight: bold;">✓</span> <strong>Certificat médical</strong> de non contre-indication à la plongée.</li>
-            </ul>
-            
-            <!-- SECTION "ET APRÈS" AVEC FOND VAGUES -->
+            <!-- SECTION "ET APRÈS" AVEC FOND VAGUES PLEINE LARGEUR -->
             <div class="waves-section">
-                <span class="gdlr-core-space-shortcode" style="margin-top: 30px;"></span>
-                <h4 class="wp-block-heading"><strong>Et après ?</strong></h4>
-                <p>Une fois votre Niveau 1 en poche :</p>
-                <ul class="list-no-left wp-block-list" style="list-style: none; padding-left: 0;">
-                    <li style="margin-bottom: 10px;"><span style="color: #2c7b8d; font-size: 22px; width: 22px; display: inline-block; font-weight: bold;">•</span> <strong>Plonger en exploration</strong> : Découvrez de nouveaux sites accompagné d'un guide.</li>
-                    <li style="margin-bottom: 10px;"><span style="color: #2c7b8d; font-size: 22px; width: 22px; display: inline-block; font-weight: bold;">•</span> <strong>Continuer avec le Niveau 2</strong> : Accéder à 40m de profondeur et à l'autonomie limitée (20m).</li>
-                </ul>
-                <span class="gdlr-core-space-shortcode" style="margin-top: 30px;"></span>
+                <div class="waves-section-inner">
+                    <span class="gdlr-core-space-shortcode" style="margin-top: 30px;"></span>
+                    <h4 class="wp-block-heading"><strong>Et après ?</strong></h4>
+                    <p>Une fois votre Niveau 1 en poche :</p>
+                    <ul class="list-no-left wp-block-list" style="list-style: none; padding-left: 0;">
+                        <li style="margin-bottom: 10px;"><span style="color: #2c7b8d; font-size: 22px; width: 22px; display: inline-block; font-weight: bold;">•</span> <strong>Plonger en exploration</strong> : Découvrez de nouveaux sites accompagné d'un guide.</li>
+                        <li style="margin-bottom: 10px;"><span style="color: #2c7b8d; font-size: 22px; width: 22px; display: inline-block; font-weight: bold;">•</span> <strong>Continuer avec le Niveau 2</strong> : Accéder à 40m de profondeur et à l'autonomie limitée (20m).</li>
+                    </ul>
+                    <span class="gdlr-core-space-shortcode" style="margin-top: 30px;"></span>
+                </div>
             </div>
         </div>
     </div>
