@@ -21,3 +21,42 @@
 .fa-x-twitter::before {
     content: "\e61b";
 }
+/* ========================================
+   FIX ICÔNES RÉSEAUX SOCIAUX - FONT AWESOME 6 BRANDS
+   ======================================== */
+
+/* Force le bon font-family pour toutes les icônes de marques */
+.fa-brands,
+.fa-facebook,
+.fa-instagram,
+.fa-x-twitter {
+    font-family: 'Font Awesome 6 Brands' !important;
+    font-weight: 400 !important;
+    font-style: normal !important;
+}
+
+/* Codes Unicode des icônes */
+.fa-facebook::before {
+    content: "\f09a" !important;
+}
+
+.fa-instagram::before {
+    content: "\f16d" !important;
+}
+
+.fa-x-twitter::before {
+    content: "\e61b" !important;
+}
+
+/* Alternative : mapper vers les classes existantes */
+i.fa-brands.fa-facebook {
+    font-family: 'Font Awesome 6 Brands' !important;
+}
+
+i.fa-brands.fa-instagram {
+    font-family: 'Font Awesome 6 Brands' !important;
+}
+
+i.fa-brands.fa-x-twitter {
+    font-family: 'Font Awesome 6 Brands' !important;
+}
