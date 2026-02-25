@@ -117,7 +117,7 @@ body {
     position: absolute;
     width: 28px;
     height: 3px;
-    background: #2c7b8d;
+    background: #000000;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -130,7 +130,7 @@ body {
     position: absolute;
     width: 28px;
     height: 3px;
-    background: #2c7b8d;
+    background: #000000;
     left: 0;
     transition: all 0.3s;
 }
@@ -205,7 +205,7 @@ body {
 #mobile-menu .sub-menu li a {
     display: block;
     padding: 12px 0 12px 20px !important;
-    color: #333333 !important;
+    color: #000000 !important;
     font-size: 16px !important;
     font-weight: 400 !important;
 }
@@ -228,6 +228,15 @@ body {
 }
 
 .zurf-mobile-header-wrap .zurf-top-bar-background {
+    background: #40C4B7 !important;
+}
+
+/* BANDEAU LOGO + BURGER BLEU TURQUOISE */
+.zurf-mobile-header {
+    background: #40C4B7 !important;
+}
+
+.zurf-mobile-header .zurf-mobile-header-container {
     background: #40C4B7 !important;
 }
 
@@ -519,7 +528,7 @@ body {
                         <div class="zurf-top-bar-right-text">
                             <i class="fa5s fa5-phone" style="font-size: 15px; color: #ffffff; margin-right: 10px;"></i><span style="font-weight: 500;"> 06.84.57.59.76</span>
                             <i class="fa5s fa5-envelope-open" style="font-size: 15px; color: #ffffff; margin-left: 30px; margin-right: 10px;"></i>
-                            <a href="contact.html"><span class="__cf_email__">contact@immersion-malouine.com</span></a>
+                            <a href="contact.html"><span class="__cf_email__"><span class="__cf_email__" data-cfemail="4625292832272532062f2b2b2334352f29286b2b272a29332f28236825292b">[email&#160;protected]</span></span></a>
                         </div>
                         <div class="zurf-top-bar-right-social">
                             <a href="https://www.facebook.com/alexandre.roussel.58" target="_blank" class="zurf-top-bar-social-icon" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
@@ -607,7 +616,7 @@ body {
                         <div class="zurf-top-bar-right-text">
                             <i class="fa5s fa5-phone" style="font-size: 15px; color: #ffffff; margin-right: 10px;"></i><span style="font-weight: 500;"> 06.84.57.59.76</span>
                             <i class="fa5s fa5-envelope-open" style="font-size: 15px; color: #ffffff; margin-left: 30px; margin-right: 10px;"></i>
-                            <a href="contact.html"><span class="__cf_email__">contact@immersion-malouine.com</span></a>
+                            <a href="contact.html"><span class="__cf_email__"><span class="__cf_email__" data-cfemail="cfaca0a1bbaeacbb8fa6a2a2aabdbca6a0a1e2a2aea3a0baa6a1aae1aca0a2">[email&#160;protected]</span></span></a>
                         </div>
                         
                                 <div class="zurf-top-bar-right-social">
@@ -807,7 +816,7 @@ body {
                                 <span class="gdlr-core-space-shortcode" style="margin-top: 7px;"></span> +06.84.57.59.76<br>
                                 <span class="gdlr-core-space-shortcode" style="margin-top: 7px;"></span>
                                 <a style="color: #09548c;" href="contact.html">
-                                <span class="__cf_email__">contact@immersion-malouine.com</span>
+                                <span class="__cf_email__"><span class="__cf_email__" data-cfemail="04676b6a70656770446d69696176776d6b6a296965686b716d6a612a676b69">[email&#160;protected]</span></span>
                                 </a>
                             </p>
                         </div>
@@ -828,7 +837,7 @@ body {
         </div>
     </div>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 (function() {
     var btn = document.getElementById('mobile-menu-btn');
     var menu = document.getElementById('mobile-menu');
@@ -846,19 +855,3 @@ body {
     menuItems.forEach(function(link) {
         link.addEventListener('click', function(e) {
             e.preventDefault();
-            e.stopPropagation();
-            this.parentElement.classList.toggle('active');
-        });
-    });
-    
-    var realLinks = menu.querySelectorAll('a[href]:not([href="#"])');
-    realLinks.forEach(function(link) {
-        link.addEventListener('click', function() {
-            btn.classList.remove('active');
-            menu.classList.remove('active');
-        });
-    });
-})();
-</script>
-</body>
-</html>
