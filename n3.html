@@ -37,18 +37,28 @@ body {
     position: relative;
 }
 
-/* === CSS MENUS DESKTOP TRANSPARENT === */
+/* === CSS MENUS DESKTOP === */
 .zurf-navigation .sf-menu > li {
     position: relative !important;
 }
 
-.zurf-navigation .sf-menu > li > .sub-menu,
-.zurf-navigation .sf-menu > li > ul.sub-menu {
+/* MENUS PRINCIPAUX EN GRAS */
+.zurf-navigation .sf-menu > li > a {
+    font-weight: 700 !important;
+}
+
+/* FLÈCHES AU LIEU DE CARRÉS */
+.zurf-navigation .sf-menu > li.menu-item-has-children > a::after {
+    content: " ▼" !important;
+    font-size: 10px !important;
+    margin-left: 5px !important;
+}
+
+.zurf-navigation .sf-menu > li > .sub-menu {
     display: none !important;
     position: absolute !important;
     top: 100% !important;
     left: 0 !important;
-    right: auto !important;
     background: transparent !important;
     min-width: 250px !important;
     padding: 0 !important;
@@ -63,15 +73,8 @@ body {
 }
 
 .zurf-navigation .sf-menu .sub-menu li {
-    list-style: none !important;
-    padding: 0 !important;
-    margin: 0 !important;
-    border-bottom: none !important;
     background: transparent !important;
-}
-
-.zurf-navigation .sf-menu .sub-menu li:last-child {
-    border-bottom: none !important;
+    border: none !important;
 }
 
 .zurf-navigation .sf-menu .sub-menu li a {
@@ -89,17 +92,10 @@ body {
 
 .zurf-navigation .sf-menu .sub-menu li a:hover {
     background: rgba(64, 196, 183, 0.2) !important;
-    color: #ffffff !important;
     padding-left: 35px !important;
 }
 
-.zurf-navigation .sf-menu > li.menu-item-has-children > a::after {
-    content: " ▼" !important;
-    font-size: 10px !important;
-    margin-left: 5px !important;
-}
-
-/* === MENU MOBILE CENTRÉ === */
+/* === MENU MOBILE BLEU TURQUOISE === */
 #mobile-menu-btn {
     width: 40px;
     height: 40px;
@@ -111,91 +107,63 @@ body {
 }
 
 #mobile-menu-btn span {
-    display: block;
-    position: absolute;
-    width: 28px;
-    height: 3px;
-    background: #2c7b8d;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    transition: all 0.3s;
+    display: block !important;
+    position: absolute !important;
+    width: 28px !important;
+    height: 3px !important;
+    background: #ffffff !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    transition: all 0.3s !important;
 }
 
 #mobile-menu-btn span::before,
 #mobile-menu-btn span::after {
-    content: '';
-    position: absolute;
-    width: 28px;
-    height: 3px;
-    background: #2c7b8d;
-    left: 0;
-    transition: all 0.3s;
+    content: '' !important;
+    position: absolute !important;
+    width: 28px !important;
+    height: 3px !important;
+    background: #ffffff !important;
+    left: 0 !important;
+    transition: all 0.3s !important;
 }
 
-#mobile-menu-btn span::before {
-    top: -9px;
+#mobile-menu-btn span::before { top: -9px !important; }
+#mobile-menu-btn span::after { top: 9px !important; }
+
+#mobile-menu-btn.active span { background: transparent !important; }
+#mobile-menu-btn.active span::before { 
+    top: 0 !important; 
+    transform: rotate(45deg) !important; 
+    background: #ffffff !important; 
+}
+#mobile-menu-btn.active span::after { 
+    top: 0 !important; 
+    transform: rotate(-45deg) !important; 
+    background: #ffffff !important; 
 }
 
-#mobile-menu-btn span::after {
-    top: 9px;
-}
-
-#mobile-menu-btn.active span {
-    background: transparent;
-}
-
-#mobile-menu-btn.active span::before {
-    top: 0;
-    transform: rotate(45deg);
-}
-
-#mobile-menu-btn.active span::after {
-    top: 0;
-    transform: rotate(-45deg);
-}
-
-/* MENU CENTRÉ SUR LA PAGE */
 #mobile-menu {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(0);
-    width: 90%;
-    max-width: 400px;
-    max-height: 80vh;
-    background: #ffffff;
-    transition: transform 0.3s ease;
-    overflow-y: auto;
-    z-index: 1000000;
-    padding: 20px;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.3);
-    border-radius: 15px;
-    opacity: 0;
-}
-
-#mobile-menu.active {
-    transform: translate(-50%, -50%) scale(1);
-    opacity: 1;
-}
-
-/* FOND SOMBRE DERRIÈRE LE MENU */
-#mobile-menu-overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 999999;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s, visibility 0.3s;
+    height: 100vh;
+    background: #40C4B7;
+    transition: transform 0.3s ease;
+    overflow-y: auto;
+    z-index: 1000000;
+    padding: 80px 30px 30px 30px;
+    transform: translateX(-100%);
 }
 
-#mobile-menu-overlay.active {
-    opacity: 1;
-    visibility: visible;
+#mobile-menu.active {
+    transform: translateX(0);
+}
+
+#mobile-menu-overlay {
+    display: none;
 }
 
 #mobile-menu .m-menu {
@@ -205,85 +173,116 @@ body {
 }
 
 #mobile-menu .m-menu > li {
-    border-bottom: 1px solid #f0f0f0;
-}
-
-#mobile-menu .m-menu > li:last-child {
-    border-bottom: none;
+    border-bottom: none !important;
+    margin-bottom: 20px;
 }
 
 #mobile-menu .m-menu > li > a {
     display: block;
-    padding: 15px 10px;
-    color: #333333 !important;
-    font-size: 16px !important;
-    font-weight: 500;
+    padding: 15px 0;
+    color: #ffffff !important;
+    font-size: 20px !important;
+    font-weight: 700 !important;
     text-decoration: none;
 }
 
 #mobile-menu .sub-menu {
     list-style: none;
     padding: 0;
-    background: #f9f9f9;
+    background: transparent !important;
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s;
-    border-radius: 8px;
-    margin-top: 5px;
+    margin-top: 10px;
 }
 
 #mobile-menu .menu-item-has-children.active > .sub-menu {
     max-height: 500px;
 }
 
+#mobile-menu .sub-menu li {
+    border: none !important;
+}
+
 #mobile-menu .sub-menu li a {
     display: block;
-    padding: 12px 30px !important;
-    color: #556575 !important;
-    font-size: 14px !important;
+    padding: 12px 0 12px 20px !important;
+    color: #ffffff !important;
+    font-size: 16px !important;
+    font-weight: 400 !important;
 }
 
 #mobile-menu .menu-item-has-children > a::after {
-    content: "▼";
+    content: " ▼";
     float: right;
-    font-size: 12px;
+    font-size: 14px;
+    transition: transform 0.3s;
+    color: #ffffff;
 }
 
 #mobile-menu .menu-item-has-children.active > a::after {
     transform: rotate(180deg);
-    display: inline-block;
 }
 
-/* BOUTON RÉSERVATION + PRIX */
-.booking-section {
-    text-align: center;
-    margin: 40px 0;
-    padding: 30px 20px;
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-    border-radius: 10px;
+/* TOP BAR MOBILE BLEU TURQUOISE */
+.zurf-mobile-header-wrap .zurf-top-bar {
+    background: #40C4B7 !important;
 }
 
-.booking-container {
-    display: inline-flex;
+.zurf-mobile-header-wrap .zurf-top-bar-background {
+    background: #40C4B7 !important;
+}
+
+/* BANDEAU LOGO + BURGER BLEU TURQUOISE */
+.zurf-mobile-header {
+    background: #40C4B7 !important;
+}
+
+.zurf-mobile-header .zurf-mobile-header-container {
+    background: #40C4B7 !important;
+}
+
+/* BANDEAU */
+#gdlr-core-wrapper-1 {
+    position: relative;
+    overflow: hidden;
+    background-image: url(images/alex.plage.jpeg) !important;
+    background-size: cover !important;
+    background-position: center !important;
+}
+
+.gdlr-core-pbf-wrapper-container {
+    max-width: 100% !important;
+}
+
+.header-content-wrapper {
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 20px;
-    flex-wrap: wrap;
     justify-content: center;
+    width: 100%;
 }
 
-.price-tag {
-    font-size: 42px;
+.header-booking-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.header-price {
+    font-size: 48px;
     font-weight: 700;
-    color: #2c7b8d;
-    background: #ffffff;
-    padding: 15px 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
 }
 
-.booking-button {
+/* BOUTON VERT ÉMERAUDE */
+.header-booking-button {
     display: inline-block;
-    background: #2c7b8d;
+    background: #40C4B7 !important;
     color: #ffffff !important;
     font-size: 18px;
     font-weight: 600;
@@ -291,21 +290,39 @@ body {
     border-radius: 8px;
     text-decoration: none;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 12px rgba(44, 123, 141, 0.3);
+    box-shadow: 0 4px 12px rgba(64, 196, 183, 0.4);
 }
 
-.booking-button:hover {
-    background: #004375;
+.header-booking-button:hover {
+    background: #35a89d !important;
     transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(44, 123, 141, 0.4);
 }
 
-/* ENCART PHOTO */
-.photo-placeholder {
-    float: right;
+/* LAYOUT AVEC PHOTO */
+.zurf-content-area {
+    padding: 60px 0;
+    position: relative;
+}
+
+.content-with-photo {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+.text-column {
+    flex: 1;
+    max-width: 60%;
+}
+
+.photo-column {
     width: 350px;
+    flex-shrink: 0;
+}
+
+.photo-placeholder {
+    width: 100%;
     height: 450px;
-    margin: 20px 0 20px 30px;
     background: #e8f4f8;
     border: 3px dashed #2c7b8d;
     border-radius: 10px;
@@ -319,16 +336,78 @@ body {
     padding: 20px;
 }
 
-/* PREMIÈRE LIGNE EN VALEUR */
-.zurf-single-article-content > p:first-of-type {
-    font-size: 22px !important;
-    font-weight: 600 !important;
-    color: #2c7b8d !important;
-    line-height: 1.8 !important;
-    margin-bottom: 35px !important;
+/* FOND VAGUES TRÈS ÉTIRÉ */
+.waves-section {
+    background-image: url(images/hp-about-bg-1.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 50px 60px;
+    border-radius: 15px;
+    margin-top: 40px;
+    margin-left: -80px;
+    margin-right: -80px;
 }
 
-/* FOOTER NOIR AVEC VAGUES */
+/* TAILLE TEXTE */
+.zurf-single-article-content p,
+.zurf-single-article-content ul li {
+    font-size: 16px !important;
+    line-height: 1.8 !important;
+}
+
+.zurf-single-article-content h4 {
+    font-size: 24px !important;
+}
+
+/* INTRO EN GRAS ET BLEU ÉMERAUDE */
+.intro-emeraude {
+    font-size: 20px !important;
+    font-weight: 700 !important;
+    color: #40C4B7 !important;
+    line-height: 1.8 !important;
+}
+
+/* BOUTON BAS VERT ÉMERAUDE */
+.bottom-booking-section {
+    text-align: center;
+    margin: 40px 0;
+    padding: 30px 20px;
+}
+
+.bottom-booking-container {
+    display: inline-flex;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.bottom-price {
+    font-size: 48px;
+    font-weight: 700;
+    color: #2c7b8d;
+}
+
+.bottom-booking-button {
+    display: inline-block;
+    background: #40C4B7 !important;
+    color: #ffffff !important;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 18px 40px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(64, 196, 183, 0.4);
+}
+
+.bottom-booking-button:hover {
+    background: #35a89d !important;
+    transform: translateY(-2px);
+}
+
+/* FOOTER */
 .zurf-footer-wrapper {
     background: #000000 !important;
     padding: 20px 0 15px 0 !important;
@@ -396,10 +475,16 @@ body {
         display: none !important;
     }
     
-    .photo-placeholder {
-        float: none;
+    .content-with-photo {
+        flex-direction: column;
+    }
+    
+    .text-column {
+        max-width: 100%;
+    }
+    
+    .photo-column {
         width: 100%;
-        margin: 20px 0;
     }
 }
 
@@ -409,60 +494,58 @@ body {
     }
 }
 
-/* RESPONSIVE TITRES MOBILE */
 @media (max-width: 768px) {
     .gdlr-core-title-item-title {
         font-size: 40px !important;
-        line-height: 1.2 !important;
-        padding: 0 15px !important;
     }
     
-    .wp-block-heading {
-        font-size: 20px !important;
-        line-height: 1.3 !important;
+    .header-price, .bottom-price {
+        font-size: 36px !important;
     }
     
-    .gdlr-core-pbf-wrapper[id="gdlr-core-wrapper-1"] {
-        padding: 180px 0px 80px 0px !important;
+    .zurf-content-area {
+        padding: 40px 20px;
     }
     
-    .zurf-single-article-content > p:first-of-type {
-        font-size: 20px !important;
+    .waves-section {
+        padding: 30px 20px;
+        margin-left: -20px;
+        margin-right: -20px;
     }
 }
 
-@media (max-width: 480px) {
-    .gdlr-core-title-item-title {
-        font-size: 32px !important;
-    }
-    
-    .price-tag {
-        font-size: 32px !important;
-        padding: 12px 20px !important;
-    }
-    
-    .booking-button {
-        font-size: 16px !important;
-        padding: 15px 30px !important;
-    }
+/* FORCER TRAITS BURGER BLANCS - PRIORITÉ MAXIMALE */
+#mobile-menu-btn span,
+#mobile-menu-btn span::before,
+#mobile-menu-btn span::after {
+    background-color: #ffffff !important;
+    background: #ffffff !important;
+}
+
+#mobile-menu-btn.active span::before,
+#mobile-menu-btn.active span::after {
+    background-color: #ffffff !important;
+    background: #ffffff !important;
 }
 </style>
 
 </head>
 <body class="home page-template-default page page-id-15793 theme-zurf gdlr-core-body tourmaster-body woocommerce-no-js zurf-body zurf-body-front zurf-full zurf-with-sticky-navigation zurf-blockquote-style-3 gdlr-core-link-to-lightbox" data-home-url="index.html">
 
-    <!-- OVERLAY POUR FOND SOMBRE -->
     <div id="mobile-menu-overlay"></div>
 
-    <!-- zurf-mobile-header-wrap -->
     <div class="zurf-mobile-header-wrap">
-        <!--  TOP BAR MOBILE -->
         <div class="zurf-top-bar">
-            <div class="zurf-top-bar-background">
-            </div>
+            <div class="zurf-top-bar-background"></div>
             <div class="zurf-top-bar-container zurf-container">
                 <div class="zurf-top-bar-container-inner clearfix">
                     <div class="zurf-top-bar-left zurf-item-pdlr">
+                        <div id="lang" style="display: flex; gap: 15px; align-items: center;">
+                            <a href="#" style="text-decoration: none; color: #ffffff; font-size: 14px; font-weight: 500;">🇫🇷 FR</a>
+                            <a href="#" style="text-decoration: none; color: #ffffff; font-size: 14px; font-weight: 500;">🇬🇧 EN</a>
+                            <a href="#" style="text-decoration: none; color: #ffffff; font-size: 14px; font-weight: 500;">🇪🇸 ES</a>
+                            <a href="#" style="text-decoration: none; color: #ffffff; font-size: 14px; font-weight: 500;">🇨🇳 CN</a>
+                        </div>
                     </div>
                     <div class="zurf-top-bar-right zurf-item-pdlr">
                         <div class="zurf-top-bar-right-text">
@@ -471,27 +554,32 @@ body {
                             <a href="contact.html"><span class="__cf_email__">contact@immersion-malouine.com</span></a>
                         </div>
                         <div class="zurf-top-bar-right-social">
-                            <a href="https://www.facebook.com/alexandre.roussel.58" target="_blank" class="zurf-top-bar-social-icon" title="Facebook" style="font-size: 16px; color: #ffffff; margin-left: 15px;"><i class="fa-brands fa-facebook"></i></a>
-                            <a href="#" target="_blank" class="zurf-top-bar-social-icon" title="Instagram" style="font-size: 16px; color: #ffffff; margin-left: 15px;"><i class="fa-brands fa-instagram"></i></a>
-                            <a href="#" target="_blank" class="zurf-top-bar-social-icon" title="X (Twitter)" style="font-size: 16px; color: #ffffff; margin-left: 15px;"><i class="fa-brands fa-x-twitter"></i></a>
+                            <a href="https://www.facebook.com/alexandre.roussel.58" target="_blank" class="zurf-top-bar-social-icon" title="Facebook" style="margin-left: 15px; display: inline-block; vertical-align: middle;">
+                                <svg width="16" height="16" fill="#ffffff" viewBox="0 0 320 512"><path d="M80 299.3V512H196V299.3h86.5l18-97.8H196V166.9c0-51.7 20.3-71.5 72.7-71.5c16.3 0 29.4 .4 37 1.2V7.9C291.4 4 256.4 0 236.2 0C129.3 0 80 50.5 80 159.4v42.1H14v97.8H80z"/></svg>
+                            </a>
+                            <a href="#" target="_blank" class="zurf-top-bar-social-icon" title="Instagram" style="margin-left: 15px; display: inline-block; vertical-align: middle;">
+                                <svg width="16" height="16" fill="#ffffff" viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
+                            </a>
+                            <a href="#" target="_blank" class="zurf-top-bar-social-icon" title="X (Twitter)" style="margin-left: 15px; display: inline-block; vertical-align: middle;">
+                                <svg width="16" height="16" fill="#ffffff" viewBox="0 0 512 512"><path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"/></svg>
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- SECTION MENU MOBILE -->
         <div class="zurf-mobile-header zurf-header-background zurf-style-slide zurf-sticky-mobile-navigation" id="zurf-mobile-header">
             <div class="zurf-mobile-header-container zurf-container clearfix">
                 <div class="zurf-logo zurf-item-pdlr">
                     <div class="zurf-logo-inner">
-                        <a class="" href="index.html"><img src="images/logov1.png" alt="" width="198" height="60" title="logox2"></a>
+                        <a class="" href="index.html"><img src="images/logov1.png" alt="" width="198" height="60"></a>
                     </div>
                 </div>
                 <div class="zurf-mobile-menu-right">
                     <div class="zurf-mobile-menu">
                         <button id="mobile-menu-btn">
-                            <span></span>
+                            <span style="background: #ffffff !important;"></span>
                         </button>
                     </div>
                 </div>
@@ -499,7 +587,7 @@ body {
         </div>
     </div>
 
-    <!-- MENU MOBILE CENTRÉ -->
+    <!-- MENU MOBILE TURQUOISE -->
     <div id="mobile-menu">
         <ul class="m-menu">
             <li class="menu-item"><a href="index.html">Accueil</a></li>
@@ -508,6 +596,7 @@ body {
                 <ul class="sub-menu">
                     <li class="menu-item"><a href="bapteme.html">Baptême</a></li>
                     <li class="menu-item"><a href="initiation.html">Initiation</a></li>
+                    <li class="menu-item"><a href="randonnee-palmee.html">Randonnée palmée</a></li>
                 </ul>
             </li>
             <li class="menu-item menu-item-has-children">
@@ -527,11 +616,10 @@ body {
                 </ul>
             </li>
             <li class="menu-item menu-item-has-children">
-                <a href="#">Sans bouteille</a>
+                <a href="#">Infos</a>
                 <ul class="sub-menu">
-                    <li class="menu-item"><a href="randonnee-palmee.html">Randonnée palmée</a></li>
-                    <li class="menu-item"><a href="apnee.html">Apnée</a></li>
-                    <li class="menu-item"><a href="maitrise-du-milieu.html">Maîtrise du milieu</a></li>
+                    <li class="menu-item"><a href="itineraire.html">Itinéraire</a></li>
+                    <li class="menu-item"><a href="qui-suis-je.html">Qui suis-je ?</a></li>
                 </ul>
             </li>
             <li class="menu-item"><a href="contact.html">Contact</a></li>
@@ -541,10 +629,8 @@ body {
     <div class="zurf-body-outer-wrapper">
         <div class="zurf-body-wrapper clearfix zurf-with-transparent-header zurf-with-frame">
             <div class="zurf-header-background-transparent">
-                <!-- SECTION Top bar DESKTOP -->
                 <div class="zurf-top-bar" style="padding: 5px 0;">
-                    <div class="zurf-top-bar-background">
-                    </div>
+                    <div class="zurf-top-bar-background"></div>
                     <div class="zurf-top-bar-container zurf-container">
                         <div class="zurf-top-bar-container-inner clearfix">
                             <div class="zurf-top-bar-left zurf-item-pdlr">
@@ -563,25 +649,28 @@ body {
                         </div>
                         
                                 <div class="zurf-top-bar-right-social">
-                                    <a href="https://www.facebook.com/alexandre.roussel.58" target="_blank" class="zurf-top-bar-social-icon" title="Facebook" style="font-size: 16px; color: #ffffff; margin-left: 15px;"><i class="fa-brands fa-facebook"></i></a>
-                                    <a href="#" target="_blank" class="zurf-top-bar-social-icon" title="Instagram" style="font-size: 16px; color: #ffffff; margin-left: 15px;"><i class="fa-brands fa-instagram"></i></a>
-                                    <a href="#" target="_blank" class="zurf-top-bar-social-icon" title="X (Twitter)" style="font-size: 16px; color: #ffffff; margin-left: 15px;"><i class="fa-brands fa-x-twitter"></i></a>
+                                    <a href="https://www.facebook.com/alexandre.roussel.58" target="_blank" class="zurf-top-bar-social-icon" title="Facebook" style="margin-left: 15px; display: inline-block; vertical-align: middle;">
+                                        <svg width="16" height="16" fill="#ffffff" viewBox="0 0 320 512"><path d="M80 299.3V512H196V299.3h86.5l18-97.8H196V166.9c0-51.7 20.3-71.5 72.7-71.5c16.3 0 29.4 .4 37 1.2V7.9C291.4 4 256.4 0 236.2 0C129.3 0 80 50.5 80 159.4v42.1H14v97.8H80z"/></svg>
+                                    </a>
+                                    <a href="#" target="_blank" class="zurf-top-bar-social-icon" title="Instagram" style="margin-left: 15px; display: inline-block; vertical-align: middle;">
+                                        <svg width="16" height="16" fill="#ffffff" viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
+                                    </a>
+                                    <a href="#" target="_blank" class="zurf-top-bar-social-icon" title="X (Twitter)" style="margin-left: 15px; display: inline-block; vertical-align: middle;">
+                                        <svg width="16" height="16" fill="#ffffff" viewBox="0 0 512 512"><path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"/></svg>
+                                    </a>
                                 </div> 
                                                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- HEADER -->
                 <header class="zurf-header-wrap zurf-header-style-plain zurf-style-menu-right zurf-sticky-navigation zurf-style-slide" data-navigation-offset="75px">
-                    <div class="zurf-header-background">
-                    </div>
+                    <div class="zurf-header-background"></div>
                     <div class="zurf-header-container zurf-container">
                         <div class="zurf-header-container-inner clearfix">
-                            <!-- LOGO -->
                             <div class="zurf-logo zurf-item-pdlr">
                                 <div class="zurf-logo-inner">
-                                    <a class="" href="index.html"><img src="images/logov1.png" alt="" width="198" height="60" title="logox1"></a>
+                                    <a class="" href="index.html"><img src="images/logov1.png" alt="" width="198" height="60"></a>
                                 </div>
                             </div>
                             <div class="zurf-navigation zurf-item-pdlr clearfix zurf-navigation-submenu-indicator">
@@ -593,6 +682,7 @@ body {
                                         <ul class="sub-menu">
                                             <li class="menu-item" data-size="60"><a href="bapteme.html">Baptême</a></li>
                                             <li class="menu-item" data-size="60"><a href="initiation.html">Initiation</a></li>
+                                            <li class="menu-item" data-size="60"><a href="randonnee-palmee.html">Randonnée palmée</a></li>
                                         </ul>
                                         </li>
                                         <li class="menu-item menu-item-has-children zurf-normal-menu">
@@ -613,11 +703,10 @@ body {
                                         </li>
 
                                         <li class="menu-item menu-item-has-children zurf-normal-menu">
-                                        <a href="#" class="sf-with-ul-pre">Sans bouteille</a>
+                                        <a href="#" class="sf-with-ul-pre">Infos</a>
                                         <ul class="sub-menu">
-                                            <li class="menu-item"><a href="randonnee-palmee.html">Randonnée palmée</a></li>
-                                            <li class="menu-item"><a href="apnee.html">Apnée</a></li>
-                                            <li class="menu-item"><a href="maitrise-du-milieu.html">Maîtrise du milieu</a></li>
+                                            <li class="menu-item"><a href="itineraire.html">Itinéraire</a></li>
+                                            <li class="menu-item"><a href="qui-suis-je.html">Qui suis-je ?</a></li>
                                         </ul>
                                         </li>
                                         <li class="menu-item zurf-normal-menu"><a href="contact.html">Contact</a></li>
@@ -632,17 +721,23 @@ body {
 		<main>
 			<div class="zurf-page-wrapper" id="zurf-page-wrapper">
                 <div class="gdlr-core-page-builder-body clearfix">
-                    <!-- HEADER AVEC FOND BLEU ÉMERAUDE -->
-                    <div class="gdlr-core-pbf-wrapper" style="padding: 320px 0px 130px 0px; background: #40C4B7;" data-skin="Dark" id="gdlr-core-wrapper-1">
+                    <!-- BANDEAU CENTRÉ -->
+                    <div class="gdlr-core-pbf-wrapper" style="padding: 320px 0px 130px 0px;" data-skin="Dark" id="gdlr-core-wrapper-1">
                         <div class="gdlr-core-pbf-wrapper-content gdlr-core-js">
-                            <div class="gdlr-core-pbf-wrapper-container clearfix gdlr-core-container">
-                                <div class="gdlr-core-pbf-element">
-                                    <div class="gdlr-core-title-item gdlr-core-item-pdb clearfix gdlr-core-center-align gdlr-core-title-item-caption-bottom gdlr-core-item-pdlr">
-                                        <div class="gdlr-core-title-item-title-wrap">
-                                            <h3 class="gdlr-core-title-item-title gdlr-core-skin-title class-test" style="font-size: 75px; font-weight: 600; letter-spacing: 0px; text-transform: none; color: #ffffff;">
-                                                Formation N3<span class="gdlr-core-title-item-title-divider gdlr-core-skin-divider"></span>
-                                            </h3>
+                            <div class="gdlr-core-pbf-wrapper-container clearfix">
+                                <div class="header-content-wrapper">
+                                    <div class="gdlr-core-pbf-element">
+                                        <div class="gdlr-core-title-item gdlr-core-item-pdb clearfix gdlr-core-center-align gdlr-core-title-item-caption-bottom gdlr-core-item-pdlr">
+                                            <div class="gdlr-core-title-item-title-wrap">
+                                                <h3 class="gdlr-core-title-item-title gdlr-core-skin-title class-test" style="font-size: 75px; font-weight: 600; letter-spacing: 0px; text-transform: none; color: #ffffff;">
+                                                    Formation N3<span class="gdlr-core-title-item-title-divider gdlr-core-skin-divider"></span>
+                                                </h3>
+                                            </div>
                                         </div>
+                                    </div>
+                                    <div class="header-booking-section">
+                                        <div class="header-price">790€ TTC</div>
+                                        <a href="reservations.html" class="header-booking-button">Réserver maintenant</a>
                                     </div>
                                 </div>
                             </div>
@@ -655,81 +750,83 @@ body {
                                 <div class="zurf-content-wrap zurf-item-pdlr clearfix">
                                     <div class="zurf-content-area">
 
-<!-- BOUTON RÉSERVATION AVANT LE TEXTE -->
-<div class="booking-section">
-    <div class="booking-container">
-        <div class="price-tag">790€</div>
-        <a href="reservations.html" class="booking-button">Réserver maintenant</a>
-    </div>
-</div>
-
 <article id="post-17071" class="post-17071 post type-post status-publish format-standard has-post-thumbnail hentry category-news tag-pro-dive tag-scuba">
     <div class="zurf-single-article clearfix">
         <div class="zurf-single-article-content">
-            <p><strong>Vous maîtrisez le Niveau 2 et vous êtes prêt à franchir un cap décisif ?</strong> Le Niveau 3 est LE graal des plongeurs loisir : il vous ouvre les portes de l'autonomie totale et des grandes profondeurs. C'est le brevet des explorateurs passionnés.</p>
             
-            <span class="gdlr-core-space-shortcode" style="margin-top: 30px;"></span>
-            <h4 class="wp-block-heading"><strong>Vos nouvelles prérogatives</strong></h4>
-            
-            <!-- ENCART PHOTO À DROITE -->
-            <div class="photo-placeholder">
-                📸 Espace photo<br>
-                (Image à ajouter)
+            <!-- LAYOUT AVEC PHOTO À DROITE -->
+            <div class="content-with-photo">
+                <div class="text-column">
+                    <!-- INTRO EN GRAS ET BLEU ÉMERAUDE -->
+                    <p class="intro-emeraude">Vous maîtrisez le Niveau 2 et vous êtes prêt à franchir un cap décisif ? Le Niveau 3 est LE graal des plongeurs loisir : il vous ouvre les portes de l'autonomie totale et des grandes profondeurs. C'est le brevet des explorateurs passionnés.</p>
+                    
+                    <span class="gdlr-core-space-shortcode" style="margin-top: 30px;"></span>
+                    <h4 class="wp-block-heading"><strong>Vos nouvelles prérogatives</strong></h4>
+                    
+                    <p>Le Niveau 3 transforme radicalement votre manière de plonger :</p>
+                    <ul class="list-no-left wp-block-list" style="list-style: none; padding-left: 0;">
+                        <li style="margin-bottom: 10px;"><span style="color: #2c7b8d; font-size: 22px; width: 22px; display: inline-block; font-weight: bold;">•</span> <strong>Autonomie complète jusqu'à 60m</strong> : Plongez en binôme ou trinôme sans guide. Vous gérez votre parcours, votre décompression, et votre sécurité de A à Z.</li>
+                        <li style="margin-bottom: 10px;"><span style="color: #2c7b8d; font-size: 22px; width: 22px; display: inline-block; font-weight: bold;">•</span> <strong>Accès aux plus beaux sites</strong> : Épaves profondes, tombants vertigineux, faune pélagique… Le monde sous-marin se dévoile dans toute sa splendeur.</li>
+                    </ul>
+                    
+                    <span class="gdlr-core-space-shortcode" style="margin-top: 30px;"></span>
+                    <h4 class="wp-block-heading"><strong>Au programme de votre formation</strong></h4>
+                    <p>Le Niveau 3 exige une maîtrise technique et mentale solide :</p>
+                    <ul class="list-no-left wp-block-list" style="list-style: none; padding-left: 0;">
+                        <li style="margin-bottom: 10px;"><span style="color: #2c7b8d; font-size: 22px; width: 22px; display: inline-block; font-weight: bold;">•</span> <strong>Gestion avancée de la décompression</strong> : Tables MN90, ordinateurs multi-gaz, paliers profonds… Vous apprendrez à planifier des plongées complexes.</li>
+                        <li style="margin-bottom: 10px;"><span style="color: #2c7b8d; font-size: 22px; width: 22px; display: inline-block; font-weight: bold;">•</span> <strong>Navigation précise</strong> : Compas, repères naturels, gestion du courant… Vous serez capable de revenir au bateau même dans des conditions difficiles.</li>
+                        <li style="margin-bottom: 10px;"><span style="color: #2c7b8d; font-size: 22px; width: 22px; display: inline-block; font-weight: bold;">•</span> <strong>Sauvetage en profondeur</strong> : Assistance d'un plongeur en difficulté à 40-60m, remontée assistée, gestion du stress.</li>
+                        <li style="margin-bottom: 10px;"><span style="color: #2c7b8d; font-size: 22px; width: 22px; display: inline-block; font-weight: bold;">•</span> <strong>Gestion des risques</strong> : Narcose, essoufflement, froid intense, panne d'air… Vous apprendrez à anticiper et réagir.</li>
+                    </ul>
+                    
+                    <span class="gdlr-core-space-shortcode" style="margin-top: 30px;"></span>
+                    <h4 class="wp-block-heading"><strong>Organisation de la formation</strong></h4>
+                    <p>Le Niveau 3 demande un investissement conséquent :</p>
+                    <ul class="list-no-left wp-block-list" style="list-style: none; padding-left: 0;">
+                        <li style="margin-bottom: 10px;"><span style="color: #2c7b8d; font-size: 22px; width: 22px; display: inline-block; font-weight: bold;">•</span> <strong>10 à 12 plongées</strong> de formation pratique, dont plusieurs à plus de 40m.</li>
+                        <li style="margin-bottom: 10px;"><span style="color: #2c7b8d; font-size: 22px; width: 22px; display: inline-block; font-weight: bold;">•</span> <strong>Cours théoriques approfondis</strong> : Physique, physiologie, réglementation, planification de plongée.</li>
+                        <li style="margin-bottom: 10px;"><span style="color: #2c7b8d; font-size: 22px; width: 22px; display: inline-block; font-weight: bold;">•</span> <strong>Examen final</strong> : Épreuves pratiques (sauvetage, orientation, mannequin) et théoriques.</li>
+                    </ul>
+                    
+                    <span class="gdlr-core-space-shortcode" style="margin-top: 30px;"></span>
+                    <h4 class="wp-block-heading"><strong>Pré-requis</strong></h4>
+                    <ul class="list-no-left wp-block-list" style="list-style: none; padding-left: 0;">
+                        <li style="margin-bottom: 10px;"><span style="color: #48bf84; font-size: 22px; width: 22px; display: inline-block; font-weight: bold;">✓</span> <strong>Niveau 2 + expérience solide</strong> : Au moins 40 plongées au compteur, dont une vingtaine à plus de 20m.</li>
+                        <li style="margin-bottom: 10px;"><span style="color: #48bf84; font-size: 22px; width: 22px; display: inline-block; font-weight: bold;">✓</span> <strong>Aptitude physique</strong> : Test de condition physique (800m nage libre, mannequin, apnée).</li>
+                        <li style="margin-bottom: 10px;"><span style="color: #48bf84; font-size: 22px; width: 22px; display: inline-block; font-weight: bold;">✓</span> <strong>Certificat médical</strong> de non contre-indication à la plongée en profondeur.</li>
+                    </ul>
+                </div>
+                
+                <!-- COLONNE PHOTO -->
+                <div class="photo-column">
+                    <div class="photo-placeholder">
+                        📸 Espace photo<br>
+                        (Image à ajouter)
+                    </div>
+                </div>
             </div>
             
-            <p>Le Niveau 3 transforme radicalement votre manière de plonger :</p>
-            <ul class="list-no-left wp-block-list" style="list-style: none; padding-left: 0;">
-                <li style="margin-bottom: 10px;"><span style="color: #48bf84; font-size: 22px; width: 22px; display: inline-block; font-weight: bold;">✓</span> <strong>Autonomie complète jusqu'à 60m</strong> : Plongez en binôme ou trinôme sans guide. Vous gérez votre parcours, votre décompression, et votre sécurité de A à Z.</li>
-                <li style="margin-bottom: 10px;"><span style="color: #48bf84; font-size: 22px; width: 22px; display: inline-block; font-weight: bold;">✓</span> <strong>Accès aux plus beaux sites</strong> : Épaves profondes, tombants vertigineux, faune pélagique… Le monde sous-marin se dévoile dans toute sa splendeur.</li>
-            </ul>
-            
-            <span class="gdlr-core-space-shortcode" style="margin-top: 30px;"></span>
-            <h4 class="wp-block-heading"><strong>Au programme de votre formation</strong></h4>
-            <p>Le Niveau 3 exige une maîtrise technique et mentale solide :</p>
-            <ul class="list-no-left wp-block-list" style="list-style: none; padding-left: 0;">
-                <li style="margin-bottom: 10px;"><span style="color: #48bf84; font-size: 22px; width: 22px; display: inline-block; font-weight: bold;">✓</span> <strong>Gestion avancée de la décompression</strong> : Tables MN90, ordinateurs multi-gaz, paliers profonds… Vous apprendrez à planifier des plongées complexes.</li>
-                <li style="margin-bottom: 10px;"><span style="color: #48bf84; font-size: 22px; width: 22px; display: inline-block; font-weight: bold;">✓</span> <strong>Navigation précise</strong> : Compas, repères naturels, gestion du courant… Vous serez capable de revenir au bateau même dans des conditions difficiles.</li>
-                <li style="margin-bottom: 10px;"><span style="color: #48bf84; font-size: 22px; width: 22px; display: inline-block; font-weight: bold;">✓</span> <strong>Sauvetage en profondeur</strong> : Assistance d'un plongeur en difficulté à 40-60m, remontée assistée, gestion du stress.</li>
-                <li style="margin-bottom: 10px;"><span style="color: #48bf84; font-size: 22px; width: 22px; display: inline-block; font-weight: bold;">✓</span> <strong>Gestion des risques</strong> : Narcose, essoufflement, froid intense, panne d'air… Vous apprendrez à anticiper et réagir.</li>
-            </ul>
-            
-            <span class="gdlr-core-space-shortcode" style="margin-top: 30px;"></span>
-            <h4 class="wp-block-heading"><strong>Organisation de la formation</strong></h4>
-            <p>Le Niveau 3 demande un investissement conséquent :</p>
-            <ul class="list-no-left wp-block-list" style="list-style: none; padding-left: 0;">
-                <li style="margin-bottom: 10px;"><span style="color: #48bf84; font-size: 22px; width: 22px; display: inline-block; font-weight: bold;">✓</span> <strong>10 à 12 plongées</strong> de formation pratique, dont plusieurs à plus de 40m.</li>
-                <li style="margin-bottom: 10px;"><span style="color: #48bf84; font-size: 22px; width: 22px; display: inline-block; font-weight: bold;">✓</span> <strong>Cours théoriques approfondis</strong> : Physique, physiologie, réglementation, planification de plongée.</li>
-                <li style="margin-bottom: 10px;"><span style="color: #48bf84; font-size: 22px; width: 22px; display: inline-block; font-weight: bold;">✓</span> <strong>Examen final</strong> : Épreuves pratiques (sauvetage, orientation, mannequin) et théoriques.</li>
-            </ul>
-            
-            <span class="gdlr-core-space-shortcode" style="margin-top: 30px;"></span>
-            <h4 class="wp-block-heading"><strong>Pré-requis</strong></h4>
-            <ul class="list-no-left wp-block-list" style="list-style: none; padding-left: 0;">
-                <li style="margin-bottom: 10px;"><span style="color: #48bf84; font-size: 22px; width: 22px; display: inline-block; font-weight: bold;">✓</span> <strong>Niveau 2 + expérience solide</strong> : Au moins 40 plongées au compteur, dont une vingtaine à plus de 20m.</li>
-                <li style="margin-bottom: 10px;"><span style="color: #48bf84; font-size: 22px; width: 22px; display: inline-block; font-weight: bold;">✓</span> <strong>Aptitude physique</strong> : Test de condition physique (800m nage libre, mannequin, apnée).</li>
-                <li style="margin-bottom: 10px;"><span style="color: #48bf84; font-size: 22px; width: 22px; display: inline-block; font-weight: bold;">✓</span> <strong>Certificat médical</strong> de non contre-indication à la plongée en profondeur.</li>
-            </ul>
-            
-            <span class="gdlr-core-space-shortcode" style="margin-top: 30px;"></span>
-            <h4 class="wp-block-heading"><strong>Et après ?</strong></h4>
-            <p>Le Niveau 3 est souvent considéré comme l'aboutissement du parcours loisir. Mais l'aventure ne s'arrête pas là :</p>
-            <ul class="list-no-left wp-block-list" style="list-style: none; padding-left: 0;">
-                <li style="margin-bottom: 10px;"><span style="color: #48bf84; font-size: 22px; width: 22px; display: inline-block; font-weight: bold;">✓</span> <strong>Spécialités techniques</strong> : Nitrox confirmé, Trimix, plongée tek, recycleur…</li>
-                <li style="margin-bottom: 10px;"><span style="color: #48bf84; font-size: 22px; width: 22px; display: inline-block; font-weight: bold;">✓</span> <strong>Niveau 4 / Guide de Palanquée</strong> : Pour encadrer d'autres plongeurs et transmettre votre passion.</li>
-                <li style="margin-bottom: 10px;"><span style="color: #48bf84; font-size: 22px; width: 22px; display: inline-block; font-weight: bold;">✓</span> <strong>Voyages plongée</strong> : Mer Rouge, Maldives, Galápagos… Le monde est à vous !</li>
-            </ul>
-            
-            <span class="gdlr-core-space-shortcode" style="margin-top: 30px;"></span>
-            <div style="clear: both;"></div>
+            <!-- FOND VAGUES TRÈS ÉTIRÉ -->
+            <div class="waves-section">
+                <span class="gdlr-core-space-shortcode" style="margin-top: 30px;"></span>
+                <h4 class="wp-block-heading"><strong>Et après ?</strong></h4>
+                <p>Le Niveau 3 est souvent considéré comme l'aboutissement du parcours loisir. Mais l'aventure ne s'arrête pas là :</p>
+                <ul class="list-no-left wp-block-list" style="list-style: none; padding-left: 0;">
+                    <li style="margin-bottom: 10px;"><span style="color: #2c7b8d; font-size: 22px; width: 22px; display: inline-block; font-weight: bold;">•</span> <strong>Spécialités techniques</strong> : Nitrox confirmé, Trimix, plongée tek, recycleur…</li>
+                    <li style="margin-bottom: 10px;"><span style="color: #2c7b8d; font-size: 22px; width: 22px; display: inline-block; font-weight: bold;">•</span> <strong>Niveau 4 / Guide de Palanquée</strong> : Pour encadrer d'autres plongeurs et transmettre votre passion.</li>
+                    <li style="margin-bottom: 10px;"><span style="color: #2c7b8d; font-size: 22px; width: 22px; display: inline-block; font-weight: bold;">•</span> <strong>Voyages plongée</strong> : Mer Rouge, Maldives, Galápagos… Le monde est à vous !</li>
+                </ul>
+                <span class="gdlr-core-space-shortcode" style="margin-top: 30px;"></span>
+            </div>
         </div>
     </div>
 </article>
 
-<!-- BOUTON RÉSERVATION APRÈS LE TEXTE -->
-<div class="booking-section">
-    <div class="booking-container">
-        <div class="price-tag">790€</div>
-        <a href="reservations.html" class="booking-button">Réserver maintenant</a>
+<!-- BOUTON BAS VERT ÉMERAUDE -->
+<div class="bottom-booking-section">
+    <div class="bottom-booking-container">
+        <div class="bottom-price">790€ TTC</div>
+        <a href="reservations.html" class="bottom-booking-button">Réserver maintenant</a>
     </div>
 </div>
 
@@ -765,7 +862,6 @@ body {
                 </div>
             </div>
             
-            <!-- COPYRIGHT BANDEAU VERT ÉMERAUDE -->
             <div style="background: #40C4B7; padding: 15px 0; text-align: center;">
                 <div class="zurf-container">
                     <p style="margin: 0; color: #ffffff; font-size: 14px;">
@@ -780,26 +876,21 @@ body {
     </div>
 
 <script>
-// === MENU MOBILE CENTRÉ QUI FONCTIONNE ===
 (function() {
     var btn = document.getElementById('mobile-menu-btn');
     var menu = document.getElementById('mobile-menu');
-    var overlay = document.getElementById('mobile-menu-overlay');
     
-    if (!btn || !menu || !overlay) return;
+    if (!btn || !menu) {
+        console.error('Menu burger elements not found!');
+        return;
+    }
     
     btn.addEventListener('click', function(e) {
         e.preventDefault();
         e.stopPropagation();
         this.classList.toggle('active');
         menu.classList.toggle('active');
-        overlay.classList.toggle('active');
-    });
-    
-    overlay.addEventListener('click', function() {
-        btn.classList.remove('active');
-        menu.classList.remove('active');
-        overlay.classList.remove('active');
+        console.log('Menu toggled!', menu.classList.contains('active'));
     });
     
     var menuItems = menu.querySelectorAll('.menu-item-has-children > a');
@@ -816,9 +907,10 @@ body {
         link.addEventListener('click', function() {
             btn.classList.remove('active');
             menu.classList.remove('active');
-            overlay.classList.remove('active');
         });
     });
+    
+    console.log('Menu burger initialized successfully!');
 })();
 </script>
 </body>
