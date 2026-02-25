@@ -6,6 +6,9 @@
 
     <title>Formation N2 - Immersion Malouine</title>
 
+    <!-- FONT AWESOME CDN QUI FONCTIONNE -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <link rel="preload" data-rocket-preload="" as="image" href="images/scuba-hero-bg.jpg" fetchpriority="high">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
@@ -126,34 +129,42 @@ body {
 }
 
 #mobile-menu-btn span {
-    display: block;
-    position: absolute;
-    width: 28px;
-    height: 3px;
-    background: #ffffff;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    transition: all 0.3s;
+    display: block !important;
+    position: absolute !important;
+    width: 28px !important;
+    height: 3px !important;
+    background: #ffffff !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    transition: all 0.3s !important;
 }
 
 #mobile-menu-btn span::before,
 #mobile-menu-btn span::after {
-    content: '';
-    position: absolute;
-    width: 28px;
-    height: 3px;
-    background: #ffffff;
-    left: 0;
-    transition: all 0.3s;
+    content: '' !important;
+    position: absolute !important;
+    width: 28px !important;
+    height: 3px !important;
+    background: #ffffff !important;
+    left: 0 !important;
+    transition: all 0.3s !important;
 }
 
-#mobile-menu-btn span::before { top: -9px; }
-#mobile-menu-btn span::after { top: 9px; }
+#mobile-menu-btn span::before { top: -9px !important; }
+#mobile-menu-btn span::after { top: 9px !important; }
 
-#mobile-menu-btn.active span { background: transparent; }
-#mobile-menu-btn.active span::before { top: 0; transform: rotate(45deg); background: #ffffff; }
-#mobile-menu-btn.active span::after { top: 0; transform: rotate(-45deg); background: #ffffff; }
+#mobile-menu-btn.active span { background: transparent !important; }
+#mobile-menu-btn.active span::before { 
+    top: 0 !important; 
+    transform: rotate(45deg) !important; 
+    background: #ffffff !important; 
+}
+#mobile-menu-btn.active span::after { 
+    top: 0 !important; 
+    transform: rotate(-45deg) !important; 
+    background: #ffffff !important; 
+}
 
 #mobile-menu {
     position: fixed;
@@ -551,9 +562,9 @@ body {
                             <a href="contact.html"><span class="__cf_email__">contact@immersion-malouine.com</span></a>
                         </div>
                         <div class="zurf-top-bar-right-social">
-                            <a href="https://www.facebook.com/alexandre.roussel.58" target="_blank" class="zurf-top-bar-social-icon" title="Facebook"><i class="fa6b fa6-facebook"></i></a>
-                            <a href="#" target="_blank" class="zurf-top-bar-social-icon" title="Instagram"><i class="fa6b fa6-instagram"></i></a>
-                            <a href="#" target="_blank" class="zurf-top-bar-social-icon" title="X (Twitter)"><i class="fa6b fa6-x-twitter"></i></a>
+                            <a href="https://www.facebook.com/alexandre.roussel.58" target="_blank" class="zurf-top-bar-social-icon" title="Facebook" style="font-size: 16px; color: #ffffff; margin-left: 15px;"><i class="fa-brands fa-facebook"></i></a>
+                            <a href="#" target="_blank" class="zurf-top-bar-social-icon" title="Instagram" style="font-size: 16px; color: #ffffff; margin-left: 15px;"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="#" target="_blank" class="zurf-top-bar-social-icon" title="X (Twitter)" style="font-size: 16px; color: #ffffff; margin-left: 15px;"><i class="fa-brands fa-x-twitter"></i></a>
                         </div>
                     </div>
                 </div>
@@ -640,9 +651,9 @@ body {
                         </div>
                         
                                 <div class="zurf-top-bar-right-social">
-                                    <a href="https://www.facebook.com/alexandre.roussel.58" target="_blank" class="zurf-top-bar-social-icon" title="Facebook"><i class="fa6b fa6-facebook"></i></a>
-                                    <a href="#" target="_blank" class="zurf-top-bar-social-icon" title="Instagram"><i class="fa6b fa6-instagram"></i></a>
-                                    <a href="#" target="_blank" class="zurf-top-bar-social-icon" title="X (Twitter)"><i class="fa6b fa6-x-twitter"></i></a>
+                                    <a href="https://www.facebook.com/alexandre.roussel.58" target="_blank" class="zurf-top-bar-social-icon" title="Facebook" style="font-size: 16px; color: #ffffff; margin-left: 15px;"><i class="fa-brands fa-facebook"></i></a>
+                                    <a href="#" target="_blank" class="zurf-top-bar-social-icon" title="Instagram" style="font-size: 16px; color: #ffffff; margin-left: 15px;"><i class="fa-brands fa-instagram"></i></a>
+                                    <a href="#" target="_blank" class="zurf-top-bar-social-icon" title="X (Twitter)" style="font-size: 16px; color: #ffffff; margin-left: 15px;"><i class="fa-brands fa-x-twitter"></i></a>
                                 </div> 
                                                             </div>
                         </div>
