@@ -37,23 +37,10 @@ body {
     position: relative;
 }
 
-/* FIX ICÔNES RÉSEAUX SOCIAUX */
-.fa-brands,
-.fa6b {
+/* FIX ICÔNES RÉSEAUX */
+.fa-brands {
     font-family: 'Font Awesome 6 Brands' !important;
     font-weight: 400 !important;
-}
-
-.fa-facebook::before {
-    content: "\f09a" !important;
-}
-
-.fa-instagram::before {
-    content: "\f16d" !important;
-}
-
-.fa-x-twitter::before {
-    content: "\e61b" !important;
 }
 
 /* === CSS MENUS DESKTOP === */
@@ -126,42 +113,34 @@ body {
 }
 
 #mobile-menu-btn span {
-    display: block !important;
-    position: absolute !important;
-    width: 28px !important;
-    height: 3px !important;
-    background: #ffffff !important;
-    top: 50% !important;
-    left: 50% !important;
-    transform: translate(-50%, -50%) !important;
-    transition: all 0.3s !important;
+    display: block;
+    position: absolute;
+    width: 28px;
+    height: 3px;
+    background: #000000;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.3s;
 }
 
 #mobile-menu-btn span::before,
 #mobile-menu-btn span::after {
-    content: '' !important;
-    position: absolute !important;
-    width: 28px !important;
-    height: 3px !important;
-    background: #ffffff !important;
-    left: 0 !important;
-    transition: all 0.3s !important;
+    content: '';
+    position: absolute;
+    width: 28px;
+    height: 3px;
+    background: #000000;
+    left: 0;
+    transition: all 0.3s;
 }
 
-#mobile-menu-btn span::before { top: -9px !important; }
-#mobile-menu-btn span::after { top: 9px !important; }
+#mobile-menu-btn span::before { top: -9px; }
+#mobile-menu-btn span::after { top: 9px; }
 
-#mobile-menu-btn.active span { background: transparent !important; }
-#mobile-menu-btn.active span::before { 
-    top: 0 !important; 
-    transform: rotate(45deg) !important; 
-    background: #ffffff !important; 
-}
-#mobile-menu-btn.active span::after { 
-    top: 0 !important; 
-    transform: rotate(-45deg) !important; 
-    background: #ffffff !important; 
-}
+#mobile-menu-btn.active span { background: transparent; }
+#mobile-menu-btn.active span::before { top: 0; transform: rotate(45deg); background: #000000; }
+#mobile-menu-btn.active span::after { top: 0; transform: rotate(-45deg); background: #000000; }
 
 #mobile-menu {
     position: fixed;
@@ -199,7 +178,7 @@ body {
 #mobile-menu .m-menu > li > a {
     display: block;
     padding: 15px 0;
-    color: #ffffff !important;
+    color: #000000 !important;
     font-size: 20px !important;
     font-weight: 700 !important;
     text-decoration: none;
@@ -226,7 +205,7 @@ body {
 #mobile-menu .sub-menu li a {
     display: block;
     padding: 12px 0 12px 20px !important;
-    color: #ffffff !important;
+    color: #000000 !important;
     font-size: 16px !important;
     font-weight: 400 !important;
 }
@@ -236,7 +215,7 @@ body {
     float: right;
     font-size: 14px;
     transition: transform 0.3s;
-    color: #ffffff;
+    color: #000000;
 }
 
 #mobile-menu .menu-item-has-children.active > a::after {
@@ -532,7 +511,6 @@ body {
         margin-right: -20px;
     }
 }
-
 /* FORCER TRAITS BURGER BLANCS - PRIORITÉ MAXIMALE */
 #mobile-menu-btn span,
 #mobile-menu-btn span::before,
@@ -558,30 +536,17 @@ body {
             <div class="zurf-top-bar-background"></div>
             <div class="zurf-top-bar-container zurf-container">
                 <div class="zurf-top-bar-container-inner clearfix">
-                    <div class="zurf-top-bar-left zurf-item-pdlr">
-                        <div id="lang" style="display: flex; gap: 15px; align-items: center;">
-                            <a href="#" style="text-decoration: none; color: #ffffff; font-size: 14px; font-weight: 500;">🇫🇷 FR</a>
-                            <a href="#" style="text-decoration: none; color: #ffffff; font-size: 14px; font-weight: 500;">🇬🇧 EN</a>
-                            <a href="#" style="text-decoration: none; color: #ffffff; font-size: 14px; font-weight: 500;">🇪🇸 ES</a>
-                            <a href="#" style="text-decoration: none; color: #ffffff; font-size: 14px; font-weight: 500;">🇨🇳 CN</a>
-                        </div>
-                    </div>
+                    <div class="zurf-top-bar-left zurf-item-pdlr"></div>
                     <div class="zurf-top-bar-right zurf-item-pdlr">
                         <div class="zurf-top-bar-right-text">
                             <i class="fa5s fa5-phone" style="font-size: 15px; color: #ffffff; margin-right: 10px;"></i><span style="font-weight: 500;"> 06.84.57.59.76</span>
                             <i class="fa5s fa5-envelope-open" style="font-size: 15px; color: #ffffff; margin-left: 30px; margin-right: 10px;"></i>
-                            <a href="contact.html"><span class="__cf_email__"><span class="__cf_email__" data-cfemail="096a66677d686a7d496064646c7b7a60666724646865667c60676c276a6664">[email&#160;protected]</span></span></a>
+                            <a href="contact.html"><span class="__cf_email__"><span class="__cf_email__" data-cfemail="b2d1dddcc6d3d1c6f2dbdfdfd7c0c1dbdddc9fdfd3deddc7dbdcd79cd1dddf">[email&#160;protected]</span></span></a>
                         </div>
                         <div class="zurf-top-bar-right-social">
-                            <a href="https://www.facebook.com/alexandre.roussel.58" target="_blank" class="zurf-top-bar-social-icon" title="Facebook" style="margin-left: 15px; display: inline-block; vertical-align: middle;">
-                                <svg width="16" height="16" fill="#ffffff" viewBox="0 0 320 512"><path d="M80 299.3V512H196V299.3h86.5l18-97.8H196V166.9c0-51.7 20.3-71.5 72.7-71.5c16.3 0 29.4 .4 37 1.2V7.9C291.4 4 256.4 0 236.2 0C129.3 0 80 50.5 80 159.4v42.1H14v97.8H80z"/></svg>
-                            </a>
-                            <a href="#" target="_blank" class="zurf-top-bar-social-icon" title="Instagram" style="margin-left: 15px; display: inline-block; vertical-align: middle;">
-                                <svg width="16" height="16" fill="#ffffff" viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
-                            </a>
-                            <a href="#" target="_blank" class="zurf-top-bar-social-icon" title="X (Twitter)" style="margin-left: 15px; display: inline-block; vertical-align: middle;">
-                                <svg width="16" height="16" fill="#ffffff" viewBox="0 0 512 512"><path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"/></svg>
-                            </a>
+                            <a href="https://www.facebook.com/alexandre.roussel.58" target="_blank" class="zurf-top-bar-social-icon" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                            <a href="#" target="_blank" class="zurf-top-bar-social-icon" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="#" target="_blank" class="zurf-top-bar-social-icon" title="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
                         </div>
                     </div>
                 </div>
@@ -621,7 +586,7 @@ body {
             <li class="menu-item menu-item-has-children">
                 <a href="#">Formation</a>
                 <ul class="sub-menu">
-                    <li class="menu-item"><a href="n1.html">Formation N1</a></li>
+                    <li class="menu-item"><a href="n1.html">Formation N2</a></li>
                     <li class="menu-item"><a href="n2.html">Formation N2</a></li>
                     <li class="menu-item"><a href="n3.html">Formation N3</a></li>
                     <li class="menu-item"><a href="n4.html">Formation N4</a></li>
@@ -664,19 +629,13 @@ body {
                         <div class="zurf-top-bar-right-text">
                             <i class="fa5s fa5-phone" style="font-size: 15px; color: #ffffff; margin-right: 10px;"></i><span style="font-weight: 500;"> 06.84.57.59.76</span>
                             <i class="fa5s fa5-envelope-open" style="font-size: 15px; color: #ffffff; margin-left: 30px; margin-right: 10px;"></i>
-                            <a href="contact.html"><span class="__cf_email__"><span class="__cf_email__" data-cfemail="3b5854554f5a584f7b5256565e494852545516565a57544e52555e15585456">[email&#160;protected]</span></span></a>
+                            <a href="contact.html"><span class="__cf_email__"><span class="__cf_email__" data-cfemail="f2919d9c86939186b29b9f9f9780819b9d9cdf9f939e9d879b9c97dc919d9f">[email&#160;protected]</span></span></a>
                         </div>
                         
                                 <div class="zurf-top-bar-right-social">
-                                    <a href="https://www.facebook.com/alexandre.roussel.58" target="_blank" class="zurf-top-bar-social-icon" title="Facebook" style="margin-left: 15px; display: inline-block; vertical-align: middle;">
-                                        <svg width="16" height="16" fill="#ffffff" viewBox="0 0 320 512"><path d="M80 299.3V512H196V299.3h86.5l18-97.8H196V166.9c0-51.7 20.3-71.5 72.7-71.5c16.3 0 29.4 .4 37 1.2V7.9C291.4 4 256.4 0 236.2 0C129.3 0 80 50.5 80 159.4v42.1H14v97.8H80z"/></svg>
-                                    </a>
-                                    <a href="#" target="_blank" class="zurf-top-bar-social-icon" title="Instagram" style="margin-left: 15px; display: inline-block; vertical-align: middle;">
-                                        <svg width="16" height="16" fill="#ffffff" viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
-                                    </a>
-                                    <a href="#" target="_blank" class="zurf-top-bar-social-icon" title="X (Twitter)" style="margin-left: 15px; display: inline-block; vertical-align: middle;">
-                                        <svg width="16" height="16" fill="#ffffff" viewBox="0 0 512 512"><path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"/></svg>
-                                    </a>
+                                    <a href="https://www.facebook.com/alexandre.roussel.58" target="_blank" class="zurf-top-bar-social-icon" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                                    <a href="#" target="_blank" class="zurf-top-bar-social-icon" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                                    <a href="#" target="_blank" class="zurf-top-bar-social-icon" title="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
                                 </div> 
                                                             </div>
                         </div>
@@ -707,7 +666,7 @@ body {
                                         <li class="menu-item menu-item-has-children zurf-normal-menu">
                                         <a href="#" class="sf-with-ul-pre">Formations</a>
                                         <ul class="sub-menu">
-                                            <li class="menu-item" data-size="60"><a href="n1.html">Formation N1</a></li>
+                                            <li class="menu-item" data-size="60"><a href="n1.html">Formation N2</a></li>
                                             <li class="menu-item" data-size="60"><a href="n2.html">Formation N2</a></li>
                                             <li class="menu-item" data-size="60"><a href="n3.html">Formation N3</a></li>
                                             <li class="menu-item" data-size="60"><a href="n4.html">Formation N4</a></li>
@@ -777,38 +736,34 @@ body {
             <div class="content-with-photo">
                 <div class="text-column">
                     <!-- INTRO EN GRAS ET BLEU ÉMERAUDE -->
-                    <p class="intro-emeraude">Vous avez adoré vos premières bulles en tant que Niveau 1 et vous en voulez plus ? Le Niveau 2 (N2) est l'étape indispensable pour ceux qui souhaitent explorer plus profond et commencer à gérer leur propre plongée. C'est le brevet de la polyvalence.</p>
+                    <p class="intro-emeraude">Vous avez adoré votre baptême ou votre initiation et vous voulez franchir le cap ? Le Niveau 1 (N1) est votre première vraie certification de plongeur. Vous allez apprendre à plonger jusqu'à 20 mètres de profondeur et découvrir un univers sous-marin fascinant.</p>
                     
                     <span class="gdlr-core-space-shortcode" style="margin-top: 30px;"></span>
-                    <h4 class="wp-block-heading"><strong>Vos nouvelles prérogatives</strong></h4>
+                    <h4 class="wp-block-heading"><strong>Qu'est-ce que le Niveau 1 ?</strong></h4>
                     
-                    <p>Le Niveau 2 vous offre un double badge de compétences :</p>
+                    <p>Le Niveau 1 vous permet de plonger jusqu'à <strong>20 mètres</strong> accompagné d'un guide de palanquée (Niveau 4 minimum). C'est la première étape officielle vers l'autonomie.</p>
+                    
+                    <span class="gdlr-core-space-shortcode" style="margin-top: 30px;"></span>
+                    <h4 class="wp-block-heading"><strong>Le programme : Pratique et Théorie</strong></h4>
+                    <p>La formation Niveau 1 se compose de :</p>
                     <ul class="list-no-left wp-block-list" style="list-style: none; padding-left: 0;">
-                        <li style="margin-bottom: 10px;"><span style="color: #2c7b8d; font-size: 22px; width: 22px; display: inline-block; font-weight: bold;">•</span> <strong>L'Autonomie (jusqu'à 20m)</strong> : Vous pouvez plonger sans guide, en binôme ou trinôme avec d'autres plongeurs de niveau 2 minimum. Vous gérez votre propre parcours et votre sécurité.</li>
-                        <li style="margin-bottom: 10px;"><span style="color: #2c7b8d; font-size: 22px; width: 22px; display: inline-block; font-weight: bold;">•</span> <strong>La Profondeur (jusqu'à 40m)</strong> : Accompagné d'un guide de palanquée, vous accédez à des épaves mythiques et à une faune plus secrète.</li>
+                        <li style="margin-bottom: 10px;"><span style="color: #2c7b8d; font-size: 22px; width: 22px; display: inline-block; font-weight: bold;">•</span> <strong>6 plongées pratiques</strong> : En milieu naturel pour maîtriser les techniques et gagner en confiance.</li>
+                        <li style="margin-bottom: 10px;"><span style="color: #2c7b8d; font-size: 22px; width: 22px; display: inline-block; font-weight: bold;">•</span> <strong>2 séances de théorie</strong> : Comprendre la physique de la plongée, les règles de sécurité et l'utilisation du matériel.</li>
                     </ul>
                     
                     <span class="gdlr-core-space-shortcode" style="margin-top: 30px;"></span>
-                    <h4 class="wp-block-heading"><strong>Au programme de votre formation</strong></h4>
-                    <p>On quitte le simple "confort" pour apprendre la maîtrise technique :</p>
+                    <h4 class="wp-block-heading"><strong>Ce que vous apprendrez</strong></h4>
                     <ul class="list-no-left wp-block-list" style="list-style: none; padding-left: 0;">
-                        <li style="margin-bottom: 10px;"><span style="color: #2c7b8d; font-size: 22px; width: 22px; display: inline-block; font-weight: bold;">•</span> <strong>Technique & Sécurité</strong> : Apprendre à s'orienter avec (ou sans) boussole, stabiliser parfaitement sa profondeur et surtout, savoir porter assistance à son coéquipier en cas de besoin.</li>
-                        <li style="margin-bottom: 10px;"><span style="color: #2c7b8d; font-size: 22px; width: 22px; display: inline-block; font-weight: bold;">•</span> <strong>Théorie Appliquée</strong> : Comprendre les mécanismes de la décompression, l'utilisation de l'ordinateur de plongée et la prévention des risques (essoufflement, froid, narcose).</li>
-                    </ul>
-                    
-                    <span class="gdlr-core-space-shortcode" style="margin-top: 30px;"></span>
-                    <h4 class="wp-block-heading"><strong>Une organisation sur-mesure</strong></h4>
-                    <ul class="list-no-left wp-block-list" style="list-style: none; padding-left: 0;">
-                        <li style="margin-bottom: 10px;"><span style="color: #2c7b8d; font-size: 22px; width: 22px; display: inline-block; font-weight: bold;">•</span> <strong>En séjour</strong> : Un stage d'environ 4 à 5 jours est idéal pour valider les compétences techniques en milieu naturel.</li>
-                        <li style="margin-bottom: 10px;"><span style="color: #2c7b8d; font-size: 22px; width: 22px; display: inline-block; font-weight: bold;">•</span> <strong>Au rythme local</strong> : Une progression par étapes sur plusieurs semaines pour bien assimiler la gestion de l'autonomie.</li>
+                        <li style="margin-bottom: 10px;"><span style="color: #2c7b8d; font-size: 22px; width: 22px; display: inline-block; font-weight: bold;">•</span> <strong>Techniques de base</strong> : Stabilisation, équilibrage, palmage efficace.</li>
+                        <li style="margin-bottom: 10px;"><span style="color: #2c7b8d; font-size: 22px; width: 22px; display: inline-block; font-weight: bold;">•</span> <strong>Gestion de l'équipement</strong> : Montage, vérifications, entretien.</li>
+                        <li style="margin-bottom: 10px;"><span style="color: #2c7b8d; font-size: 22px; width: 22px; display: inline-block; font-weight: bold;">•</span> <strong>Sécurité</strong> : Assistance d'un coéquipier, remontée sur expiration, procédures d'urgence.</li>
+                        <li style="margin-bottom: 10px;"><span style="color: #2c7b8d; font-size: 22px; width: 22px; display: inline-block; font-weight: bold;">•</span> <strong>Théorie</strong> : Pression, flottabilité, tables de plongée, signes de communication.</li>
                     </ul>
                     
                     <span class="gdlr-core-space-shortcode" style="margin-top: 30px;"></span>
                     <h4 class="wp-block-heading"><strong>Pré-requis</strong></h4>
-                    <p>Pour débuter cette aventure, il vous faut :</p>
                     <ul class="list-no-left wp-block-list" style="list-style: none; padding-left: 0;">
-                        <li style="margin-bottom: 10px;"><span style="color: #48bf84; font-size: 22px; width: 22px; display: inline-block; font-weight: bold;">✓</span> <strong>Être titulaire du Niveau 1</strong></li>
-                        <li style="margin-bottom: 10px;"><span style="color: #48bf84; font-size: 22px; width: 22px; display: inline-block; font-weight: bold;">✓</span> <strong>Expérience</strong> : Avoir réalisé quelques plongées en milieu naturel après votre N1 est vivement recommandé pour être à l'aise.</li>
+                        <li style="margin-bottom: 10px;"><span style="color: #48bf84; font-size: 22px; width: 22px; display: inline-block; font-weight: bold;">✓</span> <strong>Âge minimum</strong> : 14 ans (12 ans pour PE12).</li>
                         <li style="margin-bottom: 10px;"><span style="color: #48bf84; font-size: 22px; width: 22px; display: inline-block; font-weight: bold;">✓</span> <strong>Savoir nager</strong></li>
                         <li style="margin-bottom: 10px;"><span style="color: #48bf84; font-size: 22px; width: 22px; display: inline-block; font-weight: bold;">✓</span> <strong>Certificat médical</strong> de non contre-indication à la plongée.</li>
                     </ul>
@@ -826,11 +781,11 @@ body {
             <!-- FOND VAGUES TRÈS ÉTIRÉ -->
             <div class="waves-section">
                 <span class="gdlr-core-space-shortcode" style="margin-top: 30px;"></span>
-                <h4 class="wp-block-heading"><strong>Et après ? Vers les sommets (ou les abysses)</strong></h4>
-                <p>Le Niveau 2 est le socle de toute votre vie de plongeur. Une fois vos marques prises :</p>
+                <h4 class="wp-block-heading"><strong>Et après ?</strong></h4>
+                <p>Une fois votre Niveau 1 en poche :</p>
                 <ul class="list-no-left wp-block-list" style="list-style: none; padding-left: 0;">
-                    <li style="margin-bottom: 10px;"><span style="color: #2c7b8d; font-size: 22px; width: 22px; display: inline-block; font-weight: bold;">•</span> <strong>Le Niveau 3</strong> : Pour atteindre l'autonomie totale à 60m.</li>
-                    <li style="margin-bottom: 10px;"><span style="color: #2c7b8d; font-size: 22px; width: 22px; display: inline-block; font-weight: bold;">•</span> <strong>Spécialités</strong> : Découvrez la plongée au Nitrox (pour plus de sécurité et de temps sous l'eau) ou la Photo sous-marine.</li>
+                    <li style="margin-bottom: 10px;"><span style="color: #2c7b8d; font-size: 22px; width: 22px; display: inline-block; font-weight: bold;">•</span> <strong>Plonger en exploration</strong> : Découvrez de nouveaux sites accompagné d'un guide.</li>
+                    <li style="margin-bottom: 10px;"><span style="color: #2c7b8d; font-size: 22px; width: 22px; display: inline-block; font-weight: bold;">•</span> <strong>Continuer avec le Niveau 2</strong> : Accéder à 40m de profondeur et à l'autonomie limitée (20m).</li>
                 </ul>
                 <span class="gdlr-core-space-shortcode" style="margin-top: 30px;"></span>
             </div>
@@ -870,7 +825,7 @@ body {
                                 <span class="gdlr-core-space-shortcode" style="margin-top: 7px;"></span> +06.84.57.59.76<br>
                                 <span class="gdlr-core-space-shortcode" style="margin-top: 7px;"></span>
                                 <a style="color: #09548c;" href="contact.html">
-                                <span class="__cf_email__"><span class="__cf_email__" data-cfemail="e0838f8e94818394a0898d8d859293898f8ecd8d818c8f95898e85ce838f8d">[email&#160;protected]</span></span>
+                                <span class="__cf_email__"><span class="__cf_email__" data-cfemail="cfaca0a1bbaeacbb8fa6a2a2aabdbca6a0a1e2a2aea3a0baa6a1aae1aca0a2">[email&#160;protected]</span></span>
                                 </a>
                             </p>
                         </div>
@@ -889,9 +844,7 @@ body {
             </div>
             </footer>
         </div>
-    </div>
-
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 (function() {
     var btn = document.getElementById('mobile-menu-btn');
     var menu = document.getElementById('mobile-menu');
