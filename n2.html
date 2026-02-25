@@ -37,10 +37,23 @@ body {
     position: relative;
 }
 
-/* FIX ICÔNES RÉSEAUX */
-.fa-brands {
+/* FIX ICÔNES RÉSEAUX SOCIAUX */
+.fa-brands,
+.fa6b {
     font-family: 'Font Awesome 6 Brands' !important;
     font-weight: 400 !important;
+}
+
+.fa-facebook::before {
+    content: "\f09a" !important;
+}
+
+.fa-instagram::before {
+    content: "\f16d" !important;
+}
+
+.fa-x-twitter::before {
+    content: "\e61b" !important;
 }
 
 /* === CSS MENUS DESKTOP === */
@@ -117,7 +130,7 @@ body {
     position: absolute;
     width: 28px;
     height: 3px;
-    background: #000000;
+    background: #ffffff;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -130,7 +143,7 @@ body {
     position: absolute;
     width: 28px;
     height: 3px;
-    background: #000000;
+    background: #ffffff;
     left: 0;
     transition: all 0.3s;
 }
@@ -139,8 +152,8 @@ body {
 #mobile-menu-btn span::after { top: 9px; }
 
 #mobile-menu-btn.active span { background: transparent; }
-#mobile-menu-btn.active span::before { top: 0; transform: rotate(45deg); background: #000000; }
-#mobile-menu-btn.active span::after { top: 0; transform: rotate(-45deg); background: #000000; }
+#mobile-menu-btn.active span::before { top: 0; transform: rotate(45deg); background: #ffffff; }
+#mobile-menu-btn.active span::after { top: 0; transform: rotate(-45deg); background: #ffffff; }
 
 #mobile-menu {
     position: fixed;
@@ -178,7 +191,7 @@ body {
 #mobile-menu .m-menu > li > a {
     display: block;
     padding: 15px 0;
-    color: #000000 !important;
+    color: #ffffff !important;
     font-size: 20px !important;
     font-weight: 700 !important;
     text-decoration: none;
@@ -205,7 +218,7 @@ body {
 #mobile-menu .sub-menu li a {
     display: block;
     padding: 12px 0 12px 20px !important;
-    color: #000000 !important;
+    color: #ffffff !important;
     font-size: 16px !important;
     font-weight: 400 !important;
 }
@@ -215,7 +228,7 @@ body {
     float: right;
     font-size: 14px;
     transition: transform 0.3s;
-    color: #000000;
+    color: #ffffff;
 }
 
 #mobile-menu .menu-item-has-children.active > a::after {
@@ -523,17 +536,24 @@ body {
             <div class="zurf-top-bar-background"></div>
             <div class="zurf-top-bar-container zurf-container">
                 <div class="zurf-top-bar-container-inner clearfix">
-                    <div class="zurf-top-bar-left zurf-item-pdlr"></div>
+                    <div class="zurf-top-bar-left zurf-item-pdlr">
+                        <div id="lang" style="display: flex; gap: 15px; align-items: center;">
+                            <a href="#" style="text-decoration: none; color: #ffffff; font-size: 14px; font-weight: 500;">🇫🇷 FR</a>
+                            <a href="#" style="text-decoration: none; color: #ffffff; font-size: 14px; font-weight: 500;">🇬🇧 EN</a>
+                            <a href="#" style="text-decoration: none; color: #ffffff; font-size: 14px; font-weight: 500;">🇪🇸 ES</a>
+                            <a href="#" style="text-decoration: none; color: #ffffff; font-size: 14px; font-weight: 500;">🇨🇳 CN</a>
+                        </div>
+                    </div>
                     <div class="zurf-top-bar-right zurf-item-pdlr">
                         <div class="zurf-top-bar-right-text">
                             <i class="fa5s fa5-phone" style="font-size: 15px; color: #ffffff; margin-right: 10px;"></i><span style="font-weight: 500;"> 06.84.57.59.76</span>
                             <i class="fa5s fa5-envelope-open" style="font-size: 15px; color: #ffffff; margin-left: 30px; margin-right: 10px;"></i>
-                            <a href="contact.html"><span class="__cf_email__"><span class="__cf_email__" data-cfemail="4625292832272532062f2b2b2334352f29286b2b272a29332f28236825292b">[email&#160;protected]</span></span></a>
+                            <a href="contact.html"><span class="__cf_email__">contact@immersion-malouine.com</span></a>
                         </div>
                         <div class="zurf-top-bar-right-social">
-                            <a href="https://www.facebook.com/alexandre.roussel.58" target="_blank" class="zurf-top-bar-social-icon" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
-                            <a href="#" target="_blank" class="zurf-top-bar-social-icon" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                            <a href="#" target="_blank" class="zurf-top-bar-social-icon" title="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+                            <a href="https://www.facebook.com/alexandre.roussel.58" target="_blank" class="zurf-top-bar-social-icon" title="Facebook"><i class="fa6b fa6-facebook"></i></a>
+                            <a href="#" target="_blank" class="zurf-top-bar-social-icon" title="Instagram"><i class="fa6b fa6-instagram"></i></a>
+                            <a href="#" target="_blank" class="zurf-top-bar-social-icon" title="X (Twitter)"><i class="fa6b fa6-x-twitter"></i></a>
                         </div>
                     </div>
                 </div>
@@ -616,13 +636,13 @@ body {
                         <div class="zurf-top-bar-right-text">
                             <i class="fa5s fa5-phone" style="font-size: 15px; color: #ffffff; margin-right: 10px;"></i><span style="font-weight: 500;"> 06.84.57.59.76</span>
                             <i class="fa5s fa5-envelope-open" style="font-size: 15px; color: #ffffff; margin-left: 30px; margin-right: 10px;"></i>
-                            <a href="contact.html"><span class="__cf_email__"><span class="__cf_email__" data-cfemail="cfaca0a1bbaeacbb8fa6a2a2aabdbca6a0a1e2a2aea3a0baa6a1aae1aca0a2">[email&#160;protected]</span></span></a>
+                            <a href="contact.html"><span class="__cf_email__">contact@immersion-malouine.com</span></a>
                         </div>
                         
                                 <div class="zurf-top-bar-right-social">
-                                    <a href="https://www.facebook.com/alexandre.roussel.58" target="_blank" class="zurf-top-bar-social-icon" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
-                                    <a href="#" target="_blank" class="zurf-top-bar-social-icon" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                                    <a href="#" target="_blank" class="zurf-top-bar-social-icon" title="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+                                    <a href="https://www.facebook.com/alexandre.roussel.58" target="_blank" class="zurf-top-bar-social-icon" title="Facebook"><i class="fa6b fa6-facebook"></i></a>
+                                    <a href="#" target="_blank" class="zurf-top-bar-social-icon" title="Instagram"><i class="fa6b fa6-instagram"></i></a>
+                                    <a href="#" target="_blank" class="zurf-top-bar-social-icon" title="X (Twitter)"><i class="fa6b fa6-x-twitter"></i></a>
                                 </div> 
                                                             </div>
                         </div>
@@ -816,7 +836,7 @@ body {
                                 <span class="gdlr-core-space-shortcode" style="margin-top: 7px;"></span> +06.84.57.59.76<br>
                                 <span class="gdlr-core-space-shortcode" style="margin-top: 7px;"></span>
                                 <a style="color: #09548c;" href="contact.html">
-                                <span class="__cf_email__"><span class="__cf_email__" data-cfemail="04676b6a70656770446d69696176776d6b6a296965686b716d6a612a676b69">[email&#160;protected]</span></span>
+                                <span class="__cf_email__">contact@immersion-malouine.com</span>
                                 </a>
                             </p>
                         </div>
@@ -837,21 +857,43 @@ body {
         </div>
     </div>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 (function() {
     var btn = document.getElementById('mobile-menu-btn');
     var menu = document.getElementById('mobile-menu');
     
-    if (!btn || !menu) return;
+    if (!btn || !menu) {
+        console.error('Menu burger elements not found!');
+        return;
+    }
     
     btn.addEventListener('click', function(e) {
         e.preventDefault();
         e.stopPropagation();
         this.classList.toggle('active');
         menu.classList.toggle('active');
+        console.log('Menu toggled!', menu.classList.contains('active'));
     });
     
     var menuItems = menu.querySelectorAll('.menu-item-has-children > a');
     menuItems.forEach(function(link) {
         link.addEventListener('click', function(e) {
             e.preventDefault();
+            e.stopPropagation();
+            this.parentElement.classList.toggle('active');
+        });
+    });
+    
+    var realLinks = menu.querySelectorAll('a[href]:not([href="#"])');
+    realLinks.forEach(function(link) {
+        link.addEventListener('click', function() {
+            btn.classList.remove('active');
+            menu.classList.remove('active');
+        });
+    });
+    
+    console.log('Menu burger initialized successfully!');
+})();
+</script>
+</body>
+</html>
