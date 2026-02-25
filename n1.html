@@ -101,7 +101,7 @@ body {
     padding-left: 35px !important;
 }
 
-/* === MENU MOBILE NOIR === */
+/* === MENU MOBILE BLEU TURQUOISE === */
 #mobile-menu-btn {
     width: 40px;
     height: 40px;
@@ -117,7 +117,7 @@ body {
     position: absolute;
     width: 28px;
     height: 3px;
-    background: #2c7b8d;
+    background: #000000;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -130,7 +130,7 @@ body {
     position: absolute;
     width: 28px;
     height: 3px;
-    background: #2c7b8d;
+    background: #000000;
     left: 0;
     transition: all 0.3s;
 }
@@ -139,8 +139,8 @@ body {
 #mobile-menu-btn span::after { top: 9px; }
 
 #mobile-menu-btn.active span { background: transparent; }
-#mobile-menu-btn.active span::before { top: 0; transform: rotate(45deg); background: #ffffff; }
-#mobile-menu-btn.active span::after { top: 0; transform: rotate(-45deg); background: #ffffff; }
+#mobile-menu-btn.active span::before { top: 0; transform: rotate(45deg); background: #000000; }
+#mobile-menu-btn.active span::after { top: 0; transform: rotate(-45deg); background: #000000; }
 
 #mobile-menu {
     position: fixed;
@@ -148,7 +148,7 @@ body {
     left: 0;
     width: 100%;
     height: 100vh;
-    background: #000000;
+    background: #40C4B7;
     transition: transform 0.3s ease;
     overflow-y: auto;
     z-index: 1000000;
@@ -178,7 +178,7 @@ body {
 #mobile-menu .m-menu > li > a {
     display: block;
     padding: 15px 0;
-    color: #ffffff !important;
+    color: #000000 !important;
     font-size: 20px !important;
     font-weight: 700 !important;
     text-decoration: none;
@@ -205,7 +205,7 @@ body {
 #mobile-menu .sub-menu li a {
     display: block;
     padding: 12px 0 12px 20px !important;
-    color: #cccccc !important;
+    color: #000000 !important;
     font-size: 16px !important;
     font-weight: 400 !important;
 }
@@ -215,10 +215,29 @@ body {
     float: right;
     font-size: 14px;
     transition: transform 0.3s;
+    color: #000000;
 }
 
 #mobile-menu .menu-item-has-children.active > a::after {
     transform: rotate(180deg);
+}
+
+/* TOP BAR MOBILE BLEU TURQUOISE */
+.zurf-mobile-header-wrap .zurf-top-bar {
+    background: #40C4B7 !important;
+}
+
+.zurf-mobile-header-wrap .zurf-top-bar-background {
+    background: #40C4B7 !important;
+}
+
+/* BANDEAU LOGO + BURGER BLEU TURQUOISE */
+.zurf-mobile-header {
+    background: #40C4B7 !important;
+}
+
+.zurf-mobile-header .zurf-mobile-header-container {
+    background: #40C4B7 !important;
 }
 
 /* BANDEAU */
@@ -492,6 +511,19 @@ body {
         margin-right: -20px;
     }
 }
+/* FORCER TRAITS BURGER BLANCS - PRIORITÉ MAXIMALE */
+#mobile-menu-btn span,
+#mobile-menu-btn span::before,
+#mobile-menu-btn span::after {
+    background-color: #ffffff !important;
+    background: #ffffff !important;
+}
+
+#mobile-menu-btn.active span::before,
+#mobile-menu-btn.active span::after {
+    background-color: #ffffff !important;
+    background: #ffffff !important;
+}
 </style>
 
 </head>
@@ -509,7 +541,7 @@ body {
                         <div class="zurf-top-bar-right-text">
                             <i class="fa5s fa5-phone" style="font-size: 15px; color: #ffffff; margin-right: 10px;"></i><span style="font-weight: 500;"> 06.84.57.59.76</span>
                             <i class="fa5s fa5-envelope-open" style="font-size: 15px; color: #ffffff; margin-left: 30px; margin-right: 10px;"></i>
-                            <a href="contact.html"><span class="__cf_email__">contact@immersion-malouine.com</span></a>
+                            <a href="contact.html"><span class="__cf_email__"><span class="__cf_email__" data-cfemail="b2d1dddcc6d3d1c6f2dbdfdfd7c0c1dbdddc9fdfd3deddc7dbdcd79cd1dddf">[email&#160;protected]</span></span></a>
                         </div>
                         <div class="zurf-top-bar-right-social">
                             <a href="https://www.facebook.com/alexandre.roussel.58" target="_blank" class="zurf-top-bar-social-icon" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
@@ -531,7 +563,7 @@ body {
                 <div class="zurf-mobile-menu-right">
                     <div class="zurf-mobile-menu">
                         <button id="mobile-menu-btn">
-                            <span></span>
+                            <span style="background: #ffffff !important;"></span>
                         </button>
                     </div>
                 </div>
@@ -597,7 +629,7 @@ body {
                         <div class="zurf-top-bar-right-text">
                             <i class="fa5s fa5-phone" style="font-size: 15px; color: #ffffff; margin-right: 10px;"></i><span style="font-weight: 500;"> 06.84.57.59.76</span>
                             <i class="fa5s fa5-envelope-open" style="font-size: 15px; color: #ffffff; margin-left: 30px; margin-right: 10px;"></i>
-                            <a href="contact.html"><span class="__cf_email__">contact@immersion-malouine.com</span></a>
+                            <a href="contact.html"><span class="__cf_email__"><span class="__cf_email__" data-cfemail="f2919d9c86939186b29b9f9f9780819b9d9cdf9f939e9d879b9c97dc919d9f">[email&#160;protected]</span></span></a>
                         </div>
                         
                                 <div class="zurf-top-bar-right-social">
@@ -793,7 +825,7 @@ body {
                                 <span class="gdlr-core-space-shortcode" style="margin-top: 7px;"></span> +06.84.57.59.76<br>
                                 <span class="gdlr-core-space-shortcode" style="margin-top: 7px;"></span>
                                 <a style="color: #09548c;" href="contact.html">
-                                <span class="__cf_email__">contact@immersion-malouine.com</span>
+                                <span class="__cf_email__"><span class="__cf_email__" data-cfemail="cfaca0a1bbaeacbb8fa6a2a2aabdbca6a0a1e2a2aea3a0baa6a1aae1aca0a2">[email&#160;protected]</span></span>
                                 </a>
                             </p>
                         </div>
@@ -812,20 +844,22 @@ body {
             </div>
             </footer>
         </div>
-    </div>
-
 <script>
 (function() {
     var btn = document.getElementById('mobile-menu-btn');
     var menu = document.getElementById('mobile-menu');
     
-    if (!btn || !menu) return;
+    if (!btn || !menu) {
+        console.error('Menu burger elements not found!');
+        return;
+    }
     
     btn.addEventListener('click', function(e) {
         e.preventDefault();
         e.stopPropagation();
         this.classList.toggle('active');
         menu.classList.toggle('active');
+        console.log('Menu toggled!', menu.classList.contains('active'));
     });
     
     var menuItems = menu.querySelectorAll('.menu-item-has-children > a');
@@ -844,6 +878,8 @@ body {
             menu.classList.remove('active');
         });
     });
+    
+    console.log('Menu burger initialized successfully!');
 })();
 </script>
 </body>
