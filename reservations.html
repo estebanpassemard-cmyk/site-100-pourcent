@@ -614,7 +614,7 @@ body {
                         <div class="zurf-top-bar-right-text">
                             <i class="fa5s fa5-phone" style="font-size: 15px; color: #ffffff; margin-right: 10px;"></i><span style="font-weight: 500;"> 06.84.57.59.76</span>
                             <i class="fa5s fa5-envelope-open" style="font-size: 15px; color: #ffffff; margin-left: 30px; margin-right: 10px;"></i>
-                            <a href="contact.html"><span class="contact@immersion-malouine.com"><span class="contact@immersion-malouine.com" data-cfemail="f3909c9d87929087b39a9e9e9681809a9c9dde9e929f9c869a9d96dd909c9e">[email&#160;protected]</span></span></a>
+                            <a href="mailto:contact@immersion-malouine.com" style="color: inherit;">contact@immersion-malouine.com</a>
                         </div>
                         <div class="zurf-top-bar-right-social">
                             <a href="https://www.facebook.com/alexandre.roussel.58" target="_blank" class="zurf-top-bar-social-icon" title="Facebook" style="margin-left: 15px; display: inline-block; vertical-align: middle;">
@@ -708,7 +708,7 @@ body {
                         <div class="zurf-top-bar-right-text">
                             <i class="fa5s fa5-phone" style="font-size: 15px; color: #ffffff; margin-right: 10px;"></i><span style="font-weight: 500;"> 06.84.57.59.76</span>
                             <i class="fa5s fa5-envelope-open" style="font-size: 15px; color: #ffffff; margin-left: 30px; margin-right: 10px;"></i>
-                            <a href="contact.html"><span class="contact@immersion-malouine.com"><span class="contact@immersion-malouine.com" data-cfemail="e784888993868493a78e8a8a8295948e8889ca8a868b88928e8982c984888a">[email&#160;protected]</span></span></a>
+                            <a href="mailto:contact@immersion-malouine.com" style="color: inherit;">contact@immersion-malouine.com</a>
                         </div>
                         
                                 <div class="zurf-top-bar-right-social">
@@ -821,8 +821,17 @@ body {
             <div style="max-width: 900px; margin: 0 auto; padding: 50px 40px; background: #f9f9f9; border-radius: 15px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
                 <h3 style="font-size: 32px; font-weight: 600; color: #222222; text-align: center; margin-bottom: 40px;">📅 Système de réservation</h3>
                 
-                <form id="booking-form" style="display: flex; flex-direction: column; gap: 25px;">
+                <form id="booking-form" action="https://formspree.io/f/Sf8vz2fEW.M6n7Y" method="POST" style="display: flex; flex-direction: column; gap: 25px;">
                     
+                    
+                    <!-- Champs cachés pour Formspree -->
+                    <input type="hidden" name="_subject" value="Nouvelle demande de réservation - Immersion Malouine">
+                    <input type="hidden" name="_replyto" id="hidden-email">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="activite_selectionnee" id="hidden-activity">
+                    <input type="hidden" name="date_selectionnee" id="hidden-date">
+                    <input type="hidden" name="nombre_participants" id="hidden-participants">
+
                     <!-- CHOIX DE L'ACTIVITÉ -->
                     <div>
                         <label style="display: block; font-size: 16px; font-weight: 600; color: #222222; margin-bottom: 10px;">
@@ -1038,23 +1047,14 @@ body {
     
     // Soumission formulaire
     form.addEventListener('submit', function(e) {
-        e.preventDefault();
+        // Remplir les champs cachés avant envoi
+        document.getElementById('hidden-email').value = form.email.value;
+        document.getElementById('hidden-activity').value = activitySelect.options[activitySelect.selectedIndex].text;
+        document.getElementById('hidden-date').value = dateInput.value;
+        document.getElementById('hidden-participants').value = participantsInput.value;
         
-        // Simulation envoi
-        form.style.display = 'none';
-        confirmationMsg.style.display = 'block';
-        
-        // En production, ici on enverrait les données à Alexandre
-        console.log('Demande de réservation:', {
-            activite: activitySelect.options[activitySelect.selectedIndex].text,
-            date: dateInput.value,
-            participants: participantsInput.value,
-            nom: form.nom.value,
-            prenom: form.prenom.value,
-            email: form.email.value,
-            telephone: form.telephone.value,
-            message: form.message.value
-        });
+        // Le formulaire s'envoie automatiquement vers Formspree
+        // Pas besoin de e.preventDefault()
     });
     
     
@@ -1184,7 +1184,7 @@ body {
                                 <span class="gdlr-core-space-shortcode" style="margin-top: 7px;"></span> +06.84.57.59.76<br>
                                 <span class="gdlr-core-space-shortcode" style="margin-top: 7px;"></span>
                                 <a style="color: #09548c;" href="contact.html">
-                                <span class="contact@immersion-malouine.com"><span class="contact@immersion-malouine.com" data-cfemail="60030f0e1401031420090d0d051213090f0e4d0d010c0f15090e054e030f0d">[email&#160;protected]</span></span>
+                                <span class="contact@immersion-malouine.com"><span class="contact@immersion-malouine.com" data-cfemail="60030f0e1401031420090d0d051213090f0e4d0d010c0f15090e054e030f0d">contact@immersion-malouine.com</span></span>
                                 </a>
                             </p>
                         </div>
