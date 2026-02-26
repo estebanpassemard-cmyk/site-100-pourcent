@@ -551,7 +551,7 @@ body {
                         <div class="zurf-top-bar-right-text">
                             <i class="fa5s fa5-phone" style="font-size: 15px; color: #ffffff; margin-right: 10px;"></i><span style="font-weight: 500;"> 06.84.57.59.76</span>
                             <i class="fa5s fa5-envelope-open" style="font-size: 15px; color: #ffffff; margin-left: 30px; margin-right: 10px;"></i>
-                            <a href="contact.html"><span class="__cf_email__"><span class="__cf_email__" data-cfemail="b6d5d9d8c2d7d5c2f6dfdbdbd3c4c5dfd9d89bdbd7dad9c3dfd8d398d5d9db">[email&#160;protected]</span></span></a>
+                            <a href="contact.html"><span class="__cf_email__"><span class="__cf_email__" data-cfemail="3f5c50514b5e5c4b7f5652525a4d4c56505112525e53504a56515a115c5052">[email&#160;protected]</span></span></a>
                         </div>
                         <div class="zurf-top-bar-right-social">
                             <a href="https://www.facebook.com/alexandre.roussel.58" target="_blank" class="zurf-top-bar-social-icon" title="Facebook" style="margin-left: 15px; display: inline-block; vertical-align: middle;">
@@ -645,7 +645,7 @@ body {
                         <div class="zurf-top-bar-right-text">
                             <i class="fa5s fa5-phone" style="font-size: 15px; color: #ffffff; margin-right: 10px;"></i><span style="font-weight: 500;"> 06.84.57.59.76</span>
                             <i class="fa5s fa5-envelope-open" style="font-size: 15px; color: #ffffff; margin-left: 30px; margin-right: 10px;"></i>
-                            <a href="contact.html"><span class="__cf_email__"><span class="__cf_email__" data-cfemail="e5868a8b91848691a58c88888097968c8a8bc88884898a908c8b80cb868a88">[email&#160;protected]</span></span></a>
+                            <a href="contact.html"><span class="__cf_email__"><span class="__cf_email__" data-cfemail="2b4844455f4a485f6b4246464e595842444506464a47445e42454e05484446">[email&#160;protected]</span></span></a>
                         </div>
                         
                                 <div class="zurf-top-bar-right-social">
@@ -854,7 +854,7 @@ body {
                                 <span class="gdlr-core-space-shortcode" style="margin-top: 7px;"></span> +06.84.57.59.76<br>
                                 <span class="gdlr-core-space-shortcode" style="margin-top: 7px;"></span>
                                 <a style="color: #09548c;" href="contact.html">
-                                <span class="__cf_email__"><span class="__cf_email__" data-cfemail="70131f1e0411130430191d1d150203191f1e5d1d111c1f05191e155e131f1d">[email&#160;protected]</span></span>
+                                <span class="__cf_email__"><span class="__cf_email__" data-cfemail="42212d2c36232136022b2f2f2730312b2d2c6f2f232e2d372b2c276c212d2f">[email&#160;protected]</span></span>
                                 </a>
                             </p>
                         </div>
@@ -875,7 +875,7 @@ body {
         </div>
     </div>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 (function() {
     var btn = document.getElementById('mobile-menu-btn');
     var menu = document.getElementById('mobile-menu');
@@ -898,4 +898,20 @@ body {
         link.addEventListener('click', function(e) {
             e.preventDefault();
             e.stopPropagation();
-            this.parentElemen
+            this.parentElement.classList.toggle('active');
+        });
+    });
+    
+    var realLinks = menu.querySelectorAll('a[href]:not([href="#"])');
+    realLinks.forEach(function(link) {
+        link.addEventListener('click', function() {
+            btn.classList.remove('active');
+            menu.classList.remove('active');
+        });
+    });
+    
+    console.log('Menu burger initialized successfully!');
+})();
+</script>
+</body>
+</html>
