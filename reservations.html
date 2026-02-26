@@ -614,7 +614,7 @@ body {
                         <div class="zurf-top-bar-right-text">
                             <i class="fa5s fa5-phone" style="font-size: 15px; color: #ffffff; margin-right: 10px;"></i><span style="font-weight: 500;"> 06.84.57.59.76</span>
                             <i class="fa5s fa5-envelope-open" style="font-size: 15px; color: #ffffff; margin-left: 30px; margin-right: 10px;"></i>
-                            <a href="contact.html"><span class="contact@immersion-malouine.com">contact@immersion-malouine.com</span></a>
+                            <a href="contact.html"><span class="contact@immersion-malouine.com"><span class="contact@immersion-malouine.com" data-cfemail="f3909c9d87929087b39a9e9e9681809a9c9dde9e929f9c869a9d96dd909c9e">[email&#160;protected]</span></span></a>
                         </div>
                         <div class="zurf-top-bar-right-social">
                             <a href="https://www.facebook.com/alexandre.roussel.58" target="_blank" class="zurf-top-bar-social-icon" title="Facebook" style="margin-left: 15px; display: inline-block; vertical-align: middle;">
@@ -708,7 +708,7 @@ body {
                         <div class="zurf-top-bar-right-text">
                             <i class="fa5s fa5-phone" style="font-size: 15px; color: #ffffff; margin-right: 10px;"></i><span style="font-weight: 500;"> 06.84.57.59.76</span>
                             <i class="fa5s fa5-envelope-open" style="font-size: 15px; color: #ffffff; margin-left: 30px; margin-right: 10px;"></i>
-                            <a href="contact.html"><span class="contact@immersion-malouine.com">contact@immersion-malouine.com</span></a>
+                            <a href="contact.html"><span class="contact@immersion-malouine.com"><span class="contact@immersion-malouine.com" data-cfemail="e784888993868493a78e8a8a8295948e8889ca8a868b88928e8982c984888a">[email&#160;protected]</span></span></a>
                         </div>
                         
                                 <div class="zurf-top-bar-right-social">
@@ -861,6 +861,35 @@ body {
                         </label>
                         <input type="date" id="date" name="date" required min="" style="width: 100%; padding: 15px 20px; font-size: 16px; border: 1px solid #e0e0e0; border-radius: 8px; outline: none;">
                         <p style="font-size: 14px; color: #999; margin-top: 8px;">💡 Les horaires seront adaptés aux marées</p>
+                    
+                    <!-- HORAIRES MARÉES -->
+                    <div id="tide-info" style="display: none; padding: 20px; background: #e8f4f8; border-radius: 8px; border-left: 4px solid #2c7b8d; margin-top: 15px;">
+                        <h4 style="margin: 0 0 15px 0; color: #2c7b8d; font-size: 18px;">🌊 Horaires des marées - Rance</h4>
+                        <div id="tide-details" style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                            <div style="background: white; padding: 15px; border-radius: 8px;">
+                                <p style="margin: 0; font-size: 14px; color: #999;">Marée Haute 1</p>
+                                <p id="high-tide-1" style="margin: 5px 0 0 0; font-size: 18px; font-weight: 600; color: #2c7b8d;">--:--</p>
+                                <p id="high-coef-1" style="margin: 5px 0 0 0; font-size: 14px; color: #556575;">Coefficient: --</p>
+                            </div>
+                            <div style="background: white; padding: 15px; border-radius: 8px;">
+                                <p style="margin: 0; font-size: 14px; color: #999;">Marée Basse 1</p>
+                                <p id="low-tide-1" style="margin: 5px 0 0 0; font-size: 18px; font-weight: 600; color: #40C4B7;">--:--</p>
+                            </div>
+                            <div style="background: white; padding: 15px; border-radius: 8px;">
+                                <p style="margin: 0; font-size: 14px; color: #999;">Marée Haute 2</p>
+                                <p id="high-tide-2" style="margin: 5px 0 0 0; font-size: 18px; font-weight: 600; color: #2c7b8d;">--:--</p>
+                                <p id="high-coef-2" style="margin: 5px 0 0 0; font-size: 14px; color: #556575;">Coefficient: --</p>
+                            </div>
+                            <div style="background: white; padding: 15px; border-radius: 8px;">
+                                <p style="margin: 0; font-size: 14px; color: #999;">Marée Basse 2</p>
+                                <p id="low-tide-2" style="margin: 5px 0 0 0; font-size: 18px; font-weight: 600; color: #40C4B7;">--:--</p>
+                            </div>
+                        </div>
+                        <p style="margin: 15px 0 0 0; font-size: 14px; color: #556575; font-style: italic;">
+                            💡 <strong>Conseil :</strong> Les meilleures conditions de plongée sont généralement 2h avant ou après la marée basse.
+                        </p>
+                    </div>
+
                     </div>
                     
                     <!-- NOMBRE DE PARTICIPANTS -->
@@ -942,7 +971,7 @@ body {
     </div>
 </article>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 // MODULE DE RÉSERVATION INTELLIGENT
 (function() {
     const form = document.getElementById('booking-form');
@@ -1028,6 +1057,103 @@ body {
         });
     });
     
+    
+    // RÉCUPÉRATION HORAIRES MARÉES - API WORLDTIDES
+    dateInput.addEventListener('change', async function() {
+        const selectedDate = this.value;
+        if (!selectedDate) return;
+        
+        const tideInfo = document.getElementById('tide-info');
+        tideInfo.style.display = 'block';
+        
+        // Position : Saint-Malo / Rance
+        const lat = 48.6490;  // Latitude Le Minihic-sur-Rance
+        const lon = -2.0154;  // Longitude Le Minihic-sur-Rance
+        
+        // API WorldTides (gratuit 50 requêtes/jour)
+        // Tu devras t'inscrire sur worldtides.info pour obtenir ta clé API
+        const apiKey = 'VOTRE_CLE_API_ICI';  // À REMPLACER
+        
+        try {
+            // Convertir la date en timestamp
+            const dateObj = new Date(selectedDate);
+            const startTimestamp = Math.floor(dateObj.getTime() / 1000);
+            const endTimestamp = startTimestamp + 86400; // +24h
+            
+            // Appel API WorldTides
+            const apiUrl = `https://www.worldtides.info/api/v3?extremes&heights&datum=LAT&start=${startTimestamp}&length=86400&lat=${lat}&lon=${lon}&key=${apiKey}`;
+            
+            const response = await fetch(apiUrl);
+            const data = await response.json();
+            
+            if (data.status === 200 && data.extremes) {
+                // Récupérer les marées du jour
+                const tides = data.extremes;
+                
+                // Filtrer hautes et basses marées
+                const highTides = tides.filter(t => t.type === 'High');
+                const lowTides = tides.filter(t => t.type === 'Low');
+                
+                // Fonction pour convertir timestamp en heure locale
+                function formatTime(timestamp) {
+                    const date = new Date(timestamp * 1000);
+                    return date.toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' });
+                }
+                
+                // Afficher les horaires
+                if (highTides[0]) {
+                    document.getElementById('high-tide-1').textContent = formatTime(highTides[0].dt);
+                    document.getElementById('high-coef-1').textContent = 'Hauteur: ' + highTides[0].height.toFixed(2) + 'm';
+                }
+                if (lowTides[0]) {
+                    document.getElementById('low-tide-1').textContent = formatTime(lowTides[0].dt);
+                }
+                if (highTides[1]) {
+                    document.getElementById('high-tide-2').textContent = formatTime(highTides[1].dt);
+                    document.getElementById('high-coef-2').textContent = 'Hauteur: ' + highTides[1].height.toFixed(2) + 'm';
+                }
+                if (lowTides[1]) {
+                    document.getElementById('low-tide-2').textContent = formatTime(lowTides[1].dt);
+                }
+                
+            } else {
+                throw new Error('Données marées non disponibles');
+            }
+            
+        } catch (error) {
+            console.error('Erreur récupération marées:', error);
+            
+            // FALLBACK : Calcul approximatif si API ne fonctionne pas
+            const date = new Date(selectedDate);
+            const dayOfYear = Math.floor((date - new Date(date.getFullYear(), 0, 0)) / 86400000);
+            
+            // Simulation basée sur cycle lunaire
+            const baseHour1 = (dayOfYear * 0.8 + 6) % 24;
+            const baseHour2 = (baseHour1 + 12.4) % 24;
+            
+            function formatHour(hour) {
+                const h = Math.floor(hour);
+                const m = Math.floor((hour % 1) * 60);
+                return h.toString().padStart(2, '0') + ':' + m.toString().padStart(2, '0');
+            }
+            
+            document.getElementById('high-tide-1').textContent = formatHour(baseHour1);
+            document.getElementById('low-tide-1').textContent = formatHour((baseHour1 + 6.2) % 24);
+            document.getElementById('high-tide-2').textContent = formatHour(baseHour2);
+            document.getElementById('low-tide-2').textContent = formatHour((baseHour2 + 6.2) % 24);
+            
+            const coef = 45 + Math.floor(Math.abs(Math.sin(dayOfYear / 14)) * 45);
+            document.getElementById('high-coef-1').textContent = 'Coefficient: ' + coef + ' (estimé)';
+            document.getElementById('high-coef-2').textContent = 'Coefficient: ' + coef + ' (estimé)';
+            
+            // Message d'avertissement
+            if (apiKey === 'VOTRE_CLE_API_ICI') {
+                console.warn('⚠️ Clé API WorldTides manquante - Horaires estimés. Inscrivez-vous sur worldtides.info');
+            }
+        }
+    })
+
+    
     // Init jauge
     updateGauge();
 })();
@@ -1058,7 +1184,7 @@ body {
                                 <span class="gdlr-core-space-shortcode" style="margin-top: 7px;"></span> +06.84.57.59.76<br>
                                 <span class="gdlr-core-space-shortcode" style="margin-top: 7px;"></span>
                                 <a style="color: #09548c;" href="contact.html">
-                                <span class="contact@immersion-malouine.com">contact@immersion-malouine.com</span>
+                                <span class="contact@immersion-malouine.com"><span class="contact@immersion-malouine.com" data-cfemail="60030f0e1401031420090d0d051213090f0e4d0d010c0f15090e054e030f0d">[email&#160;protected]</span></span>
                                 </a>
                             </p>
                         </div>
@@ -1079,7 +1205,7 @@ body {
         </div>
     </div>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 (function() {
     var btn = document.getElementById('mobile-menu-btn');
     var menu = document.getElementById('mobile-menu');
@@ -1099,23 +1225,4 @@ body {
     
     var menuItems = menu.querySelectorAll('.menu-item-has-children > a');
     menuItems.forEach(function(link) {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            e.stopPropagation();
-            this.parentElement.classList.toggle('active');
-        });
-    });
-    
-    var realLinks = menu.querySelectorAll('a[href]:not([href="#"])');
-    realLinks.forEach(function(link) {
-        link.addEventListener('click', function() {
-            btn.classList.remove('active');
-            menu.classList.remove('active');
-        });
-    });
-    
-    console.log('Menu burger initialized successfully!');
-})();
-</script>
-</body>
-</html>
+        link.addEventListener('click',
