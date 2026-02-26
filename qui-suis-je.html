@@ -541,7 +541,7 @@ body {
                         <div class="zurf-top-bar-right-text">
                             <i class="fa5s fa5-phone" style="font-size: 15px; color: #ffffff; margin-right: 10px;"></i><span style="font-weight: 500;"> 06.84.57.59.76</span>
                             <i class="fa5s fa5-envelope-open" style="font-size: 15px; color: #ffffff; margin-left: 30px; margin-right: 10px;"></i>
-                            <a href="contact.html"><span class="contact@immersion-malouine.com"><span class="__cf_email__" data-cfemail="2f4c40415b4e4c5b6f4642424a5d5c46404102424e43405a46414a014c4042">[email&#160;protected]</span></span></a>
+                            <a href="contact.html"><span class="contact@immersion-malouine.com"><span class="contact@immersion-malouine.com" data-cfemail="b2d1dddcc6d3d1c6f2dbdfdfd7c0c1dbdddc9fdfd3deddc7dbdcd79cd1dddf">[email&#160;protected]</span></span></a>
                         </div>
                         <div class="zurf-top-bar-right-social">
                             <a href="https://www.facebook.com/alexandre.roussel.58" target="_blank" class="zurf-top-bar-social-icon" title="Facebook" style="margin-left: 15px; display: inline-block; vertical-align: middle;">
@@ -609,7 +609,7 @@ body {
                 <a href="#">Infos</a>
                 <ul class="sub-menu">
                     <li class="menu-item"><a href="itineraire.html">Itinéraire</a></li>
-                    <li class="menu-item"><a href="qui-suis-je?.html">Qui suis-je ?</a></li>
+                    <li class="menu-item"><a href="qui-suis-je.html">Qui suis-je ?</a></li>
                 </ul>
             </li>
             <li class="menu-item"><a href="contact.html">Contact</a></li>
@@ -635,7 +635,7 @@ body {
                         <div class="zurf-top-bar-right-text">
                             <i class="fa5s fa5-phone" style="font-size: 15px; color: #ffffff; margin-right: 10px;"></i><span style="font-weight: 500;"> 06.84.57.59.76</span>
                             <i class="fa5s fa5-envelope-open" style="font-size: 15px; color: #ffffff; margin-left: 30px; margin-right: 10px;"></i>
-                            <a href="contact.html"><span class="contact@immersion-malouine.com"><span class="__cf_email__" data-cfemail="b3d0dcddc7d2d0c7f3dadeded6c1c0dadcdd9eded2dfdcc6daddd69dd0dcde">[email&#160;protected]</span></span></a>
+                            <a href="contact.html"><span class="contact@immersion-malouine.com"><span class="contact@immersion-malouine.com" data-cfemail="f2919d9c86939186b29b9f9f9780819b9d9cdf9f939e9d879b9c97dc919d9f">[email&#160;protected]</span></span></a>
                         </div>
                         
                                 <div class="zurf-top-bar-right-social">
@@ -696,7 +696,7 @@ body {
                                         <a href="#" class="sf-with-ul-pre">Infos</a>
                                         <ul class="sub-menu">
                                             <li class="menu-item"><a href="itineraire.html">Itinéraire</a></li>
-                                            <li class="menu-item"><a href="qui-suis-je?.html">Qui suis-je ?</a></li>
+                                            <li class="menu-item"><a href="qui-suis-je.html">Qui suis-je ?</a></li>
                                         </ul>
                                         </li>
                                         <li class="menu-item zurf-normal-menu"><a href="contact.html">Contact</a></li>
@@ -743,7 +743,6 @@ body {
             <div class="content-with-photo">
                 <div class="text-column">
                     
-                    <!-- INTRO EN GRAS ET ÉMERAUDE -->
                     <p style="font-weight: 600; color: #40C4B7; font-size: 18px; margin-bottom: 30px;">
                         Votre Guide : Alexandre Roussel<br>
                         Instructeur DEJEPS E4 & PADI – Fondateur d'Immersion Malouine
@@ -788,7 +787,6 @@ body {
                 </div>
             </div>
             
-            <!-- FOND VAGUES -->
             <div class="waves-section">
                 <span class="gdlr-core-space-shortcode" style="margin-top: 30px;"></span>
                 <h4 class="wp-block-heading"><strong>Le mot d'Alexandre</strong></h4>
@@ -824,7 +822,7 @@ body {
                                 <span class="gdlr-core-space-shortcode" style="margin-top: 7px;"></span> +06.84.57.59.76<br>
                                 <span class="gdlr-core-space-shortcode" style="margin-top: 7px;"></span>
                                 <a style="color: #09548c;" href="contact.html">
-                                <span class="contact@immersion-malouine.com"><span class="__cf_email__" data-cfemail="61020e0f1500021521080c0c041312080e0f4c0c000d0e14080f044f020e0c">[email&#160;protected]</span></span>
+                                <span class="contact@immersion-malouine.com"><span class="contact@immersion-malouine.com" data-cfemail="cfaca0a1bbaeacbb8fa6a2a2aabdbca6a0a1e2a2aea3a0baa6a1aae1aca0a2">[email&#160;protected]</span></span>
                                 </a>
                             </p>
                         </div>
@@ -845,7 +843,7 @@ body {
         </div>
     </div>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 (function() {
     var btn = document.getElementById('mobile-menu-btn');
     var menu = document.getElementById('mobile-menu');
@@ -868,4 +866,20 @@ body {
         link.addEventListener('click', function(e) {
             e.preventDefault();
             e.stopPropagation();
-            this.parentEleme
+            this.parentElement.classList.toggle('active');
+        });
+    });
+    
+    var realLinks = menu.querySelectorAll('a[href]:not([href="#"])');
+    realLinks.forEach(function(link) {
+        link.addEventListener('click', function() {
+            btn.classList.remove('active');
+            menu.classList.remove('active');
+        });
+    });
+    
+    console.log('Menu burger initialized successfully!');
+})();
+</script>
+</body>
+</html>
