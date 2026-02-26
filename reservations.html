@@ -524,6 +524,79 @@ body {
     background-color: #ffffff !important;
     background: #ffffff !important;
 }
+
+/* === RESPONSIVE MOBILE RÉSERVATIONS === */
+@media (max-width: 768px) {
+    /* Formulaire réservation mobile */
+    #booking-form > div > div[style*="display: flex"] {
+        flex-direction: column !important;
+    }
+    
+    /* Inputs côte à côte deviennent empilés */
+    #booking-form input[type="text"],
+    #booking-form input[type="email"],
+    #booking-form input[type="tel"] {
+        width: 100% !important;
+    }
+    
+    /* Module réservation */
+    .zurf-single-article-content > div[style*="max-width: 900px"] {
+        padding: 30px 20px !important;
+    }
+    
+    /* Titre */
+    .zurf-single-article-content h3 {
+        font-size: 24px !important;
+    }
+    
+    /* Select et labels */
+    #booking-form label {
+        font-size: 15px !important;
+    }
+    
+    #booking-form select,
+    #booking-form input,
+    #booking-form textarea {
+        font-size: 16px !important;
+        padding: 12px 15px !important;
+    }
+    
+    /* Boutons participants */
+    #minus-btn, #plus-btn {
+        width: 40px !important;
+        height: 40px !important;
+        font-size: 20px !important;
+    }
+    
+    #participants {
+        width: 70px !important;
+        padding: 10px !important;
+        font-size: 18px !important;
+    }
+    
+    /* Bouton submit */
+    #booking-form button[type="submit"] {
+        padding: 15px 30px !important;
+        font-size: 16px !important;
+    }
+    
+    /* Messages info */
+    #booking-form > div > div[style*="padding: 20px"] p {
+        font-size: 14px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .zurf-single-article-content h3 {
+        font-size: 20px !important;
+    }
+    
+    #booking-form select,
+    #booking-form input {
+        font-size: 14px !important;
+    }
+}
+
 </style>
 
 </head>
@@ -541,7 +614,7 @@ body {
                         <div class="zurf-top-bar-right-text">
                             <i class="fa5s fa5-phone" style="font-size: 15px; color: #ffffff; margin-right: 10px;"></i><span style="font-weight: 500;"> 06.84.57.59.76</span>
                             <i class="fa5s fa5-envelope-open" style="font-size: 15px; color: #ffffff; margin-left: 30px; margin-right: 10px;"></i>
-                            <a href="contact.html"><span class="contact@immersion-malouine.com"><span class="contact@immersion-malouine.com" data-cfemail="b2d1dddcc6d3d1c6f2dbdfdfd7c0c1dbdddc9fdfd3deddc7dbdcd79cd1dddf">[email&#160;protected]</span></span></a>
+                            <a href="contact.html"><span class="contact@immersion-malouine.com">contact@immersion-malouine.com</span></a>
                         </div>
                         <div class="zurf-top-bar-right-social">
                             <a href="https://www.facebook.com/alexandre.roussel.58" target="_blank" class="zurf-top-bar-social-icon" title="Facebook" style="margin-left: 15px; display: inline-block; vertical-align: middle;">
@@ -635,7 +708,7 @@ body {
                         <div class="zurf-top-bar-right-text">
                             <i class="fa5s fa5-phone" style="font-size: 15px; color: #ffffff; margin-right: 10px;"></i><span style="font-weight: 500;"> 06.84.57.59.76</span>
                             <i class="fa5s fa5-envelope-open" style="font-size: 15px; color: #ffffff; margin-left: 30px; margin-right: 10px;"></i>
-                            <a href="contact.html"><span class="contact@immersion-malouine.com"><span class="contact@immersion-malouine.com" data-cfemail="f2919d9c86939186b29b9f9f9780819b9d9cdf9f939e9d879b9c97dc919d9f">[email&#160;protected]</span></span></a>
+                            <a href="contact.html"><span class="contact@immersion-malouine.com">contact@immersion-malouine.com</span></a>
                         </div>
                         
                                 <div class="zurf-top-bar-right-social">
@@ -985,7 +1058,7 @@ body {
                                 <span class="gdlr-core-space-shortcode" style="margin-top: 7px;"></span> +06.84.57.59.76<br>
                                 <span class="gdlr-core-space-shortcode" style="margin-top: 7px;"></span>
                                 <a style="color: #09548c;" href="contact.html">
-                                <span class="contact@immersion-malouine.com"><span class="contact@immersion-malouine.com" data-cfemail="cfaca0a1bbaeacbb8fa6a2a2aabdbca6a0a1e2a2aea3a0baa6a1aae1aca0a2">[email&#160;protected]</span></span>
+                                <span class="contact@immersion-malouine.com">contact@immersion-malouine.com</span>
                                 </a>
                             </p>
                         </div>
