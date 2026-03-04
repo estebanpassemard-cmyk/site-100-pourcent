@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
-    <title>Immersion Malouine</title>
+    <title>Itinéraire - Immersion Malouine</title>
 
     <link rel="preload" data-rocket-preload="" as="image" href="images/scuba-hero-bg.jpg" fetchpriority="high">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -35,6 +35,12 @@ html, body {
 
 body {
     position: relative;
+}
+
+/* FIX ICÔNES RÉSEAUX */
+.fa-brands {
+    font-family: 'Font Awesome 6 Brands' !important;
+    font-weight: 400 !important;
 }
 
 /* === CSS MENUS DESKTOP === */
@@ -107,42 +113,34 @@ body {
 }
 
 #mobile-menu-btn span {
-    display: block !important;
-    position: absolute !important;
-    width: 28px !important;
-    height: 3px !important;
-    background: #ffffff !important;
-    top: 50% !important;
-    left: 50% !important;
-    transform: translate(-50%, -50%) !important;
-    transition: all 0.3s !important;
+    display: block;
+    position: absolute;
+    width: 28px;
+    height: 3px;
+    background: #000000;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.3s;
 }
 
 #mobile-menu-btn span::before,
 #mobile-menu-btn span::after {
-    content: '' !important;
-    position: absolute !important;
-    width: 28px !important;
-    height: 3px !important;
-    background: #ffffff !important;
-    left: 0 !important;
-    transition: all 0.3s !important;
+    content: '';
+    position: absolute;
+    width: 28px;
+    height: 3px;
+    background: #000000;
+    left: 0;
+    transition: all 0.3s;
 }
 
-#mobile-menu-btn span::before { top: -9px !important; }
-#mobile-menu-btn span::after { top: 9px !important; }
+#mobile-menu-btn span::before { top: -9px; }
+#mobile-menu-btn span::after { top: 9px; }
 
-#mobile-menu-btn.active span { background: transparent !important; }
-#mobile-menu-btn.active span::before { 
-    top: 0 !important; 
-    transform: rotate(45deg) !important; 
-    background: #ffffff !important; 
-}
-#mobile-menu-btn.active span::after { 
-    top: 0 !important; 
-    transform: rotate(-45deg) !important; 
-    background: #ffffff !important; 
-}
+#mobile-menu-btn.active span { background: transparent; }
+#mobile-menu-btn.active span::before { top: 0; transform: rotate(45deg); background: #000000; }
+#mobile-menu-btn.active span::after { top: 0; transform: rotate(-45deg); background: #000000; }
 
 #mobile-menu {
     position: fixed;
@@ -513,7 +511,6 @@ body {
         margin-right: -20px;
     }
 }
-
 /* FORCER TRAITS BURGER BLANCS - PRIORITÉ MAXIMALE */
 #mobile-menu-btn span,
 #mobile-menu-btn span::before,
@@ -526,17 +523,6 @@ body {
 #mobile-menu-btn.active span::after {
     background-color: #ffffff !important;
     background: #ffffff !important;
-}
-
-/* === PHOTO D'ALEX RÉDUITE x3 === */
-#gdlr-core-column-3 .gdlr-core-image-item-wrap {
-    max-width: 33% !important;
-    margin: 0 auto !important;
-}
-
-#gdlr-core-column-3 img {
-    width: 100% !important;
-    height: auto !important;
 }
 </style>
 
@@ -551,18 +537,18 @@ body {
             <div class="zurf-top-bar-container zurf-container">
                 <div class="zurf-top-bar-container-inner clearfix">
                     <div class="zurf-top-bar-left zurf-item-pdlr">
-                        <div id="lang" style="display: flex; gap: 15px; align-items: center;">
-                            <a href="#" style="text-decoration: none; color: #ffffff; font-size: 14px; font-weight: 500;">🇫🇷 FR</a>
-                            <a href="#" style="text-decoration: none; color: #ffffff; font-size: 14px; font-weight: 500;">🇬🇧 EN</a>
-                            <a href="#" style="text-decoration: none; color: #ffffff; font-size: 14px; font-weight: 500;">🇪🇸 ES</a>
-                            <a href="#" style="text-decoration: none; color: #ffffff; font-size: 14px; font-weight: 500;">🇨🇳 CN</a>
+                        <div id="lang" style="display: flex; gap: 10px; align-items: center;">
+                            <a href="#" style="text-decoration: none; font-size: 18px;">🇫🇷</a>
+                            <a href="#" style="text-decoration: none; font-size: 18px;">🇬🇧</a>
+                            <a href="#" style="text-decoration: none; font-size: 18px;">🇪🇸</a>
+                            <a href="#" style="text-decoration: none; font-size: 18px;">🇨🇳</a>
                         </div>
                     </div>
                     <div class="zurf-top-bar-right zurf-item-pdlr">
                         <div class="zurf-top-bar-right-text">
                             <i class="fa5s fa5-phone" style="font-size: 15px; color: #ffffff; margin-right: 10px;"></i><span style="font-weight: 500;"> 06.84.57.59.76</span>
                             <i class="fa5s fa5-envelope-open" style="font-size: 15px; color: #ffffff; margin-left: 30px; margin-right: 10px;"></i>
-                            <a href="contact.html">contact@immersion-malouine.com</span></a>
+                            <a href="contact.html">contact@immersion-malouine.com</a>
                         </div>
                         <div class="zurf-top-bar-right-social">
                             <a href="https://www.facebook.com/alexandre.roussel.58" target="_blank" class="zurf-top-bar-social-icon" title="Facebook" style="margin-left: 15px; display: inline-block; vertical-align: middle;">
@@ -656,7 +642,7 @@ body {
                         <div class="zurf-top-bar-right-text">
                             <i class="fa5s fa5-phone" style="font-size: 15px; color: #ffffff; margin-right: 10px;"></i><span style="font-weight: 500;"> 06.84.57.59.76</span>
                             <i class="fa5s fa5-envelope-open" style="font-size: 15px; color: #ffffff; margin-left: 30px; margin-right: 10px;"></i>
-                            <a href="contact.html">contact@immersion-malouine.com</span></a>
+                            <a href="contact.html">contact@immersion-malouine.com</a>
                         </div>
                         
                                 <div class="zurf-top-bar-right-social">
@@ -730,422 +716,96 @@ body {
             </div>
 
 		<main>
-			
-
-            <!-- SECTION principal -->
-            <div class="zurf-page-wrapper" id="zurf-page-wrapper">
+			<div class="zurf-page-wrapper" id="zurf-page-wrapper">
                 <div class="gdlr-core-page-builder-body clearfix">
-
-                    <!-- SECTION TOP PAGE -->
-                    <div class="gdlr-core-pbf-wrapper" style="padding: 320px 0px 160px 0px;" id="gdlr-core-wrapper-1">
-                        <div class="gdlr-core-pbf-background-wrap" style="background-color: #0a0a0a;">
-                            <div class="gdlr-core-pbf-background gdlr-core-parallax gdlr-core-js" style="opacity: 0.5; background-image: url(images/scuba-hero-bg.jpg); background-size: cover; background-repeat: no-repeat; background-position: center;" data-parallax-speed="0">
-                            </div>
-                        </div>
+                    <!-- BANDEAU CENTRÉ -->
+                    <div class="gdlr-core-pbf-wrapper" style="padding: 320px 0px 130px 0px;" data-skin="Dark" id="gdlr-core-wrapper-1">
                         <div class="gdlr-core-pbf-wrapper-content gdlr-core-js">
-                            <div class="gdlr-core-pbf-wrapper-container clearfix gdlr-core-container-custom" style="max-width: 950px;">
-                                <div class="gdlr-core-pbf-element">
-                                    <div class="gdlr-core-title-item gdlr-core-item-pdb clearfix gdlr-core-center-align gdlr-core-title-item-caption-bottom gdlr-core-item-pdlr" style="padding-bottom: 50px;" id="gdlr-core-title-item-1">
-                                        <div class="gdlr-core-title-item-title-wrap">
-                                            <h3 class="gdlr-core-title-item-title gdlr-core-skin-title class-test" style="font-size: 82px; font-weight: 500; letter-spacing: 0px; text-transform: none; color: #ffffff;">
-                                            Plongée Minihic et pays malouin<span class="gdlr-core-title-item-title-divider gdlr-core-skin-divider"></span>
-                                            </h3>
+                            <div class="gdlr-core-pbf-wrapper-container clearfix">
+                                <div class="header-content-wrapper">
+                                    <div class="gdlr-core-pbf-element">
+                                        <div class="gdlr-core-title-item gdlr-core-item-pdb clearfix gdlr-core-center-align gdlr-core-title-item-caption-bottom gdlr-core-item-pdlr">
+                                            <div class="gdlr-core-title-item-title-wrap">
+                                                <h3 class="gdlr-core-title-item-title gdlr-core-skin-title class-test" style="font-size: 75px; font-weight: 600; letter-spacing: 0px; text-transform: none; color: #ffffff;">
+                                                    Comment nous rejoindre<span class="gdlr-core-title-item-title-divider gdlr-core-skin-divider"></span>
+                                                </h3>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="gdlr-core-pbf-element">
-                                    <div class="gdlr-core-shape-divider-item">
-                                        <div class="gdlr-core-shape-divider-wrap gdlr-core-pos-bottom gdlr-core-inverted gdlr-core-custom-image-with-height" style="background-image: url(images/scuba-hero-shape-divider.png); height: 98px;">
-                                        </div>
                                     </div>
-                                </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- SECTION DECOUVERTE -->
-                    <div class="gdlr-core-pbf-wrapper" style="padding: 75px 0px 60px 0px; background:#ffffff;" id="gdlr-core-wrapper-2">
-                        <div class="gdlr-core-pbf-background-wrap">
-                        </div>
-                        <div class="gdlr-core-pbf-wrapper-content gdlr-core-js">
-                            <div class="gdlr-core-pbf-wrapper-container clearfix gdlr-core-container">
-                                <div class="gdlr-core-pbf-column gdlr-core-column-60 gdlr-core-column-first" id="gdlr-core-column-1">
-                                    <div class="gdlr-core-pbf-column-content-margin gdlr-core-js" style="padding-bottom: 40px;">
-                                        <div class="gdlr-core-pbf-background-wrap">
-                                        </div>
-                                        <div class="gdlr-core-pbf-column-content clearfix gdlr-core-js" style="max-width: 700px;">
-                                            <div class="gdlr-core-pbf-element">
-                                                <div class="gdlr-core-title-item gdlr-core-item-pdb clearfix gdlr-core-center-align gdlr-core-title-item-caption-top gdlr-core-item-pdlr" style="padding-bottom: 15px;">
-                                                    <div class="gdlr-core-title-item-title-wrap">
-                                                        <h3 class="gdlr-core-title-item-title gdlr-core-skin-title class-test" style="font-size: 42px; font-weight: 500; letter-spacing: 0px; text-transform: none; color: #222222;">
-                                                        IMMERSION MALOUINE : L'aventure entre Rance et Mer<span class="gdlr-core-title-item-title-divider gdlr-core-skin-divider"></span>
-                                                        </h3>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="gdlr-core-pbf-element">
-                                                <div class="gdlr-core-image-item gdlr-core-item-pdb gdlr-core-center-align gdlr-core-item-pdlr" style="padding-bottom: 40px;">
-                                                    <div class="gdlr-core-image-item-wrap gdlr-core-media-image gdlr-core-image-item-style-rectangle" style="border-width: 0px; max-width: 49px;">
-                                                        <img src="images/tour-title-divider.png" alt="" width="98" height="26" title="tour-title-divider">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="gdlr-core-pbf-element">
-                                                <div class="gdlr-core-text-box-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-center-align gdlr-core-no-p-space" style="padding-bottom: 0px;">
-                                                    <div class="gdlr-core-text-box-item-content" style="font-size: 18px; font-weight: 400; letter-spacing: 0px; text-transform: none; color: #556575;">
-                                                        <p style="font-weight: 600; color: #40C4B7; font-size: 18px;">Bienvenue à bord ! Je suis Alexandre Roussel, et je vous invite à découvrir la plongée sous un nouvel angle. En partant du Minihic-sur-Rance, nous évitons l'agitation urbaine pour nous concentrer sur l'essentiel : votre plaisir et la beauté des fonds sous-marins.</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="gdlr-core-pbf-column gdlr-core-column-24 gdlr-core-column-first" id="gdlr-core-column-2">
-                                    <div class="gdlr-core-pbf-column-content-margin gdlr-core-js">
-                                        <div class="gdlr-core-pbf-background-wrap">
-                                        </div>
-                                        <div class="gdlr-core-pbf-column-content clearfix gdlr-core-js">
-                                            <div class="gdlr-core-pbf-element">
-                                                <div class="gdlr-core-title-item gdlr-core-item-pdb clearfix gdlr-core-left-align gdlr-core-title-item-caption-top gdlr-core-item-pdlr" style="padding-bottom: 25px;">
-                                                    <div class="gdlr-core-title-item-title-wrap">
-                                                        <h3 class="gdlr-core-title-item-title gdlr-core-skin-title class-test" style="font-size: 28px; font-weight: 400; letter-spacing: 0px; text-transform: none; color: #222222;">
-                                                        Un point de départ unique, deux univers à explorer<span class="gdlr-core-title-item-title-divider gdlr-core-skin-divider"></span>
-                                                        </h3>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="gdlr-core-pbf-element">
-                                                <div class="gdlr-core-text-box-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-left-align" style="padding-bottom: 10px;">
-                                                    <div class="gdlr-core-text-box-item-content" style="font-size: 16px; font-weight: 400; letter-spacing: 0px; text-transform: none; color: #556575;">
-                                                        <p>Depuis notre base au Minihic, nous avons le privilège de rayonner sur deux zones de plongée complémentaires :</p>
-                                                        
-                                                        <p><strong>Côté Rance :</strong> Un sanctuaire de biodiversité. Entre eaux calmes et rives sauvages, c'est le lieu idéal pour la randonnée palmée, l'initiation à l'apnée et les premières bulles en toute sérénité. Un véritable jardin secret où la vie se cache dans chaque herbier.</p>
-                                                        
-                                                        <p><strong>Côté Saint-Malo :</strong> L'appel du large. Nous mettons le cap vers la baie pour explorer ses tombants granitiques et ses épaves historiques. Un terrain de jeu plus sportif et spectaculaire pour les amateurs de sensations et d'histoire maritime.</p>
-                                                        
-                                                        <h5 style="font-size: 20px; font-weight: 600; color: #222222; margin-top: 25px; margin-bottom: 15px;">L'expertise internationale au service du local</h5>
-                                                        <p>Après 20 ans à enseigner la plongée à travers le monde (Colombie, Thaïlande, Polynésie...), j'ai choisi de revenir à mes racines malouines. Instructeur DEJEPS E4 et PADI, je mets mon expérience internationale au service de votre progression :</p>
-                                                        
-                                                        <ul style="list-style: none; padding-left: 0; margin-top: 15px;">
-                                                            <li style="margin-bottom: 10px;"><strong>Pédagogie sur-mesure :</strong> Que vous soyez au Minihic pour un baptême ou pour préparer un Niveau 4, chaque séance est adaptée à votre rythme.</li>
-                                                            <li style="margin-bottom: 10px;"><strong>Confort & Authenticité :</strong> Partir du Minihic, c'est choisir la facilité de stationnement, la convivialité d'un port à taille humaine et un accès direct à la nature.</li>
-                                                        </ul>
-                                                        
-                                                        <p style="margin-top: 20px; font-style: italic; color: #2c7b8d;">"Plus qu'une plongée, une escale hors du temps."</p>
-                                                        
-                                                        <p style="margin-top: 15px;">En choisissant le Minihic comme port d'attache, je vous promets une expérience authentique, loin des structures de masse. Ici, on s'équipe au calme, on prend le temps du briefing, et on part explorer le meilleur de la Bretagne.</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="gdlr-core-pbf-element">
-                                                <div class="gdlr-core-icon-list-item gdlr-core-item-pdlr gdlr-core-item-pdb clearfix gdlr-core-left-align gdlr-core-style-1" style="padding-bottom: 37px;">
-                                                    <ul class="">
-                                                        <li class="gdlr-core-skin-divider clearfix">
-                                                        <span class="gdlr-core-icon-list-icon-wrap gdlr-core-left">
-                                                        <span style="color: #48bf84; font-size: 22px; width: 22px; display: inline-block; font-weight: bold;">✓</span>
-                                                        </span>
-                                                        <div class="gdlr-core-icon-list-content-wrap">
-                                                            <span class="gdlr-core-icon-list-content" style="color: #556575; font-size: 16px; font-weight: 500;">Guide professionnel et sortie en bateau </span>
-                                                        </div>
-                                                        </li>
-                                                        <li class="gdlr-core-skin-divider clearfix">
-                                                        <span class="gdlr-core-icon-list-icon-wrap gdlr-core-left">
-                                                        <span style="color: #48bf84; font-size: 22px; width: 22px; display: inline-block; font-weight: bold;">✓</span>
-                                                        </span>
-                                                        <div class="gdlr-core-icon-list-content-wrap">
-                                                            <span class="gdlr-core-icon-list-content" style="color: #556575; font-size: 16px; font-weight: 500;">Bouteille et plombs inclus</span>
-                                                        </div>
-                                                        </li>
-                                                        <li class="gdlr-core-skin-divider clearfix">
-                                                        <span class="gdlr-core-icon-list-icon-wrap gdlr-core-left">
-                                                        <span style="color: #48bf84; font-size: 22px; width: 22px; display: inline-block; font-weight: bold;">✓</span>
-                                                        </span>
-                                                        <div class="gdlr-core-icon-list-content-wrap">
-                                                            <span class="gdlr-core-icon-list-content" style="color: #556575; font-size: 16px; font-weight: 500;">Tous les frais et taxes compris</span>
-                                                        </div>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="gdlr-core-pbf-column gdlr-core-column-36" id="gdlr-core-column-3">
-                                    <div class="gdlr-core-pbf-column-content-margin gdlr-core-js" style="padding: 0px 0px 0px 20px;">
-                                        <div class="gdlr-core-pbf-background-wrap">
-                                        </div>
-                                        <div class="gdlr-core-pbf-column-content clearfix gdlr-core-js">
-                                            <div class="gdlr-core-pbf-element">
-                                                <div class="gdlr-core-image-item gdlr-core-item-pdb gdlr-core-center-align gdlr-core-item-pdlr">
-                                                    <div class="gdlr-core-image-item-wrap gdlr-core-media-image gdlr-core-image-item-style-rectangle" style="border-width: 0px;">
-                                                        <img src="images/alex.plage.jpeg" alt="" title="Alex sur la plage">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <div class="zurf-content-container zurf-container">
+                        <div class="zurf-sidebar-wrap clearfix zurf-line-height-0 zurf-sidebar-style-none">
+                            <div class="zurf-sidebar-center zurf-column-60 zurf-line-height">
+                                <div class="zurf-content-wrap zurf-item-pdlr clearfix">
+                                    <div class="zurf-content-area">
 
-                    <!-- SECTION BANDEAU -->
-                    <div class="gdlr-core-pbf-wrapper" style="padding: 130px 0px 125px 0px;">
-                        <div class="gdlr-core-pbf-background-wrap">
-                            <div class="gdlr-core-pbf-background gdlr-core-parallax gdlr-core-js" style="background-image: url(images/hp1-cta-bg.jpg); background-size: cover; background-repeat: no-repeat; background-position: center;" data-parallax-speed="0.2">
-                            </div>
-                        </div>
-                        <div class="gdlr-core-pbf-wrapper-content gdlr-core-js">
-                            <div class="gdlr-core-pbf-wrapper-container clearfix gdlr-core-container">
-                                <div class="gdlr-core-pbf-element">
-                                    <div class="gdlr-core-shape-divider-item" id="gdlr-core-shape-divider-1">
-                                        <div class="gdlr-core-shape-divider-wrap gdlr-core-pos-top">
-                                            <svg preserveaspectratio="none" viewbox="0 0 1000 100" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="m421.9 6.5c22.6-2.5 51.5.4 75.5 5.3 23.6 4.9 70.9 23.5 100.5 35.7 75.8 32.2 133.7 44.5 192.6 49.7 23.6 2.1 48.7 3.5 103.4-2.5s106.2-25.6 106.2-25.6v-69.1h-1000.1v30.3s72 32.6 158.4 30.5c39.2-.7 92.8-6.7 134-22.4 21.2-8.1 52.2-18.2 79.7-24.2 27.2-6.3 39.5-6.7 49.8-7.7z"></path>
-                                            </svg>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="gdlr-core-pbf-column gdlr-core-column-60 gdlr-core-column-first" id="gdlr-core-column-4">
-                                    <div class="gdlr-core-pbf-column-content-margin gdlr-core-js">
-                                        <div class="gdlr-core-pbf-background-wrap">
-                                        </div>
-                                        <div class="gdlr-core-pbf-column-content clearfix gdlr-core-js" style="max-width: 1000px;">
-                                            <div class="gdlr-core-pbf-element">
-                                                <div class="gdlr-core-title-item gdlr-core-item-pdb clearfix gdlr-core-center-align gdlr-core-title-item-caption-top gdlr-core-item-pdlr" style="padding-bottom: 60px;">
-                                                    
-                                                    <div class="gdlr-core-title-item-title-wrap">
-                                                        <h3 class="gdlr-core-title-item-title gdlr-core-skin-title class-test" style="font-size: 32px; font-weight: 500; letter-spacing: 0px; text-transform: none; color: #ffffff;">
-                                                        Vous vous êtes déjà demandé ce que ça fait de respirer sous l'eau ?
-Initiez-vous à la plongée dès aujourd'hui et vivez une expérience unique !<span class="gdlr-core-title-item-title-divider gdlr-core-skin-divider"></span>
-                                                        </h3>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="gdlr-core-pbf-element">
-                                    <div class="gdlr-core-shape-divider-item" id="gdlr-core-shape-divider-2">
-                                        <div class="gdlr-core-shape-divider-wrap gdlr-core-pos-bottom gdlr-core-inverted">
-                                            <svg preserveaspectratio="none" viewbox="0 0 1000 100" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="m790.5 93.1c-59.3-5.3-116.8-18-192.6-50-29.6-12.7-76.9-31-100.5-35.9s-52.6-7.8-75.5-5.3c-10.2 1.1-22.6 1.4-50.1 7.4-27.2 6.3-58.2 16.6-79.4 24.7-41.3 15.9-94.9 21.9-134 22.6-86.4 1.6-158.4-30.8-158.4-30.8v74.2h1000v-34.7s-51.5 19.4-106.2 25.7c-54.3 6-79.7 4.2-103.3 2.1z"></path>
-                                            </svg>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+<article id="post-itineraire" class="post type-post status-publish format-standard">
+    <div class="zurf-single-article clearfix">
+        <div class="zurf-single-article-content">
+            
+            <p style="font-weight: 600; color: #40C4B7; font-size: 18px; margin-bottom: 40px;">
+                Nous vous accueillons à la Plage de la Grève au Minihic-sur-Rance, un point de départ idéal entre Rance et mer. Utilisez la carte ci-dessous pour calculer votre itinéraire depuis votre domicile.
+            </p>
+            
+            <span class="gdlr-core-space-shortcode" style="margin-top: 30px;"></span>
+            <h4 class="wp-block-heading"><strong>Notre adresse</strong></h4>
+            
+            <p style="font-size: 18px; line-height: 1.8;">
+                <strong>Immersion Malouine</strong><br>
+                Plage de la Grève<br>
+                35780 Le Minihic-sur-Rance<br>
+                France
+            </p>
+            
+            <span class="gdlr-core-space-shortcode" style="margin-top: 30px;"></span>
+            <h4 class="wp-block-heading"><strong>Calculer votre itinéraire</strong></h4>
+            
+            <div style="width: 100%; margin: 30px 0;">
+                <iframe 
+                    src="https://maps.google.com/maps?q=Plage+de+la+Grève,Le+Minihic-sur-Rance&hl=fr&z=15&output=embed&t=k"
+                    width="100%" 
+                    height="500" 
+                    style="border:0; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+            
+            <div style="text-align: center; margin: 30px 0;">
+                <a href="https://www.google.com/maps/dir/?api=1&destination=Plage+de+la+Grève,Le+Minihic-sur-Rance" 
+                   target="_blank"
+                   style="display: inline-block; background: #40C4B7; color: #ffffff !important; font-size: 18px; font-weight: 600; padding: 18px 40px; border-radius: 8px; text-decoration: none; transition: all 0.3s ease; box-shadow: 0 4px 12px rgba(64, 196, 183, 0.3);">
+                    🗺️ Calculer mon itinéraire
+                </a>
+            </div>
+            
+            <span class="gdlr-core-space-shortcode" style="margin-top: 30px;"></span>
+            <h4 class="wp-block-heading"><strong>Accès et stationnement</strong></h4>
+            
+            <ul class="list-no-left wp-block-list" style="list-style: none; padding-left: 0;">
+                <li style="margin-bottom: 10px;"><span style="color: #2c7b8d; font-size: 22px; width: 22px; display: inline-block; font-weight: bold;">•</span> <strong>En voiture</strong> : Parking gratuit disponible à la plage de la Grève</li>
+                <li style="margin-bottom: 10px;"><span style="color: #2c7b8d; font-size: 22px; width: 22px; display: inline-block; font-weight: bold;">•</span> <strong>Depuis Saint-Malo</strong> : 15 minutes en voiture via la D114</li>
+                <li style="margin-bottom: 10px;"><span style="color: #2c7b8d; font-size: 22px; width: 22px; display: inline-block; font-weight: bold;">•</span> <strong>Depuis Dinard</strong> : 20 minutes en voiture via la D168</li>
+                <li style="margin-bottom: 10px;"><span style="color: #2c7b8d; font-size: 22px; width: 22px; display: inline-block; font-weight: bold;">•</span> <strong>Depuis Rennes</strong> : 1 heure en voiture via la N137</li>
+            </ul>
+            
+            <span class="gdlr-core-space-shortcode" style="margin-top: 40px;"></span>
+            
+            <div class="waves-section">
+                <span class="gdlr-core-space-shortcode" style="margin-top: 30px;"></span>
+                <h4 class="wp-block-heading"><strong>Le conseil d'Alexandre</strong></h4>
+                <p style="font-style: italic; color: #556575; line-height: 1.8;">"La Plage de la Grève est un havre de paix, loin de l'agitation urbaine. Prévoyez d'arriver 15 minutes avant l'heure de rendez-vous pour vous garer tranquillement et profiter du cadre. N'hésitez pas à m'appeler si vous avez du mal à nous trouver : 06.84.57.59.76"</p>
+                <span class="gdlr-core-space-shortcode" style="margin-top: 30px;"></span>
+            </div>
+        </div>
+    </div>
+</article>
 
-                    <!-- SECTION MODULES PRESENTATION-->
-                    <div class="gdlr-core-pbf-wrapper" style="padding: 30px 0px 100px 0px;" id="gdlr-core-wrapper-3">
-                        <div class="gdlr-core-pbf-background-wrap">
-                        </div>
-                        <div class="gdlr-core-pbf-wrapper-content gdlr-core-js">
-                            <div class="gdlr-core-pbf-wrapper-container clearfix gdlr-core-container">
-                                <div class="gdlr-core-pbf-column gdlr-core-column-60 gdlr-core-column-first" id="gdlr-core-column-5">
-                                    <div class="gdlr-core-pbf-column-content-margin gdlr-core-js" style="padding-bottom: 80px;">
-                                        <div class="gdlr-core-pbf-background-wrap">
-                                        </div>
-                                        <div class="gdlr-core-pbf-column-content clearfix gdlr-core-js" style="max-width: 700px;">
-                                            <div class="gdlr-core-pbf-element">
-                                                <div class="gdlr-core-title-item gdlr-core-item-pdb clearfix gdlr-core-center-align gdlr-core-title-item-caption-top gdlr-core-item-pdlr" style="padding-bottom: 15px;">
-                                                    <div class="gdlr-core-title-item-title-wrap">
-                                                        <h3 class="gdlr-core-title-item-title gdlr-core-skin-title class-test" style="font-size: 34px; font-weight: 500; letter-spacing: 0px; text-transform: none; color: #222222;">
-                                                        Expérience professionnelle de la plongée<span class="gdlr-core-title-item-title-divider gdlr-core-skin-divider"></span>
-                                                        </h3>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="gdlr-core-pbf-element">
-                                                <div class="gdlr-core-image-item gdlr-core-item-pdb gdlr-core-center-align gdlr-core-item-pdlr" style="padding-bottom: 40px;">
-                                                    <div class="gdlr-core-image-item-wrap gdlr-core-media-image gdlr-core-image-item-style-rectangle" style="border-width: 0px; max-width: 49px;">
-                                                        <img src="images/tour-title-divider.png" alt="" width="98" height="26" title="tour-title-divider">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="gdlr-core-pbf-element">
-                                                <div class="gdlr-core-text-box-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-center-align gdlr-core-no-p-space" style="padding-bottom: 0px;">
-                                                    <div class="gdlr-core-text-box-item-content" style="font-size: 18px; font-weight: 400; letter-spacing: 0px; text-transform: none; color: #556575;">
-                                                        <p>
-                                                            Explorez le monde sous-marin du parc national marin de la Rance et de la baie du Mont St michel lors d'une excursion de plongée sous-marine de 3 heures qui comprend deux plongées avec votre guide.
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="gdlr-core-pbf-element">
-                                    <div class="gdlr-core-hover-box-item gdlr-core-item-pdb clearfix gdlr-core-item-pdlr gdlr-core-center-align" id="gdlr-core-hover-box-id-1">
-                                        <div class="gdlr-core-flexslider flexslider gdlr-core-js-2 gdlr-core-has-bullet gdlr-core-bullet-style-cylinder" data-type="carousel" data-column="3" data-move="1" data-nav="bullet" data-nav-parent="gdlr-core-hover-box-item">
-                                            <ul class="slides">
-                                                <li class="gdlr-core-item-mglr">
-                                                <div class="gdlr-core-hover-box gdlr-core-js clearfix" style=" background-color: #ffffff; border-width: 0px 0px 0px 0px; border-radius: 10px 10px 10px 10px; -moz-border-radius: 10px 10px 10px 10px; -webkit-border-radius: 10px 10px 10px 10px; ">
-                                                    <div class="gdlr-core-hover-box-bg-hover" style="background-image: url(images/hover-bg.png);">
-                                                    </div>
-                                                    <div class="gdlr-core-hover-box-content-wrap" style="padding: 45px 40px 50px 40px;">
-                                                        <div class="gdlr-core-hover-box-thumbnail-inside gdlr-core-media-image gdlr-core-hover-thumbnail" style="width: 60px;">
-                                                            <img src="images/icon-1.png" alt="" width="120" height="120" title="icon-1"><img src="images/icon-1-hover.png" alt="" width="120" height="120" title="icon-1-hover">
-                                                        </div>
-                                                        <h3 class="gdlr-core-hover-box-title gdlr-core-skin-title" style="font-size: 22px; font-weight: 400; text-transform: none; color: #222222;">Plongée sous-marine</h3>
-                                                        <div class="gdlr-core-hover-box-content gdlr-core-skin-content" style="font-size: 16px; font-weight: 400; color: #556575;">
-                                                            <p>
-                                                                Initiez-vous aux bases de la plongée sous-marine et profitez de deux plongées encadrées avec un instructeur certifié.
-                                                            </p>
-                                                        </div>
-                                                        <a class="gdlr-core-hover-box-text-link" href="#" style="color: #a0a0a0;">Voir plus<i class="fa fa-long-arrow-right"></i></a>
-                                                    </div>
-                                                </div>
-                                                </li>
-                                                <li class="gdlr-core-item-mglr">
-                                                <div class="gdlr-core-hover-box gdlr-core-js clearfix" style=" background-color: #ffffff; border-width: 0px 0px 0px 0px; border-radius: 10px 10px 10px 10px; -moz-border-radius: 10px 10px 10px 10px; -webkit-border-radius: 10px 10px 10px 10px; ">
-                                                    <div class="gdlr-core-hover-box-bg-hover" style="background-image: url(images/hover-bg.png);">
-                                                    </div>
-                                                    <div class="gdlr-core-hover-box-content-wrap" style="padding: 45px 40px 50px 40px;">
-                                                        <div class="gdlr-core-hover-box-thumbnail-inside gdlr-core-media-image gdlr-core-hover-thumbnail" style="width: 60px;">
-                                                            <img src="images/icon-3.png" alt="" width="120" height="120" title="icon-3"><img src="images/icon-3-hover.png" alt="" width="120" height="120" title="icon-3-hover">
-                                                        </div>
-                                                        <h3 class="gdlr-core-hover-box-title gdlr-core-skin-title" style="font-size: 22px; font-weight: 400; text-transform: none; color: #222222;">Tuba</h3>
-                                                        <div class="gdlr-core-hover-box-content gdlr-core-skin-content" style="font-size: 16px; font-weight: 400; color: #556575;">
-                                                            <p>
-                                                                Initiez-vous aux bases de la plongée sous-marine et profitez de deux plongées encadrées avec un instructeur certifié
-                                                            </p>
-                                                        </div>
-                                                        <a class="gdlr-core-hover-box-text-link" href="#" style="color: #a0a0a0;">Voir plus<i class="fa fa-long-arrow-right"></i></a>
-                                                    </div>
-                                                </div>
-                                                </li>
-                                                <li class="gdlr-core-item-mglr">
-                                                <div class="gdlr-core-hover-box gdlr-core-js clearfix" style=" background-color: #ffffff; border-width: 0px 0px 0px 0px; border-radius: 10px 10px 10px 10px; -moz-border-radius: 10px 10px 10px 10px; -webkit-border-radius: 10px 10px 10px 10px; ">
-                                                    <div class="gdlr-core-hover-box-bg-hover" style="background-image: url(images/hover-bg.png);">
-                                                    </div>
-                                                    <div class="gdlr-core-hover-box-content-wrap" style="padding: 45px 40px 50px 40px;">
-                                                        <div class="gdlr-core-hover-box-thumbnail-inside gdlr-core-media-image gdlr-core-hover-thumbnail" style="width: 60px;">
-                                                            <img src="images/icon-2.png" alt="" width="120" height="120" title="icon-2"><img src="images/icon-2-hover.png" alt="" width="120" height="120" title="icon-2-hover">
-                                                        </div>
-                                                        <h3 class="gdlr-core-hover-box-title gdlr-core-skin-title" style="font-size: 22px; font-weight: 400; text-transform: none; color: #222222;">Plongée en grotte</h3>
-                                                        <div class="gdlr-core-hover-box-content gdlr-core-skin-content" style="font-size: 16px; font-weight: 400; color: #556575;">
-                                                            <p>
-                                                                Learn the basics of scuba diving and take two dives on a PADI Discover Scuba tour from Cozumel.
-                                                            </p>
-                                                        </div>
-                                                        <a class="gdlr-core-hover-box-text-link" href="#" style="color: #a0a0a0;">Voir plus<i class="fa fa-long-arrow-right"></i></a>
-                                                    </div>
-                                                </div>
-                                                </li>
-                                                <li class="gdlr-core-item-mglr">
-                                                <div class="gdlr-core-hover-box gdlr-core-js clearfix" style=" background-color: #ffffff; border-width: 0px 0px 0px 0px; border-radius: 10px 10px 10px 10px; -moz-border-radius: 10px 10px 10px 10px; -webkit-border-radius: 10px 10px 10px 10px; ">
-                                                    <div class="gdlr-core-hover-box-bg-hover" style="background-image: url(images/hover-bg.png);">
-                                                    </div>
-                                                    <div class="gdlr-core-hover-box-content-wrap" style="padding: 45px 40px 50px 40px;">
-                                                        <div class="gdlr-core-hover-box-thumbnail-inside gdlr-core-media-image gdlr-core-hover-thumbnail" style="width: 60px;">
-                                                            <img src="images/icon-shore-1.png" alt="" width="120" height="120" title="icon-shore">
-                                                            <img src="images/icon-shore-hover-1.png" alt="" width="120" height="120" title="icon-shore-hover">
-                                                        </div>
-                                                        <h3 class="gdlr-core-hover-box-title gdlr-core-skin-title" style="font-size: 22px; font-weight: 400; text-transform: none; color: #222222;">Plongée en piscine</h3>
-                                                        <div class="gdlr-core-hover-box-content gdlr-core-skin-content" style="font-size: 16px; font-weight: 400; color: #556575;">
-                                                            <p>
-                                                                Initiez-vous aux bases de la plongée sous-marine et profitez de deux plongées encadrées avec un instructeur certifié
-                                                            </p>
-                                                        </div>
-                                                        <a class="gdlr-core-hover-box-text-link" href="#" style="color: #a0a0a0;">Voir plus<i class="fa fa-long-arrow-right"></i></a>
-                                                    </div>
-                                                </div>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- SECTION VIDEO + ARTICLE -->
-                    <div class="gdlr-core-pbf-wrapper" style="padding: 60px 0px 30px 0px;" id="gdlr-core-wrapper-4">
-                        <div class="gdlr-core-pbf-background-wrap">
-                            <div class="gdlr-core-pbf-background gdlr-core-parallax gdlr-core-js" style="background-image: url(images/hp-about-bg-1.jpg); background-size: cover; background-repeat: no-repeat; background-position: center;" data-parallax-speed="0">
-                            </div>
-                        </div>
-                        <div class="gdlr-core-pbf-wrapper-content gdlr-core-js">
-                            <div class="gdlr-core-pbf-wrapper-container clearfix gdlr-core-container">
-                                <div class="gdlr-core-pbf-column gdlr-core-column-60 gdlr-core-column-first" id="gdlr-core-column-6">
-                                    <div class="gdlr-core-pbf-column-content-margin gdlr-core-js" style="padding-bottom: 20px;">
-                                        <div class="gdlr-core-pbf-background-wrap">
-                                        </div>
-                                        <div class="gdlr-core-pbf-column-content clearfix gdlr-core-js" style="max-width: 700px;">
-                                            <div class="gdlr-core-pbf-element">
-                                                <div class="gdlr-core-title-item gdlr-core-item-pdb clearfix gdlr-core-center-align gdlr-core-title-item-caption-top gdlr-core-item-pdlr" style="padding-bottom: 17px;">
-                                                    <div class="gdlr-core-title-item-title-wrap">
-                                                        <h3 class="gdlr-core-title-item-title gdlr-core-skin-title class-test" style="font-size: 34px; font-weight: 500; letter-spacing: 0px; text-transform: none; color: #222222;">
-                                                        Nous disposons des équipements les plus modernes<span class="gdlr-core-title-item-title-divider gdlr-core-skin-divider"></span>
-                                                        </h3>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="gdlr-core-pbf-element">
-                                                <div class="gdlr-core-image-item gdlr-core-item-pdb gdlr-core-center-align gdlr-core-item-pdlr" style="padding-bottom: 40px;">
-                                                    <div class="gdlr-core-image-item-wrap gdlr-core-media-image gdlr-core-image-item-style-rectangle" style="border-width: 0px; max-width: 49px;">
-                                                        <img src="images/tour-title-divider.png" alt="" width="98" height="26" title="tour-title-divider">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="gdlr-core-pbf-column gdlr-core-column-36 gdlr-core-column-first" id="gdlr-core-column-7">
-                                    <div class="gdlr-core-pbf-column-content-margin gdlr-core-js" style="padding: 0px 60px 0px 0px;">
-                                        <div class="gdlr-core-pbf-background-wrap">
-                                        </div>
-                                        <div class="gdlr-core-pbf-column-content clearfix gdlr-core-js">
-                                            <div class="gdlr-core-pbf-element">
-                                                <div class="gdlr-core-image-item gdlr-core-item-pdb gdlr-core-center-align gdlr-core-item-pdlr">
-                                                    <div class="gdlr-core-image-item-wrap gdlr-core-media-image gdlr-core-image-item-style-rectangle" style="border-width: 0px;">
-                                                        <a class="gdlr-core-lightgallery gdlr-core-js" href="https://www.youtube.com/embed/tjkFVUwZQrQ?controls=0&rel=0&playsinline=1&widget_referrer=https%3A%2F%2Fpreview.themeforest.net%2F&enablejsapi=1&origin=https%3A%2F%2Ftemplatekit.jegtheme.com&widgetid=1&forigin=https%3A%2F%2Ftemplatekit.jegtheme.com%2Ffindive%2F&aoriginsup=0&gporigin=https%3A%2F%2Fpreview.themeforest.net%2F&vf=1">
-                                                        <img src="https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/2021/10/deep-diver-in-blue-water-e1634536094218.jpg" alt="" width="1252" height="972" title="giant stride">
-                                                        <span class="gdlr-core-image-overlay gdlr-core-no-hover gdlr-core-transparent">
-                                                        <span class="gdlr-core-image-overlay-icon" style="width: 160px;"><img src="images/play-icon.png" alt="" width="400" height="400" title="play icon"></span>
-                                                        </span>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="gdlr-core-pbf-column gdlr-core-column-24" id="gdlr-core-column-8">
-                                    <div class="gdlr-core-pbf-column-content-margin gdlr-core-js" style="padding: 80px 0px 0px 0px;">
-                                        <div class="gdlr-core-pbf-background-wrap">
-                                        </div>
-                                        <div class="gdlr-core-pbf-column-content clearfix gdlr-core-js">
-                                            <div class="gdlr-core-pbf-element">
-                                                <div class="gdlr-core-title-item gdlr-core-item-pdb clearfix gdlr-core-left-align gdlr-core-title-item-caption-top gdlr-core-item-pdlr" style="padding-bottom: 25px;">
-                                                    <div class="gdlr-core-title-item-title-wrap">
-                                                        <h3 class="gdlr-core-title-item-title gdlr-core-skin-title class-test" style="font-size: 28px; font-weight: 400; letter-spacing: 0px; text-transform: none; color: #222222;">
-                                                        Découvrez les circuits de plongée en Rance et dans la baie du Mont St Michel.<span class="gdlr-core-title-item-title-divider gdlr-core-skin-divider"></span>
-                                                        </h3>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="gdlr-core-pbf-element">
-                                                <div class="gdlr-core-text-box-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-left-align gdlr-core-no-p-space" style="padding-bottom: 40px;">
-                                                    <div class="gdlr-core-text-box-item-content" style="font-size: 16px; font-weight: 400; letter-spacing: 0px; text-transform: none; color: #556575;">
-                                                        <p>
-                                                             Il n'y a rien de tel que votre première respiration sous l'eau. Il faut un peu de temps pour s'habituer, mais en quelques minutes, la plupart des participants réalisent à quel point la plongée sous-marine est facile.
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="gdlr-core-pbf-element">
-                                                <div class="gdlr-core-button-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-left-align">
-                                                    <a class="gdlr-core-button gdlr-core-button-gradient gdlr-core-left-align gdlr-core-button-no-border" href="contact.html" style=" font-size: 16px; font-style: normal; font-weight: 500; letter-spacing: 0px; color: #ffffff; padding: 14px 32px 14px 32px; text-transform: none; border-radius: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px; background: #004375; ">
-                                                    <span class="gdlr-core-content">Nous contacter</span>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -1153,7 +813,6 @@ Initiez-vous à la plongée dès aujourd'hui et vivez une expérience unique !<s
                     
                 </div>
             </div>
-
 		</main>
 		
 <!-- FOOTER -->
@@ -1170,7 +829,7 @@ Initiez-vous à la plongée dès aujourd'hui et vivez une expérience unique !<s
                                 <span class="gdlr-core-space-shortcode" style="margin-top: 7px;"></span> +06.84.57.59.76<br>
                                 <span class="gdlr-core-space-shortcode" style="margin-top: 7px;"></span>
                                 <a style="color: #09548c;" href="contact.html">
-                                contact@immersion-malouine.com</span>
+                                contact@immersion-malouine.com
                                 </a>
                             </p>
                         </div>
